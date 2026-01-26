@@ -1,6 +1,6 @@
 ---
-title: "Contact | Code Stitch Web Designs"
-description: "Meta description for the page"
+title: "Free Crawl Space Inspection | Raleigh, Cary, & Durham | Contact Us"
+description: "Schedule your free, no-obligation crawl space inspection with MM Crawlspace Renovations. Serving Raleigh, Cary, Apex, and Durham with trustworthy mold and moisture solutions."
 permalink: "/contact/"
 ---
 
@@ -21,10 +21,6 @@ permalink: "/contact/"
     <div id="banner-310">
         <div class="cs-container">
             <span class="cs-int-title">Contact Us</span>
-            <div class="cs-breadcrumbs">
-                <a href="/" class="cs-link">Home</a>
-                <a href="/contact/" class="cs-link cs-active">Contact Us</a>
-            </div>
         </div>
         <!--Background Image-->
         <picture class="cs-background">
@@ -52,13 +48,13 @@ permalink: "/contact/"
         <div class="cs-container">
             <div class="cs-left-section">
                 <div class="cs-content">
-                    <span class="cs-topper">Contact</span>
-                    <h2 class="cs-title">Get in Touch</h2>
+                    <span class="cs-topper">Let's Get Started</span>
+                    <h2 class="cs-title">Schedule Your Free Crawl Space Inspection</h2>
                     <p class="cs-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus elementum ullamcorper ipsum porttitor aliquam. Id magna urna ultrices odio pulvinar. Sed ut.
+                        Don't wait for a musty smell to become a structural nightmare. Whether you need a code-compliant fire stop in Cary or a full encapsulation in Raleigh, our team is ready to help. Fill out the form below, and we will contact you within 24 hours to schedule your free, no-obligation inspection.
                     </p>
                 </div>
-                <form id="cs-form-265" name="Contact Form" method="post">
+                <form netlify id="cs-form-265" name="Contact Form" method="post">
                     <label>
                         Name
                         <input required type="text" id="name-265" name="name" placeholder="Name">
@@ -79,6 +75,11 @@ permalink: "/contact/"
                         Message
                         <textarea required name="Message" id="message-265" placeholder="Write message..."></textarea>
                     </label>
+                    <p class="cs-label-message">
+                        <label>
+                        Don’t fill this out if you’re human: <input name="bot-field" type="text" />
+                        </label>
+                    </p>
                     <button class="cs-button-solid cs-submit" type="submit">Submit Message</button>
                 </form>
             </div>
@@ -92,8 +93,6 @@ permalink: "/contact/"
                 <!--Address-->
                 <span class="cs-header">Address</span>
                 <a class="cs-link" href="{{ client.address.mapLink }}">
-                    {{ client.address.lineOne }}, <br>
-                    {{ client.address.lineTwo }}, <br>
                     {{ client.address.city }}, {{ client.address.state }}
                     {{ client.address.zip }}
                 </a>
