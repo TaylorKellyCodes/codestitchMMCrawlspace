@@ -24,18 +24,12 @@ permalink: "/sump/"
 
         <picture class="cs-background">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
-            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
             <!--Tablet Image-->
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
-            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
             <!--Desktop Image-->
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
-            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/cabinets.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <img src="{% getUrl "/assets/images/portfolio/crawlspace-after2.jpeg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
         </picture>
     </div>
 
@@ -50,25 +44,24 @@ permalink: "/sump/"
                 <div class="cs-picture-wrapper1">
                     <picture class="cs-picture cs-picture1">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-before1.jpg">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
                         <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-before1.jpg">
-                        <img loading="lazy" decoding="async" src="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-before1.jpg" alt="construction" width="272" height="337">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
+                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before1.webp" alt="construction" width="272" height="337">
                     </picture>
-                    <span class="cs-tag">Before</span>
+                    <span class="cs-tag"></span>
                 </div>
                 <!--Small Image-->
                 <div class="cs-picture-wrapper2">
                     <picture class="cs-picture cs-picture2">
                         <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-after1.jpg">
+                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/pump.jpeg">
                         <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-after1.jpg">
-                        <img loading="lazy" decoding="async" src="https://csimages2.nyc3.digitaloceanspaces.com/Images/Landscapes/construction-after1.jpg" alt="construction" width="243" height="367">
+                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/pump.jpeg">
+                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/pump.jpeg" alt="construction" width="243" height="367">
                     </picture>
-                    <span class="cs-tag">After</span>
+                    <span class="cs-tag"></span>
                 </div>
-                <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/before-after-arrow.svg" alt="arrow" width="148" height="54">
             </div>
             <div class="cs-content">
                 <span class="cs-topper">Water Mitigation & Air Quality</span>
@@ -93,7 +86,7 @@ permalink: "/sump/"
                         <strong>Integrated Monitoring Systems</strong>: We calibrate your system to maintain a steady relative humidity (usually below 55%) and can include Wi-Fi-enabled sensors so you get alerts directly to your phone.
                     </li>
                 </ul>
-                <a href="" class="cs-button-solid">Book Your Free Inspection</a>
+                <a href="/contact/" class="cs-button-solid">Book Your Free Inspection</a>
             </div>
         </div>
     </section>
