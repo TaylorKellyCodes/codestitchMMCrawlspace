@@ -10,7 +10,7 @@
                 <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/portfolio/mmlogo.svg" alt="logo" width="240" height="32">
             </a>
             <p class="cs-text">
-                MM Crawlspace Renovations is the Raleigh-Durham Triangle’s specialist in permanent moisture control and air quality. From professional mold remediation to code-compliant prebatt insulation, we provide the trustworthy work homeowners need to protect their foundation and family health. Licensed, Bonded, and Insured.
+                MM Crawlspace Renovations is the Raleigh-Durham Triangle’s specialist in permanent moisture control and air quality. From professional mold remediation to code-compliant prebatt insulation, we provide the trustworthy work homeowners need to protect their foundation and family health. Fully Insured.
             </p>
             <div class="cs-social">
                 <a class="cs-social-link" aria-label="visit google profile" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
@@ -82,14 +82,15 @@
                 <span class="cs-header">Contact</span>
             </li>
             <li class="cs-contact-li">
+                <a class="cs-contact-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
+            </li>
+            <li class="cs-contact-li">
                 <a class="cs-contact-link cs-address" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
                     {{ client.address.city }}, {{ client.address.state }}
                     {{ client.address.zip }}
                 </a>
             </li>
-            <li class="cs-contact-li">
-                <a class="cs-contact-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
-            </li>
+            
             <li class="cs-contact-li">
                 <a class="cs-contact-link" href="mailto:{{ client.email }}">{{ client.email }}</a>
             </li>
