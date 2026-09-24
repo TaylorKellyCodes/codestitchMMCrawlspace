@@ -10,6 +10,7 @@ module.exports = {
         country: "US",
         mapLink: "https://maps.app.goo.gl/gtSBT6UEqSdoYymy6",
     },
+    serviceAreas: ["Raleigh, NC", "Cary, NC", "Apex, NC", "Durham, NC"],
     socials: {
         facebook: "https://www.facebook.com/",
         instagram: "https://www.instagram.com/",

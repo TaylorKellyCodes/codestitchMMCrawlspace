@@ -1,7 +1,20 @@
 ---
 title: "Mold Remediation & Removal | Raleigh, Cary, & Durham | MM Crawlspace Renovations"
 description: "Don't let mold compromise your family's health. We provide expert crawl space mold remediation in Raleigh, Cary, and Apex. Safe, effective removal and permanent moisture solutions."
-permalink: "/moldremediation/"
+permalink: "/mold-remediation/"
+breadcrumbLabel: "Mold Remediation"
+serviceType: "Crawl Space Mold Remediation"
+faqs:
+  - q: "How do I know if I have mold in my crawl space?"
+    a: "Common signs include a persistent musty smell (especially on the first floor), visible dark or fuzzy discoloration on floor joists or insulation, higher indoor humidity, and allergy-like symptoms that improve when you're away from home. A visual inspection is the only way to confirm it."
+  - q: "Is crawl space mold dangerous to my health?"
+    a: "Mold spores in a crawl space can be pulled into your living space through the 'stack effect,' potentially contributing to respiratory irritation, allergy symptoms, and poor indoor air quality, particularly for people with asthma or mold sensitivities. Addressing it promptly limits ongoing exposure."
+  - q: "How much does mold remediation cost?"
+    a: "Cost depends on the size of the affected area, the severity of the growth, and whether the underlying moisture source (standing water, missing vapor barrier, poor ventilation) also needs to be corrected. We provide a free inspection and a written quote so you know the full scope before we start."
+  - q: "Will the mold come back after remediation?"
+    a: "Removing visible mold without fixing the moisture source that caused it is the most common reason mold returns. That's why our remediation process includes identifying and correcting the root cause—whether that means encapsulation, a dehumidifier, or improved drainage."
+  - q: "How long does mold remediation take?"
+    a: "Most crawl space mold remediation projects take one to two days, depending on the extent of the growth and whether additional moisture-control work (like a dehumidifier or vapor barrier) is being done at the same time."
 ---
 
 {% extends "layouts/base.html" %}
@@ -18,7 +31,8 @@ permalink: "/moldremediation/"
 
     <div id="banner-310">
         <div class="cs-container">
-            <span class="cs-int-title">Mold Remediation</span>
+            <h1 class="cs-int-title">Mold Remediation</h1>
+            {% include 'components/breadcrumbs.html' %}
         </div>
         <!--Background Image-->
 
@@ -35,7 +49,7 @@ permalink: "/moldremediation/"
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+            <img src="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Crawl space with mold growth on floor joists before remediation" width="1920" height="482" loading="eager" decoding="async">
         </picture>
     </div>
 
@@ -53,7 +67,7 @@ permalink: "/moldremediation/"
                     <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-before2.webp">
                     <!--Tablet and above Image-->
                     <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-before2.webp">
-                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before2.webp" alt="construction" width="272" height="337">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before2.webp" alt="Crawl space with active mold growth before remediation" width="272" height="337">
                 </picture>
                 <span class="cs-tag">Before</span>
             </div>
@@ -64,7 +78,7 @@ permalink: "/moldremediation/"
                     <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-after2.webp">
                     <!--Tablet and above Image-->
                     <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-after2.webp">
-                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-after2.webp" alt="construction" width="243" height="367">
+                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-after2.webp" alt="Crawl space after mold remediation with mold removed and joists treated" width="243" height="367">
                 </picture>
                 <span class="cs-tag">After</span>
             </div>
@@ -97,8 +111,47 @@ permalink: "/moldremediation/"
         </div>
     </div>
 </section>
-                                
+
+    <!-- ============================================ -->
+    <!--        Signs & Cost/Timeline Factors         -->
+    <!-- ============================================ -->
+
+    <section id="mold-details" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Is It Time?</span>
+                <h2 class="cs-title">Signs You May Have Crawl Space Mold</h2>
+                <p class="cs-text">
+                    Because crawl space mold grows out of sight, most homeowners only notice its effects upstairs. Watch for:
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li"><strong>Musty or earthy odors</strong>: A persistent smell that's strongest near the floor or after rain is one of the most common early signs.</li>
+                    <li class="cs-li"><strong>Visible discoloration</strong>: Dark spots, streaks, or fuzzy growth on floor joists, subfloor, or insulation.</li>
+                    <li class="cs-li"><strong>Worsening allergy or respiratory symptoms</strong>: Especially symptoms that improve when you leave the house.</li>
+                    <li class="cs-li"><strong>High indoor humidity</strong>: Condensation on windows or ductwork can point to a moisture problem feeding mold growth below.</li>
+                    <li class="cs-li"><strong>Recent water intrusion</strong>: Any past flooding, plumbing leak, or standing water in the crawl space raises the risk of active mold.</li>
+                </ul>
+                <h3 class="cs-h3">What Affects Cost & Timeline</h3>
+                <p class="cs-text">
+                    Mold remediation pricing depends on the extent of the growth, how much of the crawl space is affected, and whether the moisture source also needs to be corrected as part of the job. We always start with a free inspection so you get an accurate, written quote—not a guess.
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li"><strong>Extent of growth</strong>: Isolated mold on a few joists is a smaller job than widespread growth across the subfloor.</li>
+                    <li class="cs-li"><strong>Moisture source correction</strong>: Fixing the root cause (standing water, missing vapor barrier, poor humidity control) adds scope but prevents the mold from returning.</li>
+                    <li class="cs-li"><strong>Accessibility</strong>: Tight or obstructed crawl spaces take longer to treat thoroughly.</li>
+                </ul>
+                <p class="cs-text">
+                    Most remediation jobs are completed in one to two days. We'll walk you through exactly what we find and what it will take to fix it before any work begins.
+                </p>
+                <a href="/contact/" class="cs-button-solid">Get a Free Mold Inspection</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/faq.html' %}
 
     {% include 'sections/cta.html' %}
+
+    {% include 'components/service-schema.html' %}
 
 {% endblock %}

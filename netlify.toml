@@ -2,6 +2,20 @@
   publish = "public/"
   command = "npm run build"
 
+# Collapse the non-www -> www redirect into a single hop instead of the
+# default http(s) non-www -> https non-www -> https www chain.
+[[redirects]]
+  from = "http://mmcrawlspacerenovations.com/*"
+  to = "https://www.mmcrawlspacerenovations.com/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://mmcrawlspacerenovations.com/*"
+  to = "https://www.mmcrawlspacerenovations.com/:splat"
+  status = 301
+  force = true
+
 [[plugins]]
 package = "netlify-plugin-cache"
 

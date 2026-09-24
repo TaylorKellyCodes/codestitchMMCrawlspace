@@ -1,0 +1,26 @@
+<!-- ============================================ -->
+<!--                Service schema                -->
+<!-- ============================================ -->
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "serviceType": {{ serviceType | dump | safe }},
+    "name": {{ title | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "provider": {
+        "@type": "LocalBusiness",
+        "name": {{ client.name | dump | safe }},
+        "telephone": {{ client.phoneFormatted | dump | safe }},
+        "email": {{ client.email | dump | safe }},
+        "url": {{ client.domain | dump | safe }}
+    },
+    "areaServed": [
+        {%- for area in client.serviceAreas -%}
+        { "@type": "City", "name": {{ area | dump | safe }} }{% if not loop.last %},{% endif %}
+        {%- endfor -%}
+    ],
+    "url": "{{ client.domain }}{{ page.url }}"
+}
+</script>

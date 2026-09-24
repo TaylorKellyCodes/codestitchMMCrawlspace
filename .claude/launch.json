@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "eleventy-dev",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "watch:eleventy"],
+      "port": 8080
+    }
+  ]
+}
