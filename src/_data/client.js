@@ -1,5 +1,5 @@
 module.exports = {
-    name: "M&M Crawlspace Renovations",
+    name: "M&M Crawl Space Renovations",
     email: "mmcrawlspace@gmail.com",
     phoneForTel: "910-635-4943",
     phoneFormatted: "(910) 635-4943",
