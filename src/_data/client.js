@@ -11,10 +11,12 @@ module.exports = {
         mapLink: "https://maps.app.goo.gl/gtSBT6UEqSdoYymy6",
     },
     serviceAreas: ["Raleigh, NC", "Cary, NC", "Apex, NC", "Durham, NC"],
-    socials: {
-        facebook: "https://www.facebook.com/",
-        instagram: "https://www.instagram.com/",
-    },
+    foundingDate: "2021-10-06", // NC Secretary of State: M&M Crawl Space Renovation, LLC (SOSID 2282536)
+    // No Facebook or Instagram pages exist yet. Add URLs here and uncomment the footer links if that changes.
+    // socials: {
+    //     facebook: "",
+    //     instagram: "",
+    // },
     //! Make sure you include the file protocol (e.g. https://) and that NO TRAILING SLASH is included
     domain: "https://www.mmcrawlspacerenovations.com",
     // Passing the isProduction variable for use in HTML templates
