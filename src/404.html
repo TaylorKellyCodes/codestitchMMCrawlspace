@@ -1,0 +1,50 @@
+---
+title: "Page Not Found | M&M Crawl Space Renovations"
+description: "That page doesn't exist. Find our crawl space services or call M&M Crawl Space Renovations for a free inspection."
+permalink: "/404.html"
+noindex: true
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/contact.css">
+{% endblock %}
+
+{% block body %}
+
+    <div id="banner-310">
+        <div class="cs-container">
+            <h1 class="cs-int-title">Page Not Found</h1>
+        </div>
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <img src="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Freshly encapsulated crawl space in a Raleigh-area home" width="1920" height="482" loading="eager" decoding="async">
+        </picture>
+    </div>
+
+    <section id="not-found" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Error 404</span>
+                <h2 class="cs-title">We couldn't find that page</h2>
+                <p class="cs-text">
+                    The link may be old or mistyped. Here is where most visitors are headed:
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li"><a href="/crawlspace-encapsulation/"><strong>Crawl Space Encapsulation</strong></a>: seal out moisture, mold, and odors.</li>
+                    <li class="cs-li"><a href="/mold-remediation/"><strong>Mold Remediation</strong></a>: safe removal and moisture correction.</li>
+                    <li class="cs-li"><a href="/sump-pump-dehumidifier/"><strong>Sump Pumps &amp; Dehumidifiers</strong></a>: keep water out and humidity down.</li>
+                    <li class="cs-li"><a href="/prebatt-insulation/"><strong>Prebatt &amp; Fire/Draft Stops</strong></a>: insulation and code-compliant fire blocking.</li>
+                    <li class="cs-li"><a href="/reviews/"><strong>Customer Reviews</strong></a></li>
+                </ul>
+                <p class="cs-text">Not sure what you need? Call <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a> or book a free inspection.</p>
+                <a href="/contact/" class="cs-button-solid">Book a Free Inspection</a>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}
