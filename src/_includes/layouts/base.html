@@ -8,6 +8,7 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="{{ description }}">
+        {% if noindex %}<meta name="robots" content="noindex, follow">{% endif %}
         <link rel="canonical" href="{{ client.domain }}{{ page.url }}">
         <meta name="generator" content="{{ eleventy.generator }}">
 
@@ -16,8 +17,8 @@
         <meta property="og:description" content="{{ description }}"/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
-        <meta property="og:image" content="{{ image or "/assets/images/portfolio/mmlogo.png" }}"/>
-        <meta property="og:image:secure_url" content="{{ image or "/assets/images/portfolio/mmlogo.png" }}"/>
+        <meta property="og:image" content="{{ client.domain }}{{ image or "/assets/images/portfolio/mmlogo.png" }}"/>
+        <meta property="og:image:secure_url" content="{{ client.domain }}{{ image or "/assets/images/portfolio/mmlogo.png" }}"/>
 
         <!--Favicons-->
         <!-- https://realfavicongenerator.net/ -->
@@ -29,7 +30,7 @@
         <link rel="manifest" href="/assets/favicons/site.webmanifest"/>
 
         <!-- Preloads -->
-        <link rel="preload" as="image" href="/assets/images/portfolio/mmlogo.svg">
+        <link rel="preload" as="image" href="/assets/images/portfolio/mmlogo-sm.webp" type="image/webp">
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-regular.woff2" crossorigin>
         <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/roboto-v29-latin-700.woff2" crossorigin>
 
@@ -37,6 +38,20 @@
         <link rel="stylesheet" href="/assets/css/root.css">
         <script defer src="/assets/js/dark.js"></script>
         <script defer src="/assets/js/nav.js"></script>
+
+        {% if client.gaMeasurementId %}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ client.gaMeasurementId }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ client.gaMeasurementId }}');
+            document.addEventListener('click', function (e) {
+                var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+                if (a) { gtag('event', 'click_to_call', { link_url: a.getAttribute('href') }); }
+            });
+        </script>
+        {% endif %}
 
         {% block head %}{% endblock %}
 
@@ -51,6 +66,7 @@
             {% block body %}{% endblock %}
         </main>
         {% include "sections/footer.html" %}
+        <a class="cs-sticky-call" href="tel:{{ client.phoneForTel }}" aria-label="Call {{ client.phoneFormatted }}">Call Now &middot; {{ client.phoneFormatted }}</a>
 
     </body>
 </html>

@@ -1,7 +1,20 @@
 ---
-title: "Crawl Space Encapsulation Raleigh, Cary & Durham | MM Crawlspace Renovations"
+title: "Crawl Space Encapsulation Raleigh, Cary & Durham | M&M Crawl Space Renovations"
 description: "Eliminate moisture, mold, and odors with professional crawl space encapsulation in Raleigh, Cary, and Durham. We install premium 20-mil vapor barriers and dehumidifiers. Free inspections!"
-permalink: "/crawlspaceencapsulations/"
+permalink: "/crawlspace-encapsulation/"
+breadcrumbLabel: "Crawl Space Encapsulation"
+serviceType: "Crawl Space Encapsulation"
+faqs:
+  - q: "What does crawl space encapsulation include?"
+    a: "A full encapsulation typically includes clearing out old debris and insulation, leveling the soil, installing a heavy-duty vapor barrier across the floor, walls, and piers, sealing all seams and vents, and adding a dedicated dehumidifier to keep humidity under control long-term."
+  - q: "How long does crawl space encapsulation take?"
+    a: "Most residential crawl space encapsulation projects are completed in one to three days, depending on the square footage, the amount of existing debris or insulation that needs to be removed, and whether any structural or moisture issues are found once the space is opened up."
+  - q: "What factors affect the cost of encapsulation?"
+    a: "Cost depends mainly on the square footage of the crawl space, the condition it's currently in (how much cleanout is needed), the thickness and coverage of the vapor barrier, and whether a dehumidifier, sump pump, or additional drainage work is included. We provide a free inspection and a written quote before any work begins."
+  - q: "Will encapsulation stop mold and musty odors?"
+    a: "Encapsulation addresses the root cause of most crawl space mold and odor problems, which is uncontrolled moisture and humidity. Sealing the space and installing a dehumidifier removes the conditions mold needs to grow. If active mold is already present, we recommend remediation as part of or before the encapsulation."
+  - q: "Do I need a dehumidifier if I encapsulate my crawl space?"
+    a: "In North Carolina's humid climate, yes. A vapor barrier alone blocks moisture coming up from the soil, but it doesn't control humidity entering through vents, HVAC ducts, or the structure itself. A dedicated crawl space dehumidifier keeps relative humidity at a healthy level year-round."
 ---
 
 {% extends "layouts/base.html" %}
@@ -18,8 +31,8 @@ permalink: "/crawlspaceencapsulations/"
 
     <div id="banner-310">
         <div class="cs-container">
-            <span class="cs-int-title">Crawlspace Encapsulation</span>
-            
+            <h1 class="cs-int-title">Crawl Space Encapsulation in Raleigh, Cary &amp; Durham</h1>
+            {% include 'components/breadcrumbs.html' %}
         </div>
         <!--Background Image-->
 
@@ -36,9 +49,12 @@ permalink: "/crawlspaceencapsulations/"
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+            <img src="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Vapor barrier installed during crawl space encapsulation" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
         </picture>
     </div>
+
+    {% include 'components/trust-strip.html' %}
+
 
     <!-- ============================================ -->
     <!--                  Side By Side                -->
@@ -54,7 +70,7 @@ permalink: "/crawlspaceencapsulations/"
                         <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
                         <!--Tablet and above Image-->
                         <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before1.webp" alt="construction" width="272" height="337">
+                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before1.webp" alt="Crawl space before encapsulation, with exposed dirt floor and no vapor barrier" width="272" height="337">
                     </picture>
                     <span class="cs-tag">Before</span>
                 </div>
@@ -65,11 +81,11 @@ permalink: "/crawlspaceencapsulations/"
                         <source media="(max-width: 600px)" srcset="/assets/images/portfolio/clean-crawlspace3.webp">
                         <!--Tablet and above Image-->
                         <source media="(min-width: 601px)" srcset="/assets/images/portfolio/clean-crawlspace3.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/clean-crawlspace3.webp" alt="construction" width="243" height="367">
+                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/clean-crawlspace3.webp" alt="Crawl space after encapsulation with sealed vapor barrier and dehumidifier" width="243" height="367">
                     </picture>
                     <span class="cs-tag">After</span>
                 </div>
-                <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/before-after-arrow.svg" alt="arrow" width="148" height="54">
+                <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/before-after-arrow.svg" alt="" width="148" height="54" aria-hidden="true">
             </div>
             <div class="cs-content">
                 <span class="cs-topper">Foundation Protection</span>
@@ -91,15 +107,56 @@ permalink: "/crawlspaceencapsulations/"
                         <strong>Premium Sealing</strong>: We install a heavy-duty, 20-mil antimicrobial vapor barrier, meticulously sealing all seams and wrapping every pier.
                     </li>
                     <li class="cs-li">
-                        <strong>Environmental Control</strong>: We install a high-efficiency crawl space dehumidifier and a dedicated monitoring system so you can track your humidity levels from your phone.
+                        <strong>Environmental Control</strong>: We install a high-efficiency crawl space dehumidifier and a dedicated monitoring system so you can track your humidity levels from your phone. <a href="/sump-pump-dehumidifier/">Learn more about sump pumps and dehumidifiers</a>.
                     </li>
                 </ul>
                 <a href="/contact/" class="cs-button-solid">Book Your Free Inspection</a>
             </div>
         </div>
     </section>
-                                    
+
+    <!-- ============================================ -->
+    <!--        Signs & Cost/Timeline Factors         -->
+    <!-- ============================================ -->
+
+    <section id="encapsulation-details" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Is It Time?</span>
+                <h2 class="cs-title">Signs Your Crawl Space Needs Encapsulation</h2>
+                <p class="cs-text">
+                    Most homeowners don't think about their crawl space until it starts affecting the rest of the house. In the Triangle's humid climate, these warning signs usually show up gradually:
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li"><strong>Musty odors upstairs</strong>: If the first floor of your home smells damp or musty—especially after rain—air is likely being pulled up from an unsealed crawl space.</li>
+                    <li class="cs-li"><strong>Visible moisture or standing water</strong>: Damp soil, condensation on ductwork, or puddles after storms are signs that groundwater or humidity is entering the space unchecked.</li>
+                    <li class="cs-li"><strong>Sagging or cupping floors</strong>: Wood absorbs moisture from below, and floor joists that sag, bounce, or feel soft are often a sign of ongoing water exposure.</li>
+                    <li class="cs-li"><strong>Higher-than-expected energy bills</strong>: An open, uninsulated, or unsealed crawl space is one of the biggest sources of energy loss in older homes.</li>
+                    <li class="cs-li"><strong>Pest activity</strong>: Termites, rodents, and insects are drawn to damp, dark crawl spaces—especially ones with exposed dirt floors.</li>
+                    <li class="cs-li"><strong>Visible mold on joists or insulation</strong>: Discoloration or a fuzzy growth on wood framing usually means moisture levels have been elevated for a while. See our <a href="/mold-remediation/">mold remediation</a> service.</li>
+                </ul>
+                <h3 class="cs-h3">What Affects Cost & Timeline</h3>
+                <p class="cs-text">
+                    Every crawl space is different, which is why we start every job with a free, no-obligation inspection rather than a phone-quote. The main factors that go into pricing and scheduling are:
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li"><strong>Square footage</strong>: Larger crawl spaces need more vapor barrier material and labor time.</li>
+                    <li class="cs-li"><strong>Current condition</strong>: Spaces with old insulation, debris, or existing moisture damage require more cleanout before installation can begin.</li>
+                    <li class="cs-li"><strong>Accessibility</strong>: Low clearance, tight access points, or obstructions (ductwork, plumbing) can add time to the job.</li>
+                    <li class="cs-li"><strong>Added systems</strong>: A dehumidifier, sump pump, or additional drainage work adds to both cost and installation time, but also to the long-term protection of your home. We also install <a href="/prebatt-insulation/">prebatt insulation and fire/draft stops</a> during the same visit.</li>
+                </ul>
+                <p class="cs-text">
+                    As a general guide, most residential encapsulation projects are completed in one to three days once work begins. We'll walk you through the exact scope and a written price before any work starts—no surprises.
+                </p>
+                <a href="/contact/" class="cs-button-solid">Get a Free, No-Obligation Quote</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/faq.html' %}
 
     {% include 'sections/cta.html' %}
+
+    {% include 'components/service-schema.html' %}
 
 {% endblock %}

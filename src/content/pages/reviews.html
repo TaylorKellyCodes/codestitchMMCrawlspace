@@ -1,7 +1,8 @@
 ---
-title: "Reviews | Code Stitch Web Designs"
-description: "Meta description for the page"
+title: "Customer Reviews | M&M Crawl Space Renovations | Raleigh, Cary, & Durham"
+description: "See what Raleigh-Durham homeowners say about M&M Crawl Space Renovations' encapsulation, mold remediation, and sump pump work. Real reviews from real customers."
 permalink: "/reviews/"
+breadcrumbLabel: "Reviews"
 ---
 
 {% extends "layouts/base.html" %}
@@ -18,7 +19,8 @@ permalink: "/reviews/"
 
     <div id="banner-310">
         <div class="cs-container">
-            <span class="cs-int-title">Reviews</span>
+            <h1 class="cs-int-title">Reviews</h1>
+            {% include 'components/breadcrumbs.html' %}
         </div>
         <!--Background Image-->
         <picture class="cs-background">
@@ -28,7 +30,7 @@ permalink: "/reviews/"
             <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
             <!--Desktop Image-->
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
-            <img src="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+            <img src="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Clean, encapsulated crawl space completed by M&M Crawl Space Renovations" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
         </picture>
     </div>
 
@@ -175,5 +177,76 @@ permalink: "/reviews/"
     </section>
 
     {% include 'sections/cta.html' %}
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": {{ client.name | dump | safe }},
+        "url": "{{ client.domain }}/",
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5",
+            "bestRating": "5",
+            "reviewCount": "9"
+        },
+        "review": [
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Ivy Lassiter" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Miguel and his team did a great job encapsulating my mother's crawl space. Miguel was professional and very responsive, and an expert with a service that is next to none."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Anthony LiCausi" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Miguel and his team did an outstanding job. Professional, respectful, and extremely knowledgeable throughout the entire process."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Brian S" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Very professional, quality work. Reasonably priced with excellent communication, responsiveness, and timely scheduling."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Lily Brabble" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "The very best company to call to encapsulate your crawl space. Professional work, the best materials are used, and the price is reasonable."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Diane Dycus" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Excellent job on our crawl space clean out and vapor barrier installation. Great communication throughout the job."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "David Parker" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Miguel was very informative before, during, and after the crawlspace renovation. The finished product was excellent."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Anne Wylie" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Used quality materials, was consistently polite and helpful, worked really hard, and did a very nice job at a fair price."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Brittany Collins" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Miguel was patient and detailed about the how and why of what I did and didn't need. Responsive and a fair price."
+            },
+            {
+                "@type": "Review",
+                "author": { "@type": "Person", "name": "Cary McGregor" },
+                "reviewRating": { "@type": "Rating", "ratingValue": "5", "bestRating": "5" },
+                "reviewBody": "Excellent job. Professional and prompt. Great service for a reasonable price. Miguel knows crawlspaces!"
+            }
+        ]
+    }
+    </script>
 
 {% endblock %}

@@ -175,11 +175,23 @@
     }
 }
 
+/* Desktop - 1024px: tighten space above the topper so the call button sits higher */
+@media only screen and (min-width: 64rem) {
+    #hero-1856 {
+        padding-top: clamp(7.5rem, 10vw, 9rem);
+
+        .cs-title {
+            /* keeps the longer geo H1 to ~3 lines so Call Now stays above the fold */
+            font-size: clamp(3.0625rem, 3.9vw, 3.75rem);
+        }
+    }
+}
+
 /* Desktop Parallax - 1300px */
 @media only screen and (min-width: 81.25rem) {
     #hero-1856 {
         .cs-background {
-            background: url("/assets/images/portfolio/clean-crawlspace3.webp");
+            background: url("/assets/images/portfolio/hero-home.webp");
             background-size: 85%;
             background-position: center;
             background-repeat: no-repeat;
@@ -677,8 +689,6 @@
             max-width: (630/16rem);
             margin: 0 0 (32/16rem) 0;
             padding: 0;
-            /* clips the bullets to create the half circle */
-            overflow: hidden;
         }
 
         .cs-li {
@@ -697,8 +707,6 @@
                 width: (16/16rem);
                 height: (16/16rem);
                 margin-top: (3/16rem);
-                /* make it overflow the parent by half it's width to make an eclipse */
-                margin-left: (-8/16rem);
                 background: var(--secondary);
                 border-radius: 50%;
                 display: block;

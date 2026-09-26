@@ -496,9 +496,10 @@
 			width: clamp(2.75rem, 6vw, 3rem);
 			height: clamp(2.75rem, 6vw, 3rem);
 			margin: 0 0 0 auto;
-			background-color: transparent;
-			border: none;
+			background-color: var(--primary);
+			border: 2px solid var(--primary);
 			border-radius: (4/16rem);
+			cursor: pointer;
 			display: flex;
 			justify-content: center;
 			align-items: center;
@@ -682,7 +683,7 @@
 			
 
 			.cs-line {
-				background-color: #fff;
+				background-color: #1a1a1a;
 			}
 
 			.cs-ul-wrapper {
@@ -1512,4 +1513,268 @@
 			width: auto;
 		}
 	}
+}
+
+/* ============================================ */
+/*                     FAQ                       */
+/* ============================================ */
+
+#faq {
+	padding: var(--sectionPadding);
+	background-color: var(--bodyTextColorWhite);
+
+	.cs-container {
+		width: 100%;
+		max-width: (800/16rem);
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+	}
+
+	.cs-title {
+		max-width: 100%;
+	}
+
+	.cs-faq-group {
+		width: 100%;
+		text-align: left;
+		margin-top: 1rem;
+	}
+
+	.cs-faq-item {
+		width: 100%;
+		border-bottom: 1px solid #e8e8e8;
+		padding: (20/16rem) 0;
+	}
+
+	.cs-faq-question {
+		font-size: (18/16rem);
+		font-weight: 700;
+		color: var(--headerColor);
+		cursor: pointer;
+		list-style: none;
+
+		&::-webkit-details-marker {
+			display: none;
+		}
+	}
+
+	.cs-faq-answer {
+		font-size: var(--bodyFontSize);
+		line-height: 1.5em;
+		color: var(--bodyTextColor);
+		margin-top: (12/16rem);
+	}
+}
+
+/* ============================================ */
+/*       Shared service-page detail sections     */
+/*  (signs-you-need-this / cost & timeline copy) */
+/* ============================================ */
+
+.cs-detail-section {
+	padding: var(--sectionPadding);
+	background-color: #fefcf4;
+
+	.cs-container {
+		width: 100%;
+		max-width: (800/16rem);
+		margin: auto;
+	}
+
+	.cs-content {
+		text-align: left;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.cs-text {
+		margin-bottom: (16/16rem);
+	}
+
+	.cs-h3 {
+		font-size: (20/16rem);
+		font-weight: 700;
+		line-height: 1.4em;
+		margin: (8/16rem) 0 (4/16rem);
+		color: var(--headerColor);
+	}
+
+	.cs-ul {
+		margin: (12/16rem) 0 (24/16rem);
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		gap: (12/16rem);
+	}
+
+	.cs-li {
+		font-size: (16/16rem);
+		line-height: 1.5em;
+		list-style: none;
+		padding-left: clamp(1.25rem, 3vw, 1.5rem);
+		color: var(--bodyTextColor);
+		position: relative;
+
+		strong {
+			color: var(--headerColor);
+		}
+
+		&::before {
+			content: "";
+			width: (8/16rem);
+			height: (8/16rem);
+			margin-top: (8/16rem);
+			background-color: var(--secondary);
+			display: block;
+			position: absolute;
+			top: 0;
+			left: 0;
+			transform: rotate(45deg);
+		}
+	}
+}
+
+/* Dark Mode - FAQ & shared detail sections */
+@media only screen and (min-width: 0rem) {
+	body.dark-mode {
+		#faq {
+			background-color: var(--dark);
+
+			.cs-title,
+			.cs-faq-question {
+				color: var(--bodyTextColorWhite);
+			}
+
+			.cs-faq-answer {
+				color: var(--bodyTextColorWhite);
+				opacity: 0.8;
+			}
+
+			.cs-faq-item {
+				border-bottom-color: var(--medium);
+			}
+		}
+
+		.cs-detail-section {
+			background-color: rgba(0, 0, 0, 0.2);
+
+			.cs-title,
+			.cs-text,
+			.cs-h3,
+			.cs-li {
+				color: var(--bodyTextColorWhite);
+			}
+
+			.cs-text,
+			.cs-li {
+				opacity: 0.8;
+
+				strong {
+					color: var(--bodyTextColorWhite);
+				}
+			}
+		}
+	}
+}
+
+/* ============================================ */
+/*     Trust strip + sticky mobile call button   */
+/* ============================================ */
+
+.cs-trust-strip {
+	padding: (14/16rem) (16/16rem);
+	background-color: #fefcf4;
+	border-bottom: 1px solid #e8e8e8;
+
+	.cs-trust-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: (6/16rem) (24/16rem);
+	}
+
+	.cs-trust-item {
+		font-size: (15/16rem);
+		font-weight: 500;
+		color: var(--headerColor);
+		display: flex;
+		align-items: center;
+		gap: (24/16rem);
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		&:not(:last-child)::after {
+			content: "\00b7";
+			font-weight: 900;
+			color: var(--primary);
+		}
+	}
+}
+
+.cs-sticky-call {
+	display: none;
+}
+
+@media only screen and (max-width: 47.9375rem) {
+	.cs-sticky-call {
+		display: block;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1000;
+		padding: (14/16rem) (16/16rem);
+		padding-bottom: ~"calc(0.875rem + env(safe-area-inset-bottom))";
+		font-size: (17/16rem);
+		font-weight: 700;
+		text-align: center;
+		text-decoration: none;
+		background-color: var(--primary);
+		color: var(--headerColor);
+		box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.25);
+	}
+
+	body {
+		padding-bottom: (56/16rem);
+	}
+}
+
+@media only screen and (max-width: 30rem) {
+	.cs-trust-strip .cs-trust-item::after {
+		display: none;
+	}
+	.cs-trust-strip .cs-trust-list {
+		flex-direction: column;
+		gap: (4/16rem);
+	}
+}
+
+body.dark-mode .cs-trust-strip {
+	background-color: var(--medium);
+	border-bottom-color: var(--accent);
+
+	.cs-trust-item {
+		color: var(--bodyTextColorWhite);
+	}
+}
+
+/* In-copy links on body text */
+.cs-text a,
+.cs-li a {
+	color: inherit;
+	font-weight: 600;
+	text-decoration: underline;
+	text-decoration-color: var(--primary);
+	text-underline-offset: 3px;
 }

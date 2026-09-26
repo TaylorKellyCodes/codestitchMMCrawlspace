@@ -1,0 +1,36 @@
+<!-- ============================================ -->
+<!--          FAQ + FAQPage schema                -->
+<!-- ============================================ -->
+
+<section id="faq">
+    <div class="cs-container">
+        <span class="cs-topper">FAQs</span>
+        <h2 class="cs-title">Frequently Asked Questions</h2>
+        <div class="cs-faq-group">
+            {%- for item in faqs -%}
+            <details class="cs-faq-item">
+                <summary class="cs-faq-question">{{ item.q }}</summary>
+                <p class="cs-faq-answer">{{ item.a }}</p>
+            </details>
+            {%- endfor -%}
+        </div>
+    </div>
+</section>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+        {%- for item in faqs -%}
+        {
+            "@type": "Question",
+            "name": {{ item.q | dump | safe }},
+            "acceptedAnswer": {
+                "@type": "Answer",
+                "text": {{ item.a | dump | safe }}
+            }
+        }{% if not loop.last %},{% endif %}
+        {%- endfor -%}
+    ]
+}
+</script>

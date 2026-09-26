@@ -1,0 +1,28 @@
+<!-- ============================================ -->
+<!--   Breadcrumb nav + BreadcrumbList schema     -->
+<!-- ============================================ -->
+
+<div class="cs-breadcrumbs">
+    <a href="/" class="cs-link">Home</a>
+    <a href="{{ page.url }}" class="cs-link cs-active">{{ breadcrumbLabel }}</a>
+</div>
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "{{ client.domain }}/"
+        },
+        {
+            "@type": "ListItem",
+            "position": 2,
+            "name": {{ breadcrumbLabel | dump | safe }},
+            "item": "{{ client.domain }}{{ page.url }}"
+        }
+    ]
+}
+</script>

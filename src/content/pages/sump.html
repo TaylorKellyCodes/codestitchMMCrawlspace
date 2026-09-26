@@ -1,7 +1,20 @@
 ---
 title: "Sump Pump & Dehumidifier Installation | Raleigh, Cary, & Durham"
-description: "Prevent standing water and high humidity in your crawl space. MM Crawlspace Renovations installs commercial-grade sump pumps and dehumidifiers across the Raleigh-Durham area."
-permalink: "/sump/"
+description: "Prevent standing water and high humidity in your crawl space. M&M Crawl Space Renovations installs commercial-grade sump pumps and dehumidifiers across the Raleigh-Durham area."
+permalink: "/sump-pump-dehumidifier/"
+breadcrumbLabel: "Sump Pumps & Dehumidifiers"
+serviceType: "Sump Pump & Dehumidifier Installation"
+faqs:
+  - q: "How do I know if I need a sump pump?"
+    a: "If you see standing water, damp soil, or water stains in your crawl space after heavy rain, or if you've had past flooding or drainage issues, a sump pump is usually the most direct way to remove water before it causes structural or mold problems."
+  - q: "Do I need both a sump pump and a dehumidifier?"
+    a: "They solve different problems. A sump pump removes standing or incoming water; a dehumidifier controls ambient humidity in the air. In North Carolina's climate, most crawl spaces benefit from both—the pump handles bulk water, and the dehumidifier keeps the remaining air dry enough to prevent mold and wood rot."
+  - q: "What happens to my sump pump if the power goes out?"
+    a: "A battery backup can keep your sump pump running during a power outage, which matters most during the heavy storms that are also most likely to flood your crawl space in the first place. We can include a battery backup as part of your installation."
+  - q: "How much does sump pump and dehumidifier installation cost?"
+    a: "Cost depends on the drainage work required (such as a perimeter or French drain system), the size and type of pump and basin needed, and whether a dehumidifier and monitoring system are included. We provide a free inspection and written quote before any work begins."
+  - q: "How long does installation take?"
+    a: "Most sump pump and dehumidifier installations are completed in one to two days, depending on how much drainage work is needed and the size of the crawl space."
 ---
 
 {% extends "layouts/base.html" %}
@@ -18,20 +31,30 @@ permalink: "/sump/"
 
     <div id="banner-310">
         <div class="cs-container">
-            <span class="cs-int-title">Sump Pumps & Dehumidifiers</span>
+            <h1 class="cs-int-title">Sump Pumps &amp; Dehumidifiers in Raleigh, Cary &amp; Durham</h1>
+            {% include 'components/breadcrumbs.html' %}
         </div>
         <!--Background Image-->
 
         <picture class="cs-background">
             <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
             <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
             <!--Tablet Image-->
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
             <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
             <!--Desktop Image-->
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
-            <img src="{% getUrl "/assets/images/portfolio/crawlspace-after2.jpeg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="library" width="1920" height="482" loading="eager" decoding="async">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+            <img src="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Dry crawl space after sump pump and dehumidifier installation" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
         </picture>
     </div>
+
+    {% include 'components/trust-strip.html' %}
+
 
     <!-- ============================================ -->
     <!--                  Side By Side                -->
@@ -47,7 +70,7 @@ permalink: "/sump/"
                         <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
                         <!--Tablet and above Image-->
                         <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before1.webp" alt="construction" width="272" height="337">
+                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before1.webp" alt="Crawl space with standing water before sump pump installation" width="272" height="337">
                     </picture>
                     <span class="cs-tag"></span>
                 </div>
@@ -58,7 +81,7 @@ permalink: "/sump/"
                         <source media="(max-width: 600px)" srcset="/assets/images/portfolio/pump.jpeg">
                         <!--Tablet and above Image-->
                         <source media="(min-width: 601px)" srcset="/assets/images/portfolio/pump.jpeg">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/pump.jpeg" alt="construction" width="243" height="367">
+                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/pump.jpeg" alt="Cast-iron sump pump installed in a crawl space basin" width="243" height="367">
                     </picture>
                     <span class="cs-tag"></span>
                 </div>
@@ -69,7 +92,7 @@ permalink: "/sump/"
                 <p class="cs-text">
                     Standing water in your crawl space is a ticking time bomb for your foundation. In the Triangle area, heavy rains often lead to hydrostatic pressure that forces water through your masonry and onto your crawl space floor. Without a professional drainage system, this moisture leads to wood rot, settlement issues, and a breeding ground for pests.
                     <br><br>
-                    At MM Crawlspace Renovations, we install high-performance mechanical systems designed for the specific demands of North Carolina homes. From cast-iron sump pumps that can move thousands of gallons per hour to industrial-grade dehumidifiers that keep your wood joists at the ideal moisture level, we provide the hardware necessary for a permanent "Dry Zone" under your feet.
+                    At M&M Crawl Space Renovations, we install high-performance mechanical systems designed for the specific demands of North Carolina homes. From cast-iron sump pumps that can move thousands of gallons per hour to industrial-grade dehumidifiers that keep your wood joists at the ideal moisture level, we provide the hardware necessary for a permanent "Dry Zone" under your feet. For the most lasting result we pair them with <a href="/crawlspace-encapsulation/">crawl space encapsulation</a>, and we handle any <a href="/mold-remediation/">mold remediation</a> the inspection turns up.
                 </p>
                 <h3 class="cs-h3">Our Precision Installation Process</h3>
                 <ul class="cs-ul">
@@ -90,8 +113,47 @@ permalink: "/sump/"
             </div>
         </div>
     </section>
-                                    
+
+    <!-- ============================================ -->
+    <!--        Signs & Cost/Timeline Factors         -->
+    <!-- ============================================ -->
+
+    <section id="sump-details" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Is It Time?</span>
+                <h2 class="cs-title">Signs You Need a Sump Pump or Dehumidifier</h2>
+                <p class="cs-text">
+                    Water and humidity problems in a crawl space rarely announce themselves loudly—they show up as smaller issues first. Watch for:
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li"><strong>Standing water after rain</strong>: Puddles or consistently damp soil in the crawl space after storms are the clearest sign a pump is needed.</li>
+                    <li class="cs-li"><strong>Water stains or efflorescence</strong>: White, chalky mineral deposits on foundation walls point to water pushing through masonry.</li>
+                    <li class="cs-li"><strong>High humidity or condensation</strong>: Moisture on ductwork, pipes, or insulation suggests humidity levels are too high for a healthy crawl space.</li>
+                    <li class="cs-li"><strong>Musty odors or early mold growth</strong>: Persistent dampness creates the conditions mold needs to take hold.</li>
+                    <li class="cs-li"><strong>A rising local water table or history of flooding</strong>: Homes in low-lying areas of the Triangle are especially prone to hydrostatic pressure pushing water into the crawl space.</li>
+                </ul>
+                <h3 class="cs-h3">What Affects Cost & Timeline</h3>
+                <p class="cs-text">
+                    Every drainage situation is different, which is why we start with a free inspection before quoting any work. Pricing depends on:
+                </p>
+                <ul class="cs-ul">
+                    <li class="cs-li"><strong>Drainage system needed</strong>: A full perimeter or French drain system is a larger job than a standalone sump basin.</li>
+                    <li class="cs-li"><strong>Pump specifications</strong>: Pump capacity, battery backup, and basin size all affect equipment cost.</li>
+                    <li class="cs-li"><strong>Dehumidifier and monitoring</strong>: Adding a commercial-grade dehumidifier and Wi-Fi monitoring increases upfront cost but adds long-term protection.</li>
+                </ul>
+                <p class="cs-text">
+                    Most installations are completed in one to two days. We'll walk you through the exact system we recommend and a written price before work begins.
+                </p>
+                <a href="/contact/" class="cs-button-solid">Get a Free Inspection</a>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/faq.html' %}
 
     {% include 'sections/cta.html' %}
+
+    {% include 'components/service-schema.html' %}
 
 {% endblock %}
