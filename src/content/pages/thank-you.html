@@ -1,0 +1,53 @@
+---
+title: "Thank You | M&M Crawl Space Renovations"
+description: "Thanks for contacting M&M Crawl Space Renovations. We'll call you within 24 hours to schedule your free crawl space inspection."
+permalink: "/thank-you/"
+noindex: true
+eleventyExcludeFromCollections: true
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/contact.css">
+{% endblock %}
+
+{% block body %}
+
+    <div id="banner-310">
+        <div class="cs-container">
+            <h1 class="cs-int-title">Thank You</h1>
+        </div>
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+            <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+            <img src="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Freshly encapsulated crawl space in a Raleigh-area home" width="1920" height="482" loading="eager" decoding="async">
+        </picture>
+    </div>
+
+    <section id="thank-you" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Request Received</span>
+                <h2 class="cs-title">We'll call you within 24 hours</h2>
+                <p class="cs-text">
+                    Thanks for reaching out. Miguel or a member of the team will call to schedule your free, no-obligation crawl space inspection.
+                </p>
+                <h3 class="cs-h3">What happens next</h3>
+                <ul class="cs-ul">
+                    <li class="cs-li"><strong>We call you</strong>: We'll confirm the details of what you're seeing and pick an inspection time that works.</li>
+                    <li class="cs-li"><strong>We inspect</strong>: We check moisture, mold, insulation, and drainage in your crawl space.</li>
+                    <li class="cs-li"><strong>You get a clear quote</strong>: We explain what we found and give you a written price before any work starts.</li>
+                </ul>
+                <p class="cs-text">Need us sooner? Call <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>.</p>
+                <a href="/" class="cs-button-solid">Back to Home</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        if (window.gtag) { gtag('event', 'generate_lead', { form_name: 'Contact Form' }); }
+    </script>
+
+{% endblock %}

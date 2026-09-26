@@ -39,6 +39,20 @@
         <script defer src="/assets/js/dark.js"></script>
         <script defer src="/assets/js/nav.js"></script>
 
+        {% if client.gaMeasurementId %}
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ client.gaMeasurementId }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', '{{ client.gaMeasurementId }}');
+            document.addEventListener('click', function (e) {
+                var a = e.target.closest && e.target.closest('a[href^="tel:"]');
+                if (a) { gtag('event', 'click_to_call', { link_url: a.getAttribute('href') }); }
+            });
+        </script>
+        {% endif %}
+
         {% block head %}{% endblock %}
 
         <title>{{ title }}</title>
@@ -52,6 +66,7 @@
             {% block body %}{% endblock %}
         </main>
         {% include "sections/footer.html" %}
+        <a class="cs-sticky-call" href="tel:{{ client.phoneForTel }}" aria-label="Call {{ client.phoneFormatted }}">Call Now &middot; {{ client.phoneFormatted }}</a>
 
     </body>
 </html>

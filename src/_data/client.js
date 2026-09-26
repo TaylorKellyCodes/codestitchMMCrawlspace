@@ -10,6 +10,9 @@ module.exports = {
         country: "US",
         mapLink: "https://maps.app.goo.gl/gtSBT6UEqSdoYymy6",
     },
+    reviewCount: 25, // Google Business Profile five-star reviews
+    // Paste a GA4 Measurement ID (G-XXXXXXXXXX) to turn on analytics, click-to-call and lead tracking.
+    gaMeasurementId: "",
     serviceAreas: ["Raleigh, NC", "Cary, NC", "Apex, NC", "Durham, NC"],
     foundingDate: "2021-10-06", // NC Secretary of State: M&M Crawl Space Renovation, LLC (SOSID 2282536)
     // No Facebook or Instagram pages exist yet. Add URLs here and uncomment the footer links if that changes.

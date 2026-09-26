@@ -1679,3 +1679,91 @@
 		}
 	}
 }
+
+/* ============================================ */
+/*     Trust strip + sticky mobile call button   */
+/* ============================================ */
+
+.cs-trust-strip {
+	padding: (14/16rem) (16/16rem);
+	background-color: #fefcf4;
+	border-bottom: 1px solid #e8e8e8;
+
+	.cs-trust-list {
+		margin: 0;
+		padding: 0;
+		list-style: none;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: (6/16rem) (24/16rem);
+	}
+
+	.cs-trust-item {
+		font-size: (15/16rem);
+		font-weight: 500;
+		color: var(--headerColor);
+		display: flex;
+		align-items: center;
+		gap: (24/16rem);
+
+		a {
+			color: inherit;
+			text-decoration: none;
+		}
+
+		&:not(:last-child)::after {
+			content: "\00b7";
+			font-weight: 900;
+			color: var(--primary);
+		}
+	}
+}
+
+.cs-sticky-call {
+	display: none;
+}
+
+@media only screen and (max-width: 47.9375rem) {
+	.cs-sticky-call {
+		display: block;
+		position: fixed;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		z-index: 1000;
+		padding: (14/16rem) (16/16rem);
+		padding-bottom: ~"calc(0.875rem + env(safe-area-inset-bottom))";
+		font-size: (17/16rem);
+		font-weight: 700;
+		text-align: center;
+		text-decoration: none;
+		background-color: var(--primary);
+		color: var(--headerColor);
+		box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.25);
+	}
+
+	body {
+		padding-bottom: (56/16rem);
+	}
+}
+
+@media only screen and (max-width: 30rem) {
+	.cs-trust-strip .cs-trust-item::after {
+		display: none;
+	}
+	.cs-trust-strip .cs-trust-list {
+		flex-direction: column;
+		gap: (4/16rem);
+	}
+}
+
+body.dark-mode .cs-trust-strip {
+	background-color: var(--medium);
+	border-bottom-color: var(--accent);
+
+	.cs-trust-item {
+		color: var(--bodyTextColorWhite);
+	}
+}
