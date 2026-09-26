@@ -46,9 +46,13 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
 
         <!-- Background Image -->
         <picture class="cs-background">
-            <source media="(max-width: 600px)" srcset="/assets/images/portfolio/clean-crawlspace3.webp">
-            <source media="(min-width: 601px)" srcset="/assets/images/portfolio/clean-crawlspace3.webp">
-            <img loading="lazy" decoding="async" src="/assets/images/portfolio/clean-crawlspace3.webp" alt="" width="1920" height="1200" aria-hidden="true">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 800, height: 1200 }) | avif %}" type="image/avif">
+            <source media="(max-width: 600px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 800, height: 1200 }) | webp %}" type="image/webp">
+            <source media="(max-width: 1299px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 1400, height: 900 }) | avif %}" type="image/avif">
+            <source media="(max-width: 1299px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 1400, height: 900 }) | webp %}" type="image/webp">
+            <!-- 1300px+ uses a CSS parallax background, so serve a 1px placeholder here instead of downloading the photo twice -->
+            <source media="(min-width: 1300px)" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+            <img fetchpriority="high" loading="eager" decoding="async" src="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 1400, height: 900 }) | jpeg %}" alt="" width="1400" height="900" aria-hidden="true">
         </picture>
 
         <img class="cs-graphic cs-graphic-light" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/dark-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
