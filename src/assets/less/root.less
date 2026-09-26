@@ -14,6 +14,7 @@
 	/* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
 	:root {
 		--primary: #ff6a3e;
+		--primaryDark: #b93a0f;
 		--primaryLight: #ffba43;
 		--secondary: #ffba43;
 		--secondaryLight: #ffba43;
@@ -49,6 +50,15 @@
 		color: var(--bodyTextColor);
 	}
 
+	/* Without this, sections with no background fall through to the browser's dark canvas when the visitor's OS is in dark mode but the site toggle is on light. */
+	:root {
+		color-scheme: light;
+	}
+
+	body {
+		background-color: #fff;
+	}
+
 	*,
 	*:before,
 	*:after {
@@ -65,7 +75,7 @@
 		text-align: inherit;
 		letter-spacing: 0.1em;
 		font-weight: 700;
-		color: var(--primary);
+		color: var(--primaryDark);
 		margin-bottom: 0.25rem;
 		display: block;
 	}
@@ -120,7 +130,7 @@
 		overflow: hidden;
 
 		// Transition Properties
-		color: var(--bodyTextColorWhite);
+		color: var(--headerColor);
 		transition: color 0.3s;
 		transition-delay: 0.1s;
 		text-align: center;
@@ -1777,4 +1787,15 @@ body.dark-mode .cs-trust-strip {
 	text-decoration: underline;
 	text-decoration-color: var(--primary);
 	text-underline-offset: 3px;
+}
+
+/* Accessibility: keep the brighter orange topper on dark backgrounds, and readable button text on hover */
+body.dark-mode .cs-topper,
+#hero-1856 .cs-topper,
+#cta-51 .cs-topper {
+	color: var(--primary);
+}
+
+.cs-button-solid:hover {
+	color: #fff !important;
 }
