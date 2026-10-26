@@ -1862,3 +1862,28 @@ body.dark-mode {
 	border-radius: (6/16rem);
 	background-color: #eaf2f4;
 }
+
+/* Two-column Service Areas dropdown on desktop; the mobile menu keeps one column */
+@media only screen and (min-width: 64rem) {
+	#cs-navigation .cs-drop-ul.cs-areas-drop {
+		min-width: (360/16rem);
+		columns: 2;
+		column-gap: 0;
+	}
+
+	#cs-navigation .cs-areas-drop .cs-drop-li {
+		break-inside: avoid;
+	}
+}
+
+/* Mobile menu: let the open menu scroll when the Service Areas list is long */
+@media only screen and (max-width: 1023.5px) {
+	#cs-navigation .cs-ul-wrapper {
+		overflow-y: auto;
+		overscroll-behavior: contain;
+	}
+
+	#cs-navigation .cs-ul-wrapper .cs-ul {
+		padding-bottom: (96/16rem);
+	}
+}

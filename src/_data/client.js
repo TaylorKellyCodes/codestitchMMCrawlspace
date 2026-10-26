@@ -13,6 +13,9 @@ module.exports = {
         mapLink: "https://maps.app.goo.gl/FhxawrndcXawchTe9",
     },
     geo: { lat: 35.33, lng: -79.25 },
+    // Stable Google Maps URL for the Business Profile (CID), used for schema hasMap/sameAs.
+    gbpUrl: "https://www.google.com/maps?cid=4409509259746241717",
+    shareImage: "/assets/images/portfolio/og-share.jpg",
     // Hours copied from the Google Business Profile (7 days, 5 AM to 10 PM).
     hours: { days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], opens: "05:00", closes: "22:00", label: "5 AM to 10 PM" },
     bbb: "https://www.bbb.org/us/nc/cary/profile/general-contractor/mm-crawl-space-renovations-0593-90370503",

@@ -17,8 +17,8 @@
             "email": {{ client.email | dump | safe }},
             "foundingDate": {{ client.foundingDate | dump | safe }},
             "founder": { "@type": "Person", "name": {{ client.founder | dump | safe }}, "jobTitle": "Founder" },
-            "logo": { "@type": "ImageObject", "url": "{{ client.domain }}/assets/images/portfolio/mmlogo.png", "width": 1248, "height": 832 },
-            "image": ["{{ client.domain }}/assets/images/portfolio/mmlogo.png"],
+            "logo": { "@type": "ImageObject", "url": "{{ client.domain }}/assets/images/portfolio/mmlogo.png", "width": 1200, "height": 800 },
+            "image": [{ "@type": "ImageObject", "url": "{{ client.domain }}{{ client.shareImage }}", "width": 1200, "height": 630 }, "{{ client.domain }}/assets/images/portfolio/mmlogo.png"],
             "address": {
                 "@type": "PostalAddress",
                 "addressLocality": {{ client.address.city | dump | safe }},
@@ -27,7 +27,7 @@
                 "addressCountry": {{ client.address.country | dump | safe }}
             },
             "geo": { "@type": "GeoCoordinates", "latitude": {{ client.geo.lat }}, "longitude": {{ client.geo.lng }} },
-            "hasMap": {{ client.address.mapLink | dump | safe }},
+            "hasMap": {{ client.gbpUrl | dump | safe }},
             "openingHoursSpecification": {
                 "@type": "OpeningHoursSpecification",
                 "dayOfWeek": {{ client.hours.days | dump | safe }},
@@ -80,7 +80,7 @@
                 "worstRating": "1",
                 "reviewCount": "{{ client.reviewCount }}"
             },
-            "sameAs": [{{ client.address.mapLink | dump | safe }}, {{ client.bbb | dump | safe }}]
+            "sameAs": [{{ client.gbpUrl | dump | safe }}, {{ client.bbb | dump | safe }}]
         },
         {
             "@type": "WebSite",
@@ -99,7 +99,7 @@
             "inLanguage": "en-US",
             "isPartOf": { "@id": "{{ client.domain }}/#website" },
             "about": { "@id": "{{ biz }}" },
-            "primaryImageOfPage": { "@type": "ImageObject", "url": "{{ client.domain }}{{ image or '/assets/images/portfolio/mmlogo.png' }}" }
+            "primaryImageOfPage": { "@type": "ImageObject", "url": "{{ client.domain }}{{ image or client.shareImage }}" }
         }
     ]
 }

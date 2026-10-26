@@ -17,8 +17,16 @@
         <meta property="og:description" content="{{ description }}"/>
         <meta property="og:type" content="website"/>
         <meta property="og:url" content="{{ client.domain }}{{ page.url }}"/>
-        <meta property="og:image" content="{{ client.domain }}{{ image or "/assets/images/portfolio/mmlogo.png" }}"/>
-        <meta property="og:image:secure_url" content="{{ client.domain }}{{ image or "/assets/images/portfolio/mmlogo.png" }}"/>
+        <meta property="og:image" content="{{ client.domain }}{{ image or client.shareImage }}"/>
+        <meta property="og:image:secure_url" content="{{ client.domain }}{{ image or client.shareImage }}"/>
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+        <meta property="og:image:alt" content="Encapsulated crawl space with a sealed white vapor barrier. M&M Crawl Space Renovations, central North Carolina."/>
+        <meta property="og:site_name" content="{{ client.name }}"/>
+        <meta name="twitter:card" content="summary_large_image"/>
+        <meta name="twitter:title" content="{{ title }}"/>
+        <meta name="twitter:description" content="{{ description }}"/>
+        <meta name="twitter:image" content="{{ client.domain }}{{ image or client.shareImage }}"/>
 
         <!--Favicons-->
         <!-- https://realfavicongenerator.net/ -->
