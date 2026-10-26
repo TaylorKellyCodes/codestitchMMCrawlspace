@@ -5,7 +5,7 @@
 <header id="cs-navigation">
     <div class="cs-container">
         <!--Nav Logo-->
-        <a href="/" class="cs-logo" aria-label="Company Name Home page">
+        <a href="/" class="cs-logo" aria-label="M&M Crawl Space Renovations home page">
             <img src="/assets/images/portfolio/mmlogo-sm.webp" alt="" width="480" height="320" aria-hidden="true" decoding="async" loading="eager">
         </a>
         
@@ -54,6 +54,22 @@
                                 <a href="/prebatt-insulation/" class="cs-li-link cs-drop-link">Prebatt & Fire/Draft Stops</a>
                             </li>
                             
+                        </ul>
+                    </li>
+                    <li class="cs-li cs-dropdown">
+                        <button class="cs-li-link cs-dropdown-toggle {% if page.url == "/service-areas/" or page.url.startsWith("/service-areas/") %} cs-active {% endif %}" aria-haspopup="menu" aria-expanded="false" id="areas-dropdown-toggle">
+                            Service Areas
+                            <img class="cs-drop-icon" src="/assets/svgs/dropdown.svg" alt="" width="15" height="15" decoding="async" aria-hidden="true" loading="eager">
+                        </button>
+                        <ul class="cs-drop-ul cs-areas-drop" aria-labelledby="areas-dropdown-toggle">
+                            <li class="cs-drop-li">
+                                <a href="/service-areas/" class="cs-li-link cs-drop-link">All Service Areas</a>
+                            </li>
+                            {%- for l in locations %}
+                            <li class="cs-drop-li">
+                                <a href="/service-areas/{{ l.slug }}/" class="cs-li-link cs-drop-link">{{ l.name }}, NC</a>
+                            </li>
+                            {%- endfor %}
                         </ul>
                     </li>
                     <li class="cs-li">

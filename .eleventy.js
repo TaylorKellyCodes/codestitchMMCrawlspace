@@ -15,6 +15,7 @@ const configImages = require("./src/config/plugins/images");
 
 // 🔧 Processing Functions
 const less = require("./src/config/processors/less");
+const inlineCritical = require("./src/config/processors/inline-critical");
 const javascript = require("./src/config/processors/javascript");
 
 // 🛠️ Utilities
@@ -37,6 +38,7 @@ module.exports = function (eleventyConfig) {
      */
     eleventyConfig.on("eleventy.after", javascript);
     eleventyConfig.on("eleventy.after", less);
+    eleventyConfig.on("eleventy.after", inlineCritical);
 
     // ═════════════════════════════════════════════════════════════════════════
     // PLUGINS

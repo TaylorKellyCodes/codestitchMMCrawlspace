@@ -14,6 +14,7 @@
 	/* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
 	:root {
 		--primary: #ff6a3e;
+		--primaryDark: #b93a0f;
 		--primaryLight: #ffba43;
 		--secondary: #ffba43;
 		--secondaryLight: #ffba43;
@@ -49,6 +50,15 @@
 		color: var(--bodyTextColor);
 	}
 
+	/* Without this, sections with no background fall through to the browser's dark canvas when the visitor's OS is in dark mode but the site toggle is on light. */
+	:root {
+		color-scheme: light;
+	}
+
+	body {
+		background-color: #fff;
+	}
+
 	*,
 	*:before,
 	*:after {
@@ -65,7 +75,7 @@
 		text-align: inherit;
 		letter-spacing: 0.1em;
 		font-weight: 700;
-		color: var(--primary);
+		color: var(--primaryDark);
 		margin-bottom: 0.25rem;
 		display: block;
 	}
@@ -120,7 +130,7 @@
 		overflow: hidden;
 
 		// Transition Properties
-		color: var(--bodyTextColorWhite);
+		color: var(--headerColor);
 		transition: color 0.3s;
 		transition-delay: 0.1s;
 		text-align: center;
@@ -1777,4 +1787,103 @@ body.dark-mode .cs-trust-strip {
 	text-decoration: underline;
 	text-decoration-color: var(--primary);
 	text-underline-offset: 3px;
+}
+
+/* Accessibility: keep the brighter orange topper on dark backgrounds, and readable button text on hover */
+body.dark-mode .cs-topper,
+#hero-1856 .cs-topper,
+#cta-51 .cs-topper {
+	color: var(--primary);
+}
+
+.cs-button-solid:hover {
+	color: #fff !important;
+}
+
+/* Service area pages */
+.cs-detail-section.cs-alt {
+	background-color: #fff;
+}
+
+.cs-area-cards {
+	margin: (16/16rem) 0 (24/16rem);
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	gap: (16/16rem);
+
+	.cs-area-card {
+		padding: (16/16rem) (18/16rem);
+		border: 1px solid #e8e8e8;
+		border-radius: (6/16rem);
+		background-color: #fff;
+
+		.cs-h3 {
+			margin: 0 0 (6/16rem);
+			font-size: (18/16rem);
+		}
+
+		.cs-text {
+			margin: 0;
+			font-size: (15/16rem);
+		}
+
+		a {
+			color: var(--headerColor);
+			text-decoration: none;
+		}
+	}
+}
+
+body.dark-mode {
+	.cs-detail-section.cs-alt {
+		background-color: var(--dark);
+	}
+
+	.cs-area-cards .cs-area-card {
+		background-color: var(--medium);
+		border-color: var(--accent);
+
+		.cs-h3,
+		.cs-h3 a,
+		.cs-text {
+			color: var(--bodyTextColorWhite);
+		}
+	}
+}
+
+/* Service area map (Leaflet container) */
+.cs-map {
+	width: 100%;
+	height: (460/16rem);
+	margin-top: (8/16rem);
+	border-radius: (6/16rem);
+	background-color: #eaf2f4;
+}
+
+/* Two-column Service Areas dropdown on desktop; the mobile menu keeps one column */
+@media only screen and (min-width: 64rem) {
+	#cs-navigation .cs-drop-ul.cs-areas-drop {
+		min-width: (360/16rem);
+		columns: 2;
+		column-gap: 0;
+	}
+
+	#cs-navigation .cs-areas-drop .cs-drop-li {
+		break-inside: avoid;
+	}
+}
+
+/* Mobile menu: let the open menu scroll when the Service Areas list is long */
+@media only screen and (max-width: 1023.5px) {
+	#cs-navigation .cs-ul-wrapper {
+		overflow-y: auto;
+		overscroll-behavior: contain;
+	}
+
+	#cs-navigation .cs-ul-wrapper .cs-ul {
+		padding-bottom: (96/16rem);
+	}
 }

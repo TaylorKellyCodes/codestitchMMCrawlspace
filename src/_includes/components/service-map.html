@@ -1,0 +1,37 @@
+<section class="cs-detail-section cs-alt cs-service-map">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Service Area Map</span>
+            <h2 class="cs-title">Serving homes within about two hours of Cameron</h2>
+            <p class="cs-text">The dashed ring shows roughly a two-hour drive from our base near Cameron, NC. Tap a city to see what crawl spaces face there.</p>
+            <div id="service-map" class="cs-map" role="region" aria-label="Interactive map of the central North Carolina service area. City links are also listed in the service areas section."></div>
+        </div>
+    </div>
+</section>
+<script>
+(function () {
+    var el = document.getElementById('service-map');
+    var cities = {{ locations | dump | safe }};
+    var loaded = false;
+    function init() {
+        if (loaded) return; loaded = true;
+        var s = document.createElement('script');
+        s.src = '/assets/vendor/leaflet.js';
+        s.onload = function () {
+            var map = L.map(el, { scrollWheelZoom: false }).setView([35.33, -79.25], 8);
+            L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 12, attribution: '&copy; OpenStreetMap contributors' }).addTo(map);
+            L.circle([35.33, -79.25], { radius: 160934, color: '#ff6a3e', weight: 2, dashArray: '8 6', fillOpacity: 0.06 }).addTo(map);
+            cities.forEach(function (c) {
+                var home = c.slug === 'cameron';
+                L.circleMarker([c.lat, c.lng], { radius: home ? 9 : 6, color: '#fff', weight: 2, fillColor: home ? '#1a1a1a' : '#ff6a3e', fillOpacity: 1 })
+                    .addTo(map).bindTooltip(c.name, { direction: 'top' })
+                    .on('click', function () { window.location = '/service-areas/' + c.slug + '/'; });
+            });
+        };
+        document.head.appendChild(s);
+    }
+    if ('IntersectionObserver' in window) {
+        new IntersectionObserver(function (e, o) { if (e[0].isIntersecting) { init(); o.disconnect(); } }, { rootMargin: '200px' }).observe(el);
+    } else { init(); }
+})();
+</script>

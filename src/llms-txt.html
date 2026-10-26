@@ -5,19 +5,28 @@ eleventyExcludeFromCollections: true
 ---
 # {{ client.name | safe }}
 
-> Crawl space encapsulation, mold remediation, sump pump and dehumidifier installation, and prebatt insulation / fire-draft stopping for homeowners in Raleigh, Cary, Apex, and Durham, North Carolina.
+> Crawl space encapsulation, mold remediation, sump pump and dehumidifier installation, and prebatt insulation with fire/draft stopping for homeowners across central North Carolina. Based near Cameron, NC (Moore County) and serving the Sandhills, Fayetteville, and the Triangle.
 
 - Phone: {{ client.phoneFormatted }}
 - Email: {{ client.email }}
-- Service area: Raleigh, Cary, Apex, and Durham, NC
+- Hours: open daily, {{ client.hours.label }}
+- Rating: {{ client.ratingValue }} stars from {{ client.reviewCount }} Google reviews
+- Google Business Profile: {{ client.address.mapLink }}
+- BBB profile: {{ client.bbb }}
+- Founded: 2021 (founder {{ client.founder }})
 
 ## Services
 
 - [Crawl Space Encapsulation]({{ client.domain }}/crawlspace-encapsulation/): Vapor barrier installation, moisture sealing, and dehumidification for crawl spaces.
 - [Mold Remediation]({{ client.domain }}/mold-remediation/): Safe removal of crawl space mold and correction of the underlying moisture source.
-- [Sump Pump & Dehumidifier Installation]({{ client.domain }}/sump-pump-dehumidifier/): Drainage systems, sump pumps, and commercial-grade dehumidifiers to prevent standing water and control humidity.
+- [Sump Pump & Dehumidifier Installation]({{ client.domain }}/sump-pump-dehumidifier/): Drainage systems, sump pumps, and commercial-grade dehumidifiers.
 - [Prebatt Insulation & Fire/Draft Stops]({{ client.domain }}/prebatt-insulation/): Crawl space insulation and code-compliant fire and draft stopping.
 
+## Service areas
+
+- [All service areas]({{ client.domain }}/service-areas/)
+{% for l in locations %}- [{{ l.name }}, NC]({{ client.domain }}/service-areas/{{ l.slug }}/): {{ l.county }}
+{% endfor %}
 ## Other pages
 
 - [Reviews]({{ client.domain }}/reviews/): Customer reviews.

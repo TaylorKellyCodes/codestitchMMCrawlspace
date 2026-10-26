@@ -1,14 +1,15 @@
 ---
-title: "Prebatt Insulation & Fire/Draft Stops | Raleigh, Cary, & Durham"
-description: "Improve your home's safety and energy efficiency. M&M Crawl Space Renovations offers professional prebatt insulation and fire/draft stopping in Raleigh, Cary, and Durham. Free quotes!"
+title: "Prebatt Insulation & Fire/Draft Stops | Central NC | M&M"
+description: "Precision crawl space insulation and code-approved fire and draft stopping for homes across central North Carolina. Free quotes."
 permalink: "/prebatt-insulation/"
 breadcrumbLabel: "Prebatt & Fire/Draft Stops"
+serviceName: "Prebatt Insulation & Fire/Draft Stopping"
 serviceType: "Prebatt Insulation & Fire/Draft Stopping"
 faqs:
   - q: "What is prebatt insulation?"
-    a: "Prebatt insulation is pre-cut fiberglass or mineral wool batt insulation installed between floor joists in a crawl space to reduce heat loss, block drafts, and improve energy efficiency. It's fitted precisely to each joist bay rather than sprayed or blown in."
+    a: "Prebatt insulation is pre-cut fiberglass or mineral wool batt insulation installed between floor joists in a crawl space to reduce heat loss, block drafts, and improve energy efficiency. It is cut to fit each joist bay."
   - q: "What are fire and draft stops, and why do I need them?"
-    a: "Fire and draft stops are code-approved materials installed in wall cavities and floor joist bays to slow the spread of fire and air movement between levels of a home. Many older homes in the Raleigh-Durham area were never fitted with them, which can be a code compliance issue as well as a safety gap."
+    a: "Fire and draft stops are code-approved materials installed in wall cavities and floor joist bays to slow the spread of fire and air movement between levels of a home. Many older homes across central North Carolina were never fitted with them, which affects both code compliance and safety."
   - q: "Will prebatt insulation lower my energy bills?"
     a: "Sealing drafts and insulating the crawl space reduces how hard your HVAC system has to work to condition your home, which typically lowers energy costs. The exact savings depend on your home's current insulation levels and how much air leakage is being corrected."
   - q: "How much does prebatt insulation and fire-stopping cost?"
@@ -24,6 +25,7 @@ faqs:
 {% endblock %}
 
 {% block body %}
+    {% from "components/macros.html" import pic %}
 
     <!-- ============================================ -->
     <!--                   Banner                     -->
@@ -31,7 +33,7 @@ faqs:
 
     <div id="banner-310">
         <div class="cs-container">
-            <h1 class="cs-int-title">Prebatt Insulation &amp; Fire/Draft Stops in Raleigh, Cary &amp; Durham</h1>
+            <h1 class="cs-int-title">Prebatt Insulation &amp; Fire/Draft Stops in Central NC</h1>
             {% include 'components/breadcrumbs.html' %}
         </div>
         <!--Background Image-->
@@ -49,7 +51,7 @@ faqs:
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/blow-in-attic.webp" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/blow-in-attic.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/blow-in-attic.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/portfolio/blow-in-attic.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Attic and crawl space insulation installation" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
+            <img src="{% getUrl "/assets/images/portfolio/blow-in-attic.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Attic with blown-in insulation and an access panel marked by a traffic cone" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
         </picture>
     </div>
 
@@ -65,24 +67,12 @@ faqs:
             <div class="cs-image-group">
                 <!--Main Image-->
                 <div class="cs-picture-wrapper1">
-                    <picture class="cs-picture cs-picture1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/vent.jpeg">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/vent.jpeg">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/vent.jpeg" alt="Crawl space vent prepared for fire and draft stopping" width="272" height="337">
-                    </picture>
+                    {{ pic("/assets/images/portfolio/vent.jpeg", "Foundation block vent sealed with foam and a clear panel", 272, 337, "cs-picture cs-picture1") }}
                     <span class="cs-tag"></span>
                 </div>
                 <!--Small Image-->
                 <div class="cs-picture-wrapper2">
-                    <picture class="cs-picture cs-picture2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/air-pipe.webp">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/air-pipe.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/air-pipe.webp" alt="Sealed air pipe and prebatt insulation installation" width="243" height="367">
-                    </picture>
+                    {{ pic("/assets/images/portfolio/air-pipe.webp", "Fiberglass batt insulation installed around ductwork between framing", 243, 367, "cs-picture cs-picture2") }}
                     <span class="cs-tag"></span>
                 </div>
             </div>
@@ -90,9 +80,9 @@ faqs:
                 <span class="cs-topper">Energy Efficiency & Home Safety</span>
                 <h2 class="cs-title">Precision Insulation and Fire-Stopping for a Safer, Warmer Home</h2>
                 <p class="cs-text">
-                    Many homeowners don't realize that their crawl space is the biggest "thermal leak" in their house. Without proper insulation and draft stopping, the winter air in the Triangle flows freely through your floor joists, making your HVAC system work twice as hard. Worse yet, many older homes in Raleigh and Durham lack the critical fire-stops necessary to slow the spread of flames between floors in the event of an emergency.
+                    Your crawl space is one of the biggest sources of heat loss in your house. With proper insulation and draft stopping, the winter air in central North Carolina stays out of your floor joists and your HVAC system works less. Many older homes in the region also lack the fire-stops that slow the spread of flames between floors in an emergency.
                     <br><br>
-                    At M&M Crawl Space Renovations, our "Trustworthy Work" means we never cut corners on what you can't see. We provide precision-fit prebatt insulation to eliminate cold spots and professionally installed fire and draft stops to seal your home's thermal envelope. Whether you’re trying to lower your energy bills or ensure your home meets modern NC safety codes, our team delivers the expert installation you need. Insulation performs best over a dry floor system, so we often pair it with <a href="/crawlspace-encapsulation/">crawl space encapsulation</a> or a <a href="/sump-pump-dehumidifier/">sump pump and dehumidifier</a>.
+                    At M&M Crawl Space Renovations, our "Trustworthy Work" covers the parts of your home that stay out of sight. We install precision-fit prebatt insulation to remove cold spots and fire and draft stops to seal your home’s thermal envelope. If you want lower energy bills or a home that meets modern NC safety codes, we can do both. Insulation performs best over a dry floor system, so we often pair it with <a href="/crawlspace-encapsulation/">crawl space encapsulation</a> or a <a href="/sump-pump-dehumidifier/">sump pump and dehumidifier</a>.
                 </p>
                 <h3 class="cs-h3">Our Compliance-Focused Process</h3>
                 <ul class="cs-ul">
@@ -100,13 +90,13 @@ faqs:
                         <strong>Thermal Gap Audit</strong>: We identify exactly where drafts are entering your home and where insulation is missing or failing.
                     </li>
                     <li class="cs-li">
-                        <strong>Precision Prebatt Installation</strong>: We install high-quality batt insulation with exact fits, ensuring no gaps are left to let heat escape.
+                        <strong>Precision Prebatt Installation</strong>: We install high-quality batt insulation cut to fit, leaving no gaps for heat to escape.
                     </li>
                     <li class="cs-li">
                         <strong>Fire & Draft Stopping</strong>: We use code-approved materials to seal the "chimney effect" in your wall cavities, preventing air (and potentially fire) from moving between levels.
                     </li>
                     <li class="cs-li">
-                        <strong>Final Quality Check</strong>: We verify that all work meets or exceeds local Raleigh and Durham building codes for your peace of mind.
+                        <strong>Final Quality Check</strong>: We verify that all work meets the building codes that apply where your home is located.
                     </li>
                 </ul>
                 <a href="/contact/" class="cs-button-solid">Get Your Free Safety Inspection</a>
@@ -124,18 +114,18 @@ faqs:
                 <span class="cs-topper">Is It Time?</span>
                 <h2 class="cs-title">Signs You Need Prebatt Insulation or Fire/Draft Stops</h2>
                 <p class="cs-text">
-                    Insulation and fire-stopping problems are easy to overlook because they're hidden inside your crawl space and wall cavities. Common signs include:
+                    Insulation and fire-stopping sit inside your crawl space and wall cavities, so they are easy to miss. Common signs include:
                 </p>
                 <ul class="cs-ul">
                     <li class="cs-li"><strong>Cold or drafty floors</strong>: Floors that feel noticeably cold in winter often mean the joist bays below are missing or have failing insulation.</li>
-                    <li class="cs-li"><strong>Rising energy bills</strong>: A crawl space that's leaking conditioned air makes your HVAC system work harder year-round.</li>
-                    <li class="cs-li"><strong>Sagging, damaged, or missing batt insulation</strong>: Insulation that has fallen, gotten wet, or was never installed correctly leaves gaps in your home's thermal envelope.</li>
+                    <li class="cs-li"><strong>Rising energy bills</strong>: A crawl space that leaks conditioned air makes your HVAC system work harder year-round.</li>
+                    <li class="cs-li"><strong>Sagging, damaged, or missing batt insulation</strong>: Insulation that has fallen, gotten wet, or was installed with gaps leaves openings in your home’s thermal envelope.</li>
                     <li class="cs-li"><strong>An older home with no visible fire-stopping</strong>: If your home predates modern building codes, it may be missing the fire and draft stops required to slow fire spread between floors.</li>
-                    <li class="cs-li"><strong>A home inspection or code review flagged missing insulation or fire-stopping</strong>: This is one of the most common ways homeowners first learn about the issue.</li>
+                    <li class="cs-li"><strong>A home inspection or code review flagged missing insulation or fire-stopping</strong>: This is a common way homeowners first learn about the issue.</li>
                 </ul>
                 <h3 class="cs-h3">What Affects Cost & Timeline</h3>
                 <p class="cs-text">
-                    Every home's crawl space and framing layout is different, so we always start with a free inspection rather than a phone estimate. Pricing depends on:
+                    Every home’s crawl space and framing layout is different, so we start with a free inspection. Pricing depends on:
                 </p>
                 <ul class="cs-ul">
                     <li class="cs-li"><strong>Square footage and number of joist bays</strong>: More area means more material and installation time.</li>
@@ -143,12 +133,14 @@ faqs:
                     <li class="cs-li"><strong>Condition of existing insulation</strong>: Removing old, wet, or damaged insulation adds to the scope before new material can go in.</li>
                 </ul>
                 <p class="cs-text">
-                    Most projects are completed in a single day for an average-sized crawl space. We'll give you a clear, written quote after the inspection—no surprises once work begins.
+                    Most projects take a single day for an average-sized crawl space. After the inspection, you get a clear written quote before any work begins.
                 </p>
                 <a href="/contact/" class="cs-button-solid">Get a Free Safety Inspection</a>
             </div>
         </div>
     </section>
+
+    {% include 'components/areas-served.html' %}
 
     {% include 'components/faq.html' %}
 

@@ -7,14 +7,14 @@
         <!-- Logo Group -->
         <div class="cs-logo-group">
             <a aria-label="go back to home" class="cs-logo" href="/">
-                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/portfolio/mmlogo-sm.webp" alt="logo" width="480" height="320">
+                <img class="cs-logo-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/images/portfolio/mmlogo-sm.webp" alt="M&M Crawl Space Renovations logo" width="480" height="320">
             </a>
             <p class="cs-text">
-                M&M Crawl Space Renovations is the Raleigh-Durham Triangle’s specialist in permanent moisture control and air quality. From professional mold remediation to code-compliant prebatt insulation, we provide the trustworthy work homeowners need to protect their foundation and family health. Fully Insured.
+                M&M Crawl Space Renovations is central North Carolina’s specialist in permanent moisture control and air quality. From professional mold remediation to code-compliant prebatt insulation, we provide trustworthy work that protects your foundation and your family’s health. Fully Insured.
             </p>
             <div class="cs-social">
                 <a class="cs-social-link" aria-label="visit google profile" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
-                    <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="google" width="11" height="11">
+                    <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/google.svg" alt="Google Business Profile" width="11" height="11">
                 </a>
                 <!-- <a class="cs-social-link" aria-label="visit facebook profile" href="{{ client.socials.facebook }}" target="_blank" rel="noopener">
                     <img class="cs-social-img" aria-hidden="true" loading="lazy" decoding="async" src="/assets/svgs/facebook.svg" alt="facebook" width="6" height="11">
@@ -63,17 +63,13 @@
             <li class="cs-nav-li">
                 <span class="cs-header">Service Areas</span>
             </li>
+            {%- for slug in ["cameron", "sanford", "southern-pines", "pinehurst", "fayetteville", "raleigh", "cary", "durham"] %}{% for l in locations %}{% if l.slug == slug %}
             <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/contact/">Raleigh, NC</a>
+                <a class="cs-nav-link" href="/service-areas/{{ l.slug }}/">{{ l.name }}, NC</a>
             </li>
+            {%- endif %}{% endfor %}{% endfor %}
             <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/contact/">Cary, NC</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/contact/">Apex, NC</a>
-            </li>
-            <li class="cs-nav-li">
-                <a class="cs-nav-link" href="/contact/">Durham, NC</a>
+                <a class="cs-nav-link" href="/service-areas/">All service areas</a>
             </li>
         </ul>
         <!-- Contact Info -->
@@ -86,9 +82,17 @@
             </li>
             <li class="cs-contact-li">
                 <a class="cs-contact-link cs-address" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">
-                    {{ client.address.city }}, {{ client.address.state }}
-                    {{ client.address.zip }}
+                    Based near {{ client.address.city }}, {{ client.address.state }}<br>Serving central NC
                 </a>
+            </li>
+            <li class="cs-contact-li">
+                <span class="cs-contact-link">Open daily, {{ client.hours.label }}</span>
+            </li>
+            <li class="cs-contact-li">
+                <a class="cs-contact-link" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">Rated {{ client.ratingValue }} on Google &middot; {{ client.reviewCount }} reviews</a>
+            </li>
+            <li class="cs-contact-li">
+                <a class="cs-contact-link" href="{{ client.bbb }}" target="_blank" rel="noopener">BBB Business Profile</a>
             </li>
             
             <li class="cs-contact-li">
