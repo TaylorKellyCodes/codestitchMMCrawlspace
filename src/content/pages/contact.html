@@ -53,7 +53,7 @@ breadcrumbLabel: "Contact Us"
                     <span class="cs-topper">Let's Get Started</span>
                     <h2 class="cs-title">Schedule Your Free Crawl Space Inspection</h2>
                     <p class="cs-text">
-                        Don't wait for a musty smell to become a structural nightmare. Whether you need a code-compliant fire stop in Sanford or a full encapsulation near Raleigh, our team is ready to help. Fill out the form below, and we will contact you within 24 hours to schedule your free, no-obligation inspection.
+                        A musty smell, damp insulation, or standing water is a good reason to have the crawl space checked. Whether you need a code-compliant fire stop in Sanford or a full encapsulation near Raleigh, we can help. Fill out the form below and we will contact you within 24 hours to schedule your free, no-obligation inspection.
                     </p>
                 </div>
                 <form id="cs-form-265" name="Contact Form" method="post" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
@@ -132,13 +132,10 @@ breadcrumbLabel: "Contact Us"
         <div class="cs-container">
             <div class="cs-content">
                 <span class="cs-topper">Hours &amp; Coverage</span>
-                <h2 class="cs-title">Open seven days a week</h2>
+                <h2 class="cs-title">Open daily, {{ client.hours.label }}</h2>
                 <p class="cs-text">
-                    Call or text <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a> any day between 5 AM and 10 PM. We are based near Cameron, NC and travel to homes across the Sandhills, Fayetteville, and the Triangle. Every inspection is free, and you get a written quote before any work begins.
+                    Call or text <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a> any day. We are open daily, {{ client.hours.label }}. We are based near Cameron, NC and travel to homes across the Sandhills, Fayetteville, and the Triangle. Every inspection is free, and you get a written quote before any work begins.
                 </p>
-                <ul class="cs-ul">
-                    {% for d in client.hours.days %}<li class="cs-li"><strong>{{ d }}</strong>: {{ client.hours.label }}</li>{% endfor %}
-                </ul>
                 <p class="cs-text">
                     Read our <a href="/reviews/">customer reviews</a>, check our <a href="{{ client.bbb }}" target="_blank" rel="noopener">BBB profile</a>, or learn about <a href="/crawlspace-encapsulation/">encapsulation</a>, <a href="/mold-remediation/">mold remediation</a>, <a href="/sump-pump-dehumidifier/">sump pumps</a>, and <a href="/prebatt-insulation/">insulation</a> before you call.
                 </p>

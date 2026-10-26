@@ -37,7 +37,7 @@ eleventyComputed:
                 {% if loc.slug == "cameron" %}
                 <p class="cs-text">Because we are based here, a free inspection in {{ loc.name }} is usually the easiest one to schedule.</p>
                 {% else %}
-                <p class="cs-text">We travel to {{ loc.name }} from our base near Cameron, roughly {{ loc.drive }} away depending on traffic, and we are available seven days a week from {{ client.hours.label }}.</p>
+                <p class="cs-text">We travel to {{ loc.name }} from our base near Cameron, roughly {{ loc.drive }} away depending on traffic, and we are open daily, {{ client.hours.label }}.</p>
                 {% endif %}
                 <h2 class="cs-title">What crawl spaces face in {{ loc.name }}</h2>
                 <p class="cs-text">{{ loc.conditions }}</p>
@@ -92,7 +92,7 @@ eleventyComputed:
                 <h2 class="cs-title">Also serving communities near {{ loc.name }}</h2>
                 <p class="cs-text">
                     {% for n in loc.nearLinks %}<a href="/service-areas/{{ n.slug }}/">{{ n.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
-                    &mdash; or see the full <a href="/service-areas/">list of service areas</a>.
+                    See the full <a href="/service-areas/">list of service areas</a>.
                 </p>
             </div>
         </div>
