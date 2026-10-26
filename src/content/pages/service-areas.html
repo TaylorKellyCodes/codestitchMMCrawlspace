@@ -1,0 +1,69 @@
+---
+title: "Crawl Space Service Areas | Sandhills & Triangle NC | M&M"
+description: "M&M Crawl Space Renovations serves Cameron, Sanford, Southern Pines, Fayetteville, Raleigh, Durham and communities within about two hours of Cameron, NC."
+permalink: "/service-areas/"
+pageType: "CollectionPage"
+breadcrumbLabel: "Service Areas"
+faqs:
+  - q: "How far will you travel for a crawl space job?"
+    a: "We are based near Cameron, NC and regularly work within about two hours of there, from the Sandhills through Fayetteville and the Triangle. If your town is not listed, call us and we will tell you whether we can come."
+  - q: "Do you charge extra to travel to farther communities?"
+    a: "Inspections are free everywhere we serve. Any travel considerations are explained in your written quote before work starts, so there are no surprises."
+  - q: "Which service area is closest to your base?"
+    a: "Cameron is our home base, followed by Sanford, Southern Pines, Pinehurst, and Aberdeen, which are all roughly 25 to 35 minutes away."
+---
+
+{% extends "layouts/base.html" %}
+{% from "components/macros.html" import banner %}
+
+{% block body %}
+
+    <div id="banner-310">
+        <div class="cs-container">
+            <h1 class="cs-int-title">Crawl Space Service Areas in Central North Carolina</h1>
+            {% include 'components/breadcrumbs.html' %}
+        </div>
+        {{ banner("/assets/images/portfolio/clean-crawlspace3.webp", "Encapsulated crawl space with a white vapor barrier on the floor and wrapped piers") }}
+    </div>
+
+    {% include 'components/trust-strip.html' %}
+
+    <section id="areas-hub" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Where We Work</span>
+                <h2 class="cs-title">From the Sandhills to the Triangle</h2>
+                <p class="cs-text">
+                    M&amp;M Crawl Space Renovations is based near Cameron in Moore County and travels across central North Carolina. Pick your community below for what crawl spaces face in your area, the neighborhoods we work in, and answers to local questions. All inspections are free.
+                </p>
+                {% for tier in ["Home base", "Close to home", "Within an hour", "Triangle"] %}
+                <h3 class="cs-h3">{% if tier == "Home base" %}Home base{% elif tier == "Close to home" %}Close to home (about 25 to 35 minutes){% elif tier == "Within an hour" %}Within about an hour{% else %}The Triangle (about 65 to 85 minutes){% endif %}</h3>
+                <ul class="cs-area-cards">
+                    {% for l in locations %}{% if l.tier == tier %}
+                    <li class="cs-area-card">
+                        <h3 class="cs-h3"><a href="/service-areas/{{ l.slug }}/">{{ l.name }}, NC</a></h3>
+                        <p class="cs-text">{{ l.county }} &middot; {{ l.drive }}</p>
+                    </li>
+                    {% endif %}{% endfor %}
+                </ul>
+                {% endfor %}
+                <h3 class="cs-h3">Also serving</h3>
+                <p class="cs-text">
+                    {% for t in client.extraAreas %}{{ t }}{% if not loop.last %}, {% endif %}{% endfor %}, and other communities within about two hours of Cameron. Not sure if we cover you? <a href="/contact/">Contact us</a> or call <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>.
+                </p>
+                <h3 class="cs-h3">Services in every area</h3>
+                <ul class="cs-ul">
+                    <li class="cs-li"><a href="/crawlspace-encapsulation/"><strong>Crawl space encapsulation</strong></a></li>
+                    <li class="cs-li"><a href="/mold-remediation/"><strong>Mold remediation</strong></a></li>
+                    <li class="cs-li"><a href="/sump-pump-dehumidifier/"><strong>Sump pumps and dehumidifiers</strong></a></li>
+                    <li class="cs-li"><a href="/prebatt-insulation/"><strong>Prebatt insulation and fire/draft stops</strong></a></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/faq.html' %}
+
+    {% include 'sections/cta.html' %}
+
+{% endblock %}

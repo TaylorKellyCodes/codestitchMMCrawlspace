@@ -1,8 +1,9 @@
 ---
-title: "Sump Pump & Dehumidifier Installation | Raleigh, Cary, & Durham"
-description: "Prevent standing water and high humidity in your crawl space. M&M Crawl Space Renovations installs commercial-grade sump pumps and dehumidifiers across the Raleigh-Durham area."
+title: "Sump Pump & Dehumidifier Installation | Central NC | M&M"
+description: "Stop standing water and high humidity in your crawl space. Sump pumps, drainage and dehumidifiers installed across the Sandhills and Triangle."
 permalink: "/sump-pump-dehumidifier/"
 breadcrumbLabel: "Sump Pumps & Dehumidifiers"
+serviceName: "Sump Pump & Dehumidifier Installation"
 serviceType: "Sump Pump & Dehumidifier Installation"
 faqs:
   - q: "How do I know if I need a sump pump?"
@@ -24,6 +25,7 @@ faqs:
 {% endblock %}
 
 {% block body %}
+    {% from "components/macros.html" import pic %}
 
     <!-- ============================================ -->
     <!--                   Banner                     -->
@@ -31,7 +33,7 @@ faqs:
 
     <div id="banner-310">
         <div class="cs-container">
-            <h1 class="cs-int-title">Sump Pumps &amp; Dehumidifiers in Raleigh, Cary &amp; Durham</h1>
+            <h1 class="cs-int-title">Sump Pumps &amp; Dehumidifiers in Central NC</h1>
             {% include 'components/breadcrumbs.html' %}
         </div>
         <!--Background Image-->
@@ -49,7 +51,7 @@ faqs:
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Dry crawl space after sump pump and dehumidifier installation" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
+            <img src="{% getUrl "/assets/images/portfolio/crawlspace-after2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Encapsulated crawl space with a sealed floor liner and foil-faced insulation on the walls" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
         </picture>
     </div>
 
@@ -65,32 +67,20 @@ faqs:
             <div class="cs-image-group">
                 <!--Main Image-->
                 <div class="cs-picture-wrapper1">
-                    <picture class="cs-picture cs-picture1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before1.webp" alt="Crawl space with standing water before sump pump installation" width="272" height="337">
-                    </picture>
+                    {{ pic("/assets/images/portfolio/crawlspace-before1.webp", "Wet crawl space with fallen insulation, debris, and standing water before work", 272, 337, "cs-picture cs-picture1") }}
                     <span class="cs-tag"></span>
                 </div>
                 <!--Small Image-->
                 <div class="cs-picture-wrapper2">
-                    <picture class="cs-picture cs-picture2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/pump.jpeg">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/pump.jpeg">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/pump.jpeg" alt="Cast-iron sump pump installed in a crawl space basin" width="243" height="367">
-                    </picture>
+                    {{ pic("/assets/images/portfolio/pump.jpeg", "Crawl space dehumidifier on a cinder block above the vapor barrier", 243, 367, "cs-picture cs-picture2") }}
                     <span class="cs-tag"></span>
                 </div>
             </div>
             <div class="cs-content">
                 <span class="cs-topper">Water Mitigation & Air Quality</span>
-                <h2 class="cs-title">Heavy-Duty Protection Against Raleigh’s Rising Water Table</h2>
+                <h2 class="cs-title">Heavy-Duty Protection Against Rising Groundwater</h2>
                 <p class="cs-text">
-                    Standing water in your crawl space is a ticking time bomb for your foundation. In the Triangle area, heavy rains often lead to hydrostatic pressure that forces water through your masonry and onto your crawl space floor. Without a professional drainage system, this moisture leads to wood rot, settlement issues, and a breeding ground for pests.
+                    Standing water in your crawl space is a ticking time bomb for your foundation. Across central North Carolina, heavy rains often lead to hydrostatic pressure that forces water through your masonry and onto your crawl space floor. Without a professional drainage system, this moisture leads to wood rot, settlement issues, and a breeding ground for pests.
                     <br><br>
                     At M&M Crawl Space Renovations, we install high-performance mechanical systems designed for the specific demands of North Carolina homes. From cast-iron sump pumps that can move thousands of gallons per hour to industrial-grade dehumidifiers that keep your wood joists at the ideal moisture level, we provide the hardware necessary for a permanent "Dry Zone" under your feet. For the most lasting result we pair them with <a href="/crawlspace-encapsulation/">crawl space encapsulation</a>, and we handle any <a href="/mold-remediation/">mold remediation</a> the inspection turns up.
                 </p>
@@ -100,7 +90,7 @@ faqs:
                         <strong>Custom Basin & Drainage Design</strong>: We don't just "drop in" a pump. We engineer a perimeter drainage or "French Drain" system that funnels water into a heavy-duty, perforated basin.
                     </li>
                     <li class="cs-li">
-                        <strong>Industrial Sump Pump Installation</strong>: We install high-head, cast-iron pumps with optional battery backups, ensuring your Raleigh home stays dry even if the power goes out during a hurricane.
+                        <strong>Industrial Sump Pump Installation</strong>: We install high-head, cast-iron pumps with optional battery backups, ensuring your home stays dry even if the power goes out during a hurricane.
                     </li>
                     <li class="cs-li">
                         <strong>Commercial-Grade Dehumidification</strong>: Unlike residential units, our crawl space dehumidifiers are designed to operate in low temperatures and high-volume spaces, removing up to 100+ pints of water per day.
@@ -131,7 +121,7 @@ faqs:
                     <li class="cs-li"><strong>Water stains or efflorescence</strong>: White, chalky mineral deposits on foundation walls point to water pushing through masonry.</li>
                     <li class="cs-li"><strong>High humidity or condensation</strong>: Moisture on ductwork, pipes, or insulation suggests humidity levels are too high for a healthy crawl space.</li>
                     <li class="cs-li"><strong>Musty odors or early mold growth</strong>: Persistent dampness creates the conditions mold needs to take hold.</li>
-                    <li class="cs-li"><strong>A rising local water table or history of flooding</strong>: Homes in low-lying areas of the Triangle are especially prone to hydrostatic pressure pushing water into the crawl space.</li>
+                    <li class="cs-li"><strong>A rising local water table or history of flooding</strong>: Homes in low-lying areas, near rivers and creeks, and on clay soil are especially prone to hydrostatic pressure pushing water into the crawl space.</li>
                 </ul>
                 <h3 class="cs-h3">What Affects Cost & Timeline</h3>
                 <p class="cs-text">
@@ -149,6 +139,8 @@ faqs:
             </div>
         </div>
     </section>
+
+    {% include 'components/areas-served.html' %}
 
     {% include 'components/faq.html' %}
 

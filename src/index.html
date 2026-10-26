@@ -1,6 +1,6 @@
 ---
-title: "Crawl Space Encapsulation & Mold Remediation | Cary & Raleigh, NC"
-description: "Protect your Raleigh-Durham home from mold and moisture. M&M Crawl Space Renovations specializes in encapsulation, mold remediation, and sump pumps. Free inspections in Cary, Apex, & Durham!"
+title: "Crawl Space Encapsulation & Mold Removal | Central NC"
+description: "Crawl space encapsulation, mold removal, sump pumps and insulation across the Sandhills and Triangle. 5.0 stars on Google. Free inspections."
 permalink: "/"
 tags: "sitemap" # content/content.json will make sure that all pages in content/ are marked with a "sitemap" tag, for automatic sitemap generation. As index.html is not in content/, we need to add it here to ensure the root page is included in the sitemap generation
 ---
@@ -22,10 +22,11 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <link rel="stylesheet" href="/assets/css/local.css"/>
     {% endif %}
 
-    {% include "components/home-schema.html" %}
+    
 {% endblock %}
 
 {% block body %}
+    {% from "components/macros.html" import pic %}
 
     <!-- ============================================ -->
     <!--                    Hero                      -->
@@ -34,13 +35,13 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
     <section id="hero-1856">
         <div class="cs-container">
             <div class="cs-content">
-                <span class="cs-topper">Serving Raleigh, Cary, Apex, & Durham</span>
-                <h1 class="cs-title">Transform Your Cary &amp; Raleigh Crawl Space Into a Dry, Healthy Foundation</h1>
+                <span class="cs-topper">Serving the Sandhills &amp; Triangle, NC</span>
+                <h1 class="cs-title">Transform Your Central NC Crawl Space Into a Dry, Healthy Foundation</h1>
                 <p class="cs-text">
-                    Don't let moisture, mold, or poor insulation compromise your home’s air quality and structural integrity. We provide elite encapsulation and remediation services to keep your Raleigh-Durham home safe, efficient, and dry.
+                    Don't let moisture, mold, or poor insulation compromise your home’s air quality and structural integrity. We provide elite encapsulation and remediation services to keep your central North Carolina home safe, efficient, and dry.
                 </p>
                 <a href="tel:910-635-4943" class="cs-button-solid">Call Now</a>
-                <img class="cs-content-graphic" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/gym-hero-graphic.svg" alt="graphic" height="1075" width="1135" loading="lazy" decoding="async">
+                <img class="cs-content-graphic" src="/assets/svgs/decor/gym-hero-graphic.svg" alt="" height="1075" width="1135" loading="lazy" decoding="async" aria-hidden="true">
             </div>
         </div>
 
@@ -55,9 +56,9 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <img fetchpriority="high" loading="eager" decoding="async" src="{% getUrl "/assets/images/portfolio/clean-crawlspace3.webp" | resize({ width: 1400, height: 900 }) | jpeg %}" alt="" width="1400" height="900" aria-hidden="true">
         </picture>
 
-        <img class="cs-graphic cs-graphic-light" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/dark-splatter.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+        <img class="cs-graphic cs-graphic-light" src="/assets/svgs/decor/dark-splatter.svg" alt="" height="161" width="1920" loading="lazy" decoding="async"  aria-hidden="true">
         <!--This is a dark version. Download the image and change the fill color to match the color of the section background below it-->
-        <img class="cs-graphic cs-graphic-dark" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/dark-mode-splatter2.svg" alt="graphic" height="161" width="1920" loading="lazy" decoding="async" >
+        <img class="cs-graphic cs-graphic-dark" src="/assets/svgs/decor/dark-mode-splatter2.svg" alt="" height="161" width="1920" loading="lazy" decoding="async"  aria-hidden="true">
     </section>
 
     {% include 'components/trust-strip.html' %}
@@ -73,7 +74,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <ul class="cs-card-group">
                 <li class="cs-item">
                     <a href="/crawlspace-encapsulation/" class="cs-link">
-                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/brain.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
+                        <img class="cs-icon" src="/assets/svgs/decor/brain.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
                         <h2 class="cs-h3">Crawlspace Encapsulations</h2>
                         <p class="cs-item-text">
                             Stop moisture at the source. Our 20-mil vapor barriers and sealed vents prevent wood rot and lower your energy bills year-round.
@@ -82,7 +83,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 </li>
                 <li class="cs-item">
                     <a href="/mold-remediation/" class="cs-link">
-                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/users.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
+                        <img class="cs-icon" src="/assets/svgs/decor/users.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
                         <h2 class="cs-h3">Mold remediation</h2>
                         <p class="cs-item-text">
                             Breathe cleaner air. We safely remove toxic mold growth and treat your floor joists to ensure a permanent, healthy environment for your family.
@@ -91,7 +92,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 </li>
                 <li class="cs-item">
                     <a href="/sump-pump-dehumidifier/" class="cs-link">
-                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/Layer.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
+                        <img class="cs-icon" src="/assets/svgs/decor/Layer.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
                         <h2 class="cs-h3">Sump Pump & Dehumidifier Installs</h2>
                         <p class="cs-item-text">
                             Keep the water out and the humidity down. We install heavy-duty sump pumps and industrial-grade dehumidifiers tailored for NC clay soil.
@@ -100,7 +101,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 </li>
                 <li class="cs-item">
                     <a href="/prebatt-insulation/" class="cs-link">
-                        <img class="cs-icon" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/Layer.svg" loading="lazy" decoding="async" alt="icon" width="40" height="40" aria-hidden="true">
+                        <img class="cs-icon" src="/assets/svgs/decor/Layer.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
                         <h2 class="cs-h3">Prebatt & Fire/Draft Stops</h2>
                         <p class="cs-item-text">
                             Advanced insulation and fire-blocking solutions that meet strict NC building codes while improving your home’s thermal envelope and safety.
@@ -133,7 +134,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/before1.png" | resize({ width: 1044, height: 1162 }) | avif %}" type="image/avif">
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/before1.png" | resize({ width: 1044, height: 1162 }) | webp %}" type="image/webp">
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/before1.png" | resize({ width: 1044, height: 1162 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/portfolio/before1.png" | resize({ width: 1044, height: 1162 }) | jpeg %}" alt="Crawl space before encapsulation" width="522" height="581" loading="lazy" decoding="async">
+                    <img src="{% getUrl "/assets/images/portfolio/before1.png" | resize({ width: 1044, height: 1162 }) | jpeg %}" alt="Crawl space with a bare dirt floor and exposed piers before encapsulation" width="522" height="581" loading="lazy" decoding="async">
                 </picture>
                 <picture class="cs-picture cs-picture2">
                     <!--Mobile Image-->
@@ -148,17 +149,17 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/after1.png" | resize({ width: 780, height: 752 }) | avif %}" type="image/avif">
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/after1.png" | resize({ width: 780, height: 752 }) | webp %}" type="image/webp">
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/after1.png" | resize({ width: 780, height: 752 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/portfolio/after1.png" | resize({ width: 780, height: 752 }) | jpeg %}" alt="Crawl space after encapsulation with sealed vapor barrier" width="390" height="376" loading="lazy" decoding="async">
+                    <img src="{% getUrl "/assets/images/portfolio/after1.png" | resize({ width: 780, height: 752 }) | jpeg %}" alt="Encapsulated crawl space with wrapped piers and a sealed vapor barrier" width="390" height="376" loading="lazy" decoding="async">
                 </picture>
             </div>
             <!-- Right Content Section-->
             <div class="cs-content">
-                <span class="cs-topper">Local Raleigh Experts</span>
+                <span class="cs-topper">Central NC Crawl Space Experts</span>
                 <h2 class="cs-title">
-                    Raleigh’s Trusted Name in Crawl Space Renovations
+                    Central North Carolina’s Trusted Name in Crawl Space Renovations
                 </h2>
                 <p class="cs-text">
-                    At M&M Crawl Space Renovations, we believe a healthy home starts from the ground up. Serving the Triangle area since 2021, we’ve built our reputation on "Trustworthy Work"—meaning we don't just patch problems; we engineer long-term solutions. Whether you’re dealing with standing water in Apex or musty smells in Cary, our team provides the expert diagnosis you need to protect your biggest investment.
+                    At M&M Crawl Space Renovations, we believe a healthy home starts from the ground up. Based near Cameron and serving central North Carolina since 2021, we’ve built our reputation on "Trustworthy Work"—meaning we don't just patch problems; we engineer long-term solutions. Whether you’re dealing with a musty smell in <a href="/service-areas/southern-pines/">Southern Pines</a>, standing water near <a href="/service-areas/fayetteville/">Fayetteville</a>, or sagging insulation in a <a href="/service-areas/raleigh/">Raleigh</a> bungalow, our team provides the expert diagnosis you need to protect your biggest investment. See every community on our <a href="/service-areas/">service area map</a>.
                 </p>
                 <div class="cs-quote">
                     <span class="cs-quote-text">
@@ -183,31 +184,13 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
         <div class="cs-container">
             <div class="cs-image-group">
                 <!--Top left image-->
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawl1.jpg">
-                    <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawl1.jpg">
-                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawl1.jpg" alt="Crawl space vapor barrier installation" width="217" height="440">
-                </picture>
+                {{ pic("/assets/images/portfolio/crawl1.jpg", "Crawl space pier wrapped in white liner with foil-faced insulation on the walls", 217, 440, "cs-picture cs-picture1") }}
                 <!--Middle image-->
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawl2.jpg">
-                    <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawl2.jpg">
-                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawl2.jpg" alt="Sealed crawl space vents and support piers" width="305" height="600">
-                </picture>
+                {{ pic("/assets/images/portfolio/crawl2.jpg", "Vapor barrier covering a crawl space floor and wrapping the support piers", 305, 600, "cs-picture cs-picture2") }}
                 <!--Bottom right image-->
-                <picture class="cs-picture cs-picture3">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/vent.jpeg">
-                    <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/vent.jpeg">
-                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/vent.jpeg" alt="Crawl space vent sealed as part of encapsulation" width="216" height="440">
-                </picture>
+                {{ pic("/assets/images/portfolio/vent.jpeg", "Foundation block vent sealed with foam and a clear panel", 216, 440, "cs-picture cs-picture3") }}
                 <!--Stripe background-->
-                <img class="cs-stripes" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/stripes.svg" alt="" width="509" height="535" aria-hidden="true">
+                <img class="cs-stripes" loading="lazy" decoding="async" src="/assets/svgs/decor/stripes.svg" alt="" width="509" height="535" aria-hidden="true">
             </div>
             <div class="cs-content">
                 <span class="cs-topper">The M&M Advantage</span>
@@ -216,7 +199,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                     We understand the unique challenges of North Carolina's climate. From high humidity to flash-flood drainage issues, we provide specific solutions that general contractors miss.
                 </p>
                 <ul class="cs-list">
-                    <li class="cs-li">Customized solutions for Raleigh’s red clay soil</li>
+                    <li class="cs-li">Solutions for the Sandhills’ sandy soil and the Piedmont’s red clay</li>
                     <li class="cs-li">Fully licensed, insured, and NC code-compliant</li>
                     <li class="cs-li">Specialists in both "Panic" repairs and "Value" upgrades</li>
                     <li class="cs-li">Lifetime transferable warranties available</li>
@@ -224,7 +207,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                 </ul>
                 <a class="cs-link" href="tel:910-635-4943">
                     <picture class="cs-wrapper">
-                        <img class="cs-icon" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/white-phone.svg" alt="icon" width="24" height="24">
+                        <img class="cs-icon" loading="lazy" decoding="async" src="/assets/svgs/decor/white-phone.svg" alt="" width="24" height="24" aria-hidden="true">
                     </picture>
                     <div class="cs-info" href="tel:+19106354943">
                         <span class="cs-header">Call Anytime</span>
@@ -245,33 +228,21 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
             <div class="cs-image-group">
                 <!--Main Image-->
                 <div class="cs-picture-wrapper1">
-                    <picture class="cs-picture cs-picture1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/before-crawlspace-durham.webp">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/before-crawlspace-durham.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/before-crawlspace-durham.webp" alt="Crawl space in a Durham home before encapsulation" width="272" height="337">
-                    </picture>
+                    {{ pic("/assets/images/portfolio/before-crawlspace-durham.webp", "Durham crawl space before work, with drooping fiberglass insulation and a dark dirt floor", 272, 337, "cs-picture cs-picture1") }}
                     <span class="cs-tag">Before</span>
                 </div>
                 <!--Small Image-->
                 <div class="cs-picture-wrapper2">
-                    <picture class="cs-picture cs-picture2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/after-crawlspace-cary.webp">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/after-crawlspace-cary.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/after-crawlspace-cary.webp" alt="Encapsulated crawl space in a Cary home after completion" width="243" height="367">
-                    </picture>
+                    {{ pic("/assets/images/portfolio/after-crawlspace-cary.webp", "Cary crawl space after encapsulation with a smooth sealed vapor barrier", 243, 367, "cs-picture cs-picture2") }}
                     <span class="cs-tag">After</span>
                 </div>
-                <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/before-after-arrow.svg" alt="arrow" width="148" height="54">
+                <img class="cs-arrow" loading="lazy" decoding="async" src="/assets/svgs/decor/before-after-arrow.svg" alt="" width="148" height="54" aria-hidden="true">
             </div>
             <div class="cs-content">
                 <span class="cs-topper">Real Results</span>
                 <h2 class="cs-title">From Damp Dungeon to Sealed Sanctuary</h2>
                 <p class="cs-text">
-                    See how we transformed this Raleigh home by removing failing insulation, remediating heavy mold growth, and installing a full encapsulation system with a high-efficiency dehumidifier.
+                    Before and after: a Durham crawl space with drooping insulation and a dirt floor, beside a sealed Cary crawl space after <a href="/crawlspace-encapsulation/">encapsulation</a>. Different homes, same fix. Need <a href="/mold-remediation/">mold removal</a> or a <a href="/sump-pump-dehumidifier/">sump pump</a> first? We handle that too.
                 </p>
                 <h3 class="cs-h3">Our Process</h3>
                 <ul class="cs-ul">
@@ -295,4 +266,7 @@ tags: "sitemap" # content/content.json will make sure that all pages in content/
                                 
 
     
+
+    {% include 'components/areas-served.html' %}
+
 {% endblock %}

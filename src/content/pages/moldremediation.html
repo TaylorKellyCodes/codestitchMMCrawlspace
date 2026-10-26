@@ -1,8 +1,9 @@
 ---
-title: "Mold Remediation & Removal | Raleigh, Cary, & Durham | M&M Crawl Space Renovations"
-description: "Don't let mold compromise your family's health. We provide expert crawl space mold remediation in Raleigh, Cary, and Apex. Safe, effective removal and permanent moisture solutions."
+title: "Crawl Space Mold Removal in Central NC | M&M"
+description: "Safe crawl space mold remediation plus the moisture fix that keeps it from coming back. Serving Sanford, Southern Pines, Fayetteville and the Triangle."
 permalink: "/mold-remediation/"
 breadcrumbLabel: "Mold Remediation"
+serviceName: "Crawl Space Mold Remediation"
 serviceType: "Crawl Space Mold Remediation"
 faqs:
   - q: "How do I know if I have mold in my crawl space?"
@@ -24,6 +25,7 @@ faqs:
 {% endblock %}
 
 {% block body %}
+    {% from "components/macros.html" import pic %}
 
     <!-- ============================================ -->
     <!--                   Banner                     -->
@@ -31,7 +33,7 @@ faqs:
 
     <div id="banner-310">
         <div class="cs-container">
-            <h1 class="cs-int-title">Mold Remediation in Raleigh, Cary &amp; Durham</h1>
+            <h1 class="cs-int-title">Crawl Space Mold Remediation in Central NC</h1>
             {% include 'components/breadcrumbs.html' %}
         </div>
         <!--Background Image-->
@@ -49,7 +51,7 @@ faqs:
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Crawl space with mold growth on floor joists before remediation" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
+            <img src="{% getUrl "/assets/images/portfolio/crawlspace-before2.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Crawl space with a bare dirt floor, debris, and brick foundation walls before cleanup" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
         </picture>
     </div>
 
@@ -65,31 +67,19 @@ faqs:
         <div class="cs-image-group">
             <!--Main Image-->
             <div class="cs-picture-wrapper1">
-                <picture class="cs-picture cs-picture1">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-before2.webp">
-                    <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-before2.webp">
-                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before2.webp" alt="Crawl space with active mold growth before remediation" width="272" height="337">
-                </picture>
+                {{ pic("/assets/images/portfolio/crawlspace-before2.webp", "Crawl space with a bare dirt floor, debris, and brick foundation walls before cleanup", 272, 337, "cs-picture cs-picture1") }}
                 <span class="cs-tag">Before</span>
             </div>
             <!--Small Image-->
             <div class="cs-picture-wrapper2">
-                <picture class="cs-picture cs-picture2">
-                    <!--Mobile Image-->
-                    <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-after2.webp">
-                    <!--Tablet and above Image-->
-                    <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-after2.webp">
-                    <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-after2.webp" alt="Crawl space after mold remediation with mold removed and joists treated" width="243" height="367">
-                </picture>
+                {{ pic("/assets/images/portfolio/crawlspace-after2.webp", "Encapsulated crawl space with a sealed floor liner and foil-faced insulation on the walls", 243, 367, "cs-picture cs-picture2") }}
                 <span class="cs-tag">After</span>
             </div>
-            <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/before-after-arrow.svg" alt="arrow" width="148" height="54">
+            <img class="cs-arrow" loading="lazy" decoding="async" src="/assets/svgs/decor/before-after-arrow.svg" alt="arrow" width="148" height="54">
         </div>
         <div class="cs-content">
             <span class="cs-topper">Health & Safety First</span>
-            <h2 class="cs-title">Expert Mold Removal for a Healthier Triangle Home</h2>
+            <h2 class="cs-title">Expert Mold Removal for a Healthier Central NC Home</h2>
             <p class="cs-text">
                 Discovering mold in your crawl space is more than just a maintenance issue—it’s a health risk. In the humid North Carolina climate, mold spores can thrive on damp floor joists and insulation. Because of the "Stack Effect," those spores are pulled upward into your living areas, potentially causing respiratory issues and persistent musty odors.
                 <br><br>
@@ -150,6 +140,8 @@ faqs:
             </div>
         </div>
     </section>
+
+    {% include 'components/areas-served.html' %}
 
     {% include 'components/faq.html' %}
 

@@ -1,0 +1,13 @@
+<section class="cs-detail-section cs-alt cs-areas-block">
+    <div class="cs-container">
+        <div class="cs-content">
+            <span class="cs-topper">Service Areas</span>
+            <h2 class="cs-title">{{ areasHeading or "Where we work across central North Carolina" }}</h2>
+            <p class="cs-text">
+                Based near Cameron, we serve
+                {% for l in locations %}<a href="/service-areas/{{ l.slug }}/">{{ l.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+                and nearby communities. <a href="/service-areas/">See all service areas</a>.
+            </p>
+        </div>
+    </div>
+</section>

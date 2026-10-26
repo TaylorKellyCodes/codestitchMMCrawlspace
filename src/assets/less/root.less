@@ -1799,3 +1799,57 @@ body.dark-mode .cs-topper,
 .cs-button-solid:hover {
 	color: #fff !important;
 }
+
+/* Service area pages */
+.cs-detail-section.cs-alt {
+	background-color: #fff;
+}
+
+.cs-area-cards {
+	margin: (16/16rem) 0 (24/16rem);
+	padding: 0;
+	list-style: none;
+	width: 100%;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+	gap: (16/16rem);
+
+	.cs-area-card {
+		padding: (16/16rem) (18/16rem);
+		border: 1px solid #e8e8e8;
+		border-radius: (6/16rem);
+		background-color: #fff;
+
+		.cs-h3 {
+			margin: 0 0 (6/16rem);
+			font-size: (18/16rem);
+		}
+
+		.cs-text {
+			margin: 0;
+			font-size: (15/16rem);
+		}
+
+		a {
+			color: var(--headerColor);
+			text-decoration: none;
+		}
+	}
+}
+
+body.dark-mode {
+	.cs-detail-section.cs-alt {
+		background-color: var(--dark);
+	}
+
+	.cs-area-cards .cs-area-card {
+		background-color: var(--medium);
+		border-color: var(--accent);
+
+		.cs-h3,
+		.cs-h3 a,
+		.cs-text {
+			color: var(--bodyTextColorWhite);
+		}
+	}
+}

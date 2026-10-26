@@ -1,26 +1,25 @@
-<!-- ============================================ -->
-<!--                Service schema                -->
-<!-- ============================================ -->
-
 <script type="application/ld+json">
 {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": "{{ client.domain }}{{ page.url }}#service",
     "serviceType": {{ serviceType | dump | safe }},
-    "name": {{ title | dump | safe }},
+    "name": {{ (serviceName or serviceType) | dump | safe }},
     "description": {{ description | dump | safe }},
-    "provider": {
-        "@type": "LocalBusiness",
-        "name": {{ client.name | dump | safe }},
-        "telephone": {{ client.phoneFormatted | dump | safe }},
-        "email": {{ client.email | dump | safe }},
-        "url": {{ client.domain | dump | safe }}
-    },
+    "url": "{{ client.domain }}{{ page.url }}",
+    "mainEntityOfPage": { "@id": "{{ client.domain }}{{ page.url }}#webpage" },
+    "provider": { "@id": "{{ client.domain }}/#business" },
+    "category": "Crawl space services",
+    "termsOfService": "{{ client.domain }}/contact/",
     "areaServed": [
-        {%- for area in client.serviceAreas -%}
-        { "@type": "City", "name": {{ area | dump | safe }} }{% if not loop.last %},{% endif %}
-        {%- endfor -%}
+        {%- for loc in locations %}
+        { "@type": "City", "name": {{ loc.name | dump | safe }}, "geo": { "@type": "GeoCoordinates", "latitude": {{ loc.lat }}, "longitude": {{ loc.lng }} } }{% if not loop.last %},{% endif %}
+        {%- endfor %}
     ],
-    "url": "{{ client.domain }}{{ page.url }}"
+    "availableChannel": {
+        "@type": "ServiceChannel",
+        "serviceUrl": "{{ client.domain }}/contact/",
+        "servicePhone": { "@type": "ContactPoint", "telephone": "+19106354943", "contactType": "customer service" }
+    }
 }
 </script>

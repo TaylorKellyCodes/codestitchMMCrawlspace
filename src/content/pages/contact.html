@@ -1,7 +1,8 @@
 ---
-title: "Free Crawl Space Inspection | Raleigh, Cary, & Durham | Contact Us"
-description: "Schedule your free, no-obligation crawl space inspection with M&M Crawl Space Renovations. Serving Raleigh, Cary, Apex, and Durham with trustworthy mold and moisture solutions."
+title: "Free Crawl Space Inspection | Contact M&M | Central NC"
+description: "Request a free, no-obligation crawl space inspection. Call (910) 635-4943 or send a message. Serving Cameron, Sanford, Southern Pines, Raleigh and more."
 permalink: "/contact/"
+pageType: "ContactPage"
 breadcrumbLabel: "Contact Us"
 ---
 
@@ -36,7 +37,7 @@ breadcrumbLabel: "Contact Us"
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Freshly encapsulated crawl space in a Raleigh-area home" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
+            <img src="{% getUrl "/assets/images/portfolio/clean-crawlspace1.webp" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Encapsulated crawl space with foil-faced wall insulation and a sealed floor liner" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
         </picture>
     </div>
 
@@ -51,7 +52,7 @@ breadcrumbLabel: "Contact Us"
                     <span class="cs-topper">Let's Get Started</span>
                     <h2 class="cs-title">Schedule Your Free Crawl Space Inspection</h2>
                     <p class="cs-text">
-                        Don't wait for a musty smell to become a structural nightmare. Whether you need a code-compliant fire stop in Cary or a full encapsulation in Raleigh, our team is ready to help. Fill out the form below, and we will contact you within 24 hours to schedule your free, no-obligation inspection.
+                        Don't wait for a musty smell to become a structural nightmare. Whether you need a code-compliant fire stop in Sanford or a full encapsulation near Raleigh, our team is ready to help. Fill out the form below, and we will contact you within 24 hours to schedule your free, no-obligation inspection.
                     </p>
                 </div>
                 <form id="cs-form-265" name="Contact Form" method="post" action="/thank-you/" data-netlify="true" netlify-honeypot="bot-field">
@@ -103,11 +104,8 @@ breadcrumbLabel: "Contact Us"
                 <span class="cs-header">Phone</span>
                 <a class="cs-link" href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a>
                 <!--Address-->
-                <span class="cs-header">Address</span>
-                <a class="cs-link" href="{{ client.address.mapLink }}">
-                    {{ client.address.city }}, {{ client.address.state }}
-                    {{ client.address.zip }}
-                </a>
+                <span class="cs-header">Based Near</span>
+                <a class="cs-link" href="{{ client.address.mapLink }}" target="_blank" rel="noopener">{{ client.address.city }}, {{ client.address.state }} &middot; serving central NC</a>
                 <!-- Background Image-->
                 <picture class="cs-bg-picture">
                     <!--Mobile Image-->
@@ -122,10 +120,31 @@ breadcrumbLabel: "Contact Us"
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | avif %}" type="image/avif">
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | webp %}" type="image/webp">
                     <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | jpeg %}" type="image/jpeg">
-                    <img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | jpeg %}" alt="building" width="542" height="578" decoding="async" loading="lazy">
+                    <img src="{% getUrl "/assets/images/construction.jpg" | resize({ width: 1084, height: 1156 }) | jpeg %}" alt="" aria-hidden="true" width="542" height="578" decoding="async" loading="lazy">
                 </picture>
             </div>
         </div>
     </section>
+
+
+    <section id="contact-details" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Hours &amp; Coverage</span>
+                <h2 class="cs-title">Open seven days a week</h2>
+                <p class="cs-text">
+                    Call or text <a href="tel:{{ client.phoneForTel }}">{{ client.phoneFormatted }}</a> any day between 5 AM and 10 PM. We are based near Cameron, NC and travel to homes across the Sandhills, Fayetteville, and the Triangle. Every inspection is free, and you get a written quote before any work begins.
+                </p>
+                <ul class="cs-ul">
+                    {% for d in client.hours.days %}<li class="cs-li"><strong>{{ d }}</strong>: {{ client.hours.label }}</li>{% endfor %}
+                </ul>
+                <p class="cs-text">
+                    Read our <a href="/reviews/">customer reviews</a>, check our <a href="{{ client.bbb }}" target="_blank" rel="noopener">BBB profile</a>, or learn about <a href="/crawlspace-encapsulation/">encapsulation</a>, <a href="/mold-remediation/">mold remediation</a>, <a href="/sump-pump-dehumidifier/">sump pumps</a>, and <a href="/prebatt-insulation/">insulation</a> before you call.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/areas-served.html' %}
 
 {% endblock %}

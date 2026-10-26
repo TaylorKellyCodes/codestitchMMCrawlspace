@@ -1,0 +1,106 @@
+{#- Sitewide JSON-LD graph: business, website, and the current page. Other components reference these @ids. -#}
+{%- set biz = client.domain + "/#business" -%}
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@graph": [
+        {
+            "@type": ["LocalBusiness", "HomeAndConstructionBusiness"],
+            "@id": "{{ biz }}",
+            "name": {{ client.name | dump | safe }},
+            "legalName": {{ client.legalName | dump | safe }},
+            "alternateName": ["M&M Crawlspace Renovations", "M and M Crawl Space Renovations"],
+            "url": "{{ client.domain }}/",
+            "description": "Crawl space encapsulation, mold remediation, sump pump and dehumidifier installation, and crawl space insulation with fire and draft stopping across the Sandhills and Triangle of North Carolina.",
+            "slogan": "Trustworthy Work",
+            "telephone": "+19106354943",
+            "email": {{ client.email | dump | safe }},
+            "foundingDate": {{ client.foundingDate | dump | safe }},
+            "founder": { "@type": "Person", "name": {{ client.founder | dump | safe }}, "jobTitle": "Founder" },
+            "logo": { "@type": "ImageObject", "url": "{{ client.domain }}/assets/images/portfolio/mmlogo.png", "width": 1248, "height": 832 },
+            "image": ["{{ client.domain }}/assets/images/portfolio/mmlogo.png"],
+            "address": {
+                "@type": "PostalAddress",
+                "addressLocality": {{ client.address.city | dump | safe }},
+                "addressRegion": {{ client.address.state | dump | safe }},
+                "postalCode": {{ client.address.zip | dump | safe }},
+                "addressCountry": {{ client.address.country | dump | safe }}
+            },
+            "geo": { "@type": "GeoCoordinates", "latitude": {{ client.geo.lat }}, "longitude": {{ client.geo.lng }} },
+            "hasMap": {{ client.address.mapLink | dump | safe }},
+            "openingHoursSpecification": {
+                "@type": "OpeningHoursSpecification",
+                "dayOfWeek": {{ client.hours.days | dump | safe }},
+                "opens": "{{ client.hours.opens }}",
+                "closes": "{{ client.hours.closes }}"
+            },
+            "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "customer service",
+                "telephone": "+19106354943",
+                "email": {{ client.email | dump | safe }},
+                "areaServed": "US-NC",
+                "availableLanguage": ["English"],
+                "hoursAvailable": {
+                    "@type": "OpeningHoursSpecification",
+                    "dayOfWeek": {{ client.hours.days | dump | safe }},
+                    "opens": "{{ client.hours.opens }}",
+                    "closes": "{{ client.hours.closes }}"
+                }
+            },
+            "serviceArea": {
+                "@type": "GeoCircle",
+                "geoMidpoint": { "@type": "GeoCoordinates", "latitude": {{ client.geo.lat }}, "longitude": {{ client.geo.lng }} },
+                "geoRadius": "160000"
+            },
+            "areaServed": [
+                { "@type": "State", "name": "North Carolina" },
+                {%- for loc in locations %}
+                { "@type": "City", "name": {{ loc.name | dump | safe }}, "containedInPlace": { "@type": "AdministrativeArea", "name": {{ loc.county | dump | safe }} } },
+                {%- endfor %}
+                {%- for town in client.extraAreas %}
+                { "@type": "City", "name": {{ town | dump | safe }} }{% if not loop.last %},{% endif %}
+                {%- endfor %}
+            ],
+            "knowsAbout": ["Crawl space encapsulation", "Crawl space mold remediation", "Vapor barrier installation", "Crawl space dehumidification", "Sump pump installation", "Crawl space drainage", "Crawl space insulation", "Fire and draft stopping"],
+            "hasOfferCatalog": {
+                "@type": "OfferCatalog",
+                "name": "Crawl space services",
+                "itemListElement": [
+                    { "@type": "Offer", "itemOffered": { "@id": "{{ client.domain }}/crawlspace-encapsulation/#service" } },
+                    { "@type": "Offer", "itemOffered": { "@id": "{{ client.domain }}/mold-remediation/#service" } },
+                    { "@type": "Offer", "itemOffered": { "@id": "{{ client.domain }}/sump-pump-dehumidifier/#service" } },
+                    { "@type": "Offer", "itemOffered": { "@id": "{{ client.domain }}/prebatt-insulation/#service" } }
+                ]
+            },
+            "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "{{ client.ratingValue }}",
+                "bestRating": "5",
+                "worstRating": "1",
+                "reviewCount": "{{ client.reviewCount }}"
+            },
+            "sameAs": [{{ client.address.mapLink | dump | safe }}, {{ client.bbb | dump | safe }}]
+        },
+        {
+            "@type": "WebSite",
+            "@id": "{{ client.domain }}/#website",
+            "url": "{{ client.domain }}/",
+            "name": {{ client.name | dump | safe }},
+            "inLanguage": "en-US",
+            "publisher": { "@id": "{{ biz }}" }
+        },
+        {
+            "@type": {{ (pageType or "WebPage") | dump | safe }},
+            "@id": "{{ client.domain }}{{ page.url }}#webpage",
+            "url": "{{ client.domain }}{{ page.url }}",
+            "name": {{ title | dump | safe }},
+            "description": {{ description | dump | safe }},
+            "inLanguage": "en-US",
+            "isPartOf": { "@id": "{{ client.domain }}/#website" },
+            "about": { "@id": "{{ biz }}" },
+            "primaryImageOfPage": { "@type": "ImageObject", "url": "{{ client.domain }}{{ image or '/assets/images/portfolio/mmlogo.png' }}" }
+        }
+    ]
+}
+</script>

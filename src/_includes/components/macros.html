@@ -1,0 +1,34 @@
+{#
+  Responsive, optimized <picture> following CodeStitch's sharp-images pattern:
+  AVIF + WebP + JPEG sources at mobile / tablet / desktop widths, generated at build time.
+  w/h are the CSS display size (used for the width/height attributes and to size the sources at ~2x).
+#}
+{% macro pic(src, alt, w, h, cls="", loading="lazy", hidden=false) %}
+{%- set mw = (w * 1.5) | round -%}{%- set mh = (h * 1.5) | round -%}
+{%- set dw = (w * 2.5) | round -%}{%- set dh = (h * 2.5) | round -%}
+<picture{% if cls %} class="{{ cls }}"{% endif %}>
+    <source media="(max-width: 600px)" srcset="{% getUrl src | resize({ width: mw, height: mh }) | avif %}" type="image/avif">
+    <source media="(max-width: 600px)" srcset="{% getUrl src | resize({ width: mw, height: mh }) | webp %}" type="image/webp">
+    <source media="(max-width: 600px)" srcset="{% getUrl src | resize({ width: mw, height: mh }) | jpeg %}" type="image/jpeg">
+    <source media="(min-width: 601px)" srcset="{% getUrl src | resize({ width: dw, height: dh }) | avif %}" type="image/avif">
+    <source media="(min-width: 601px)" srcset="{% getUrl src | resize({ width: dw, height: dh }) | webp %}" type="image/webp">
+    <source media="(min-width: 601px)" srcset="{% getUrl src | resize({ width: dw, height: dh }) | jpeg %}" type="image/jpeg">
+    <img src="{% getUrl src | resize({ width: dw, height: dh }) | jpeg %}" alt="{{ alt }}" width="{{ w }}" height="{{ h }}" loading="{{ loading }}" decoding="async"{% if hidden %} aria-hidden="true"{% endif %}>
+</picture>
+{% endmacro %}
+
+{#- Full-width banner background using the same mobile/tablet/desktop pattern as the other banners. -#}
+{% macro banner(src, alt) %}
+<picture class="cs-background">
+    <source media="(max-width: 600px)" srcset="{% getUrl src | resize({ width: 640, height: 600 }) | avif %}" type="image/avif">
+    <source media="(max-width: 600px)" srcset="{% getUrl src | resize({ width: 640, height: 600 }) | webp %}" type="image/webp">
+    <source media="(max-width: 600px)" srcset="{% getUrl src | resize({ width: 640, height: 600 }) | jpeg %}" type="image/jpeg">
+    <source media="(max-width: 1024px)" srcset="{% getUrl src | resize({ width: 2048, height: 942 }) | avif %}" type="image/avif">
+    <source media="(max-width: 1024px)" srcset="{% getUrl src | resize({ width: 2048, height: 942 }) | webp %}" type="image/webp">
+    <source media="(max-width: 1024px)" srcset="{% getUrl src | resize({ width: 2048, height: 942 }) | jpeg %}" type="image/jpeg">
+    <source media="(min-width: 1024px)" srcset="{% getUrl src | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
+    <source media="(min-width: 1024px)" srcset="{% getUrl src | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
+    <source media="(min-width: 1024px)" srcset="{% getUrl src | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
+    <img src="{% getUrl src | resize({ width: 2500, height: 628 }) | jpeg %}" alt="{{ alt }}" width="1920" height="482" loading="eager" fetchpriority="high" decoding="async">
+</picture>
+{% endmacro %}

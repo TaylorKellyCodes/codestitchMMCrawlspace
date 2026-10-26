@@ -1,0 +1,130 @@
+---
+pagination:
+  data: locations
+  size: 1
+  alias: loc
+permalink: "/service-areas/{{ loc.slug }}/"
+eleventyComputed:
+  title: "Crawl Space Encapsulation in {{ loc.name }}, NC | M&M"
+  description: "Crawl space encapsulation, mold removal and sump pumps in {{ loc.name }}, NC. 5.0 stars on Google. Free inspections. Call (910) 635-4943."
+  breadcrumbLabel: "{{ loc.name }}"
+  breadcrumbParentName: "Service Areas"
+  breadcrumbParentUrl: "/service-areas/"
+---
+
+{% extends "layouts/base.html" %}
+{% from "components/macros.html" import banner %}
+{% set faqs = loc.faqs.concat([{ q: "Do you offer free crawl space inspections in " + loc.name + "?", a: "Yes. Every inspection in " + loc.name + " is free and comes with no obligation. We look at moisture, mold, insulation, and drainage, explain what we find, and give you a written quote before any work starts." }]) %}
+
+{% block body %}
+
+    <div id="banner-310">
+        <div class="cs-container">
+            <h1 class="cs-int-title">Crawl Space Encapsulation &amp; Mold Removal in {{ loc.name }}, NC</h1>
+            {% include 'components/breadcrumbs.html' %}
+        </div>
+        {{ banner(loc.hero.src, loc.hero.alt) }}
+    </div>
+
+    {% include 'components/trust-strip.html' %}
+
+    <section id="area-intro" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">{{ loc.county }} &middot; {{ loc.region }}</span>
+                <h2 class="cs-title">Crawl space help for {{ loc.name }} homeowners</h2>
+                <p class="cs-text">{{ loc.intro }}</p>
+                {% if loc.slug == "cameron" %}
+                <p class="cs-text">Because we are based here, a free inspection in {{ loc.name }} is usually the easiest one to schedule.</p>
+                {% else %}
+                <p class="cs-text">We travel to {{ loc.name }} from our base near Cameron, roughly {{ loc.drive }} away depending on traffic, and we are available seven days a week from {{ client.hours.label }}.</p>
+                {% endif %}
+                <h2 class="cs-title">What crawl spaces face in {{ loc.name }}</h2>
+                <p class="cs-text">{{ loc.conditions }}</p>
+                <p class="cs-text">In {{ loc.name }} we most often recommend {{ loc.focus }}.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="area-communities" class="cs-detail-section cs-alt">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Where We Work</span>
+                <h2 class="cs-title">Communities we serve around {{ loc.name }}</h2>
+                <ul class="cs-area-cards">
+                    {% for c in loc.communities %}
+                    <li class="cs-area-card">
+                        <h3 class="cs-h3">{{ c[0] }}</h3>
+                        <p class="cs-text">{{ c[1] }}</p>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="area-services" class="cs-detail-section">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Our Services</span>
+                <h2 class="cs-title">Crawl space services in {{ loc.name }}</h2>
+                <ul class="cs-ul">
+                    <li class="cs-li"><a href="/crawlspace-encapsulation/"><strong>Crawl space encapsulation</strong></a>: a sealed 20-mil vapor barrier, sealed vents, and humidity control for {{ loc.name }} homes.</li>
+                    <li class="cs-li"><a href="/mold-remediation/"><strong>Mold remediation</strong></a>: safe removal of crawl space mold and correction of the moisture that caused it.</li>
+                    <li class="cs-li"><a href="/sump-pump-dehumidifier/"><strong>Sump pumps and dehumidifiers</strong></a>: drainage and humidity control where water collects.</li>
+                    <li class="cs-li"><a href="/prebatt-insulation/"><strong>Prebatt insulation and fire/draft stops</strong></a>: tighter, safer floor systems that cut energy loss.</li>
+                </ul>
+                <h3 class="cs-h3">How a {{ loc.name }} inspection works</h3>
+                <ul class="cs-ul">
+                    <li class="cs-li"><strong>You call or message us</strong>: tell us what you are seeing and we set a time that works.</li>
+                    <li class="cs-li"><strong>We inspect the crawl space</strong>: moisture, mold, insulation, vents, and drainage.</li>
+                    <li class="cs-li"><strong>You get a clear written quote</strong>: we explain what we found before any work starts.</li>
+                </ul>
+                <a href="/contact/" class="cs-button-solid">Book a Free {{ loc.name }} Inspection</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="area-nearby" class="cs-detail-section cs-alt">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Nearby</span>
+                <h2 class="cs-title">Also serving communities near {{ loc.name }}</h2>
+                <p class="cs-text">
+                    {% for n in loc.nearLinks %}<a href="/service-areas/{{ n.slug }}/">{{ n.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
+                    &mdash; or see the full <a href="/service-areas/">list of service areas</a>.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    {% include 'components/faq.html' %}
+
+    {% include 'sections/cta.html' %}
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Service",
+        "@id": "{{ client.domain }}{{ page.url }}#service",
+        "serviceType": "Crawl space encapsulation and mold remediation",
+        "name": "Crawl Space Encapsulation & Mold Removal in {{ loc.name }}, NC",
+        "description": {{ description | dump | safe }},
+        "url": "{{ client.domain }}{{ page.url }}",
+        "mainEntityOfPage": { "@id": "{{ client.domain }}{{ page.url }}#webpage" },
+        "provider": { "@id": "{{ client.domain }}/#business" },
+        "areaServed": { "@type": "City", "name": {{ loc.name | dump | safe }}, "containedInPlace": { "@type": "AdministrativeArea", "name": {{ loc.county | dump | safe }} }, "geo": { "@type": "GeoCoordinates", "latitude": {{ loc.lat }}, "longitude": {{ loc.lng }} } },
+        "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Crawl space services in {{ loc.name }}",
+            "itemListElement": [
+                { "@type": "Offer", "itemOffered": { "@id": "{{ client.domain }}/crawlspace-encapsulation/#service" } },
+                { "@type": "Offer", "itemOffered": { "@id": "{{ client.domain }}/mold-remediation/#service" } },
+                { "@type": "Offer", "itemOffered": { "@id": "{{ client.domain }}/sump-pump-dehumidifier/#service" } },
+                { "@type": "Offer", "itemOffered": { "@id": "{{ client.domain }}/prebatt-insulation/#service" } }
+            ]
+        }
+    }
+    </script>
+
+{% endblock %}

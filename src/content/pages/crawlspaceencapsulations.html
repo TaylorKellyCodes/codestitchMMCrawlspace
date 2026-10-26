@@ -1,8 +1,9 @@
 ---
-title: "Crawl Space Encapsulation Raleigh, Cary & Durham | M&M Crawl Space Renovations"
-description: "Eliminate moisture, mold, and odors with professional crawl space encapsulation in Raleigh, Cary, and Durham. We install premium 20-mil vapor barriers and dehumidifiers. Free inspections!"
+title: "Crawl Space Encapsulation in Central NC | M&M"
+description: "Seal moisture, mold and odors out of your crawl space with a 20-mil vapor barrier and dehumidifier. Free inspections from Sanford to Raleigh."
 permalink: "/crawlspace-encapsulation/"
 breadcrumbLabel: "Crawl Space Encapsulation"
+serviceName: "Crawl Space Encapsulation"
 serviceType: "Crawl Space Encapsulation"
 faqs:
   - q: "What does crawl space encapsulation include?"
@@ -24,6 +25,7 @@ faqs:
 {% endblock %}
 
 {% block body %}
+    {% from "components/macros.html" import pic %}
 
     <!-- ============================================ -->
     <!--                   Banner                     -->
@@ -31,7 +33,7 @@ faqs:
 
     <div id="banner-310">
         <div class="cs-container">
-            <h1 class="cs-int-title">Crawl Space Encapsulation in Raleigh, Cary &amp; Durham</h1>
+            <h1 class="cs-int-title">Crawl Space Encapsulation in Central NC</h1>
             {% include 'components/breadcrumbs.html' %}
         </div>
         <!--Background Image-->
@@ -49,7 +51,7 @@ faqs:
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | avif %}" type="image/avif">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | webp %}" type="image/webp">
             <source media="(min-width: 1024px)" srcset="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" type="image/jpeg">
-            <img src="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Vapor barrier installed during crawl space encapsulation" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
+            <img src="{% getUrl "/assets/images/portfolio/vapor.jpg" | resize({ width: 2500, height: 628 }) | jpeg %}" alt="Vapor barrier installed on a crawl space floor with sealed seams around a pier" width="1920" height="482" fetchpriority="high" loading="eager" decoding="async">
         </picture>
     </div>
 
@@ -65,40 +67,28 @@ faqs:
             <div class="cs-image-group">
                 <!--Main Image-->
                 <div class="cs-picture-wrapper1">
-                    <picture class="cs-picture cs-picture1">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/crawlspace-before1.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/crawlspace-before1.webp" alt="Crawl space before encapsulation, with exposed dirt floor and no vapor barrier" width="272" height="337">
-                    </picture>
+                    {{ pic("/assets/images/portfolio/crawlspace-before1.webp", "Wet crawl space with fallen insulation, debris, and standing water before work", 272, 337, "cs-picture cs-picture1") }}
                     <span class="cs-tag">Before</span>
                 </div>
                 <!--Small Image-->
                 <div class="cs-picture-wrapper2">
-                    <picture class="cs-picture cs-picture2">
-                        <!--Mobile Image-->
-                        <source media="(max-width: 600px)" srcset="/assets/images/portfolio/clean-crawlspace3.webp">
-                        <!--Tablet and above Image-->
-                        <source media="(min-width: 601px)" srcset="/assets/images/portfolio/clean-crawlspace3.webp">
-                        <img loading="lazy" decoding="async" src="/assets/images/portfolio/clean-crawlspace3.webp" alt="Crawl space after encapsulation with sealed vapor barrier and dehumidifier" width="243" height="367">
-                    </picture>
+                    {{ pic("/assets/images/portfolio/clean-crawlspace3.webp", "Encapsulated crawl space with a white vapor barrier on the floor and wrapped piers", 243, 367, "cs-picture cs-picture2") }}
                     <span class="cs-tag">After</span>
                 </div>
-                <img class="cs-arrow" loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Icons/before-after-arrow.svg" alt="" width="148" height="54" aria-hidden="true">
+                <img class="cs-arrow" loading="lazy" decoding="async" src="/assets/svgs/decor/before-after-arrow.svg" alt="" width="148" height="54" aria-hidden="true">
             </div>
             <div class="cs-content">
                 <span class="cs-topper">Foundation Protection</span>
-                <h2 class="cs-title">Stop Raleigh’s Humidity From Destroying Your Home</h2>
+                <h2 class="cs-title">Stop North Carolina’s Humidity From Destroying Your Home</h2>
                 <p class="cs-text">
-                    Did you know that up to 50% of the air you breathe on the first floor of your home comes directly from your crawl space? In the Triangle, our high humidity and red clay soil create a "perfect storm" for moisture buildup, wood rot, and unhealthy air.
+                    Did you know that a significant share of the air on your home’s first floor can come directly from the crawl space? Across central North Carolina, our high humidity, heavy red clay, and sandy Sandhills soil all combine to create a "perfect storm" for moisture buildup, wood rot, and unhealthy air.
                     <br><br>
                     Our encapsulation process transforms your damp, dark crawl space into a clean, dry, and conditioned environment. By sealing the floor, walls, and vents, we stop the "Stack Effect," preventing humid air and soil gases from rising into your living space. This doesn't just protect your foundation; it lowers your energy bills and improves your family’s respiratory health.
                 </p>
                 <h3 class="cs-h3">Our Trustworthy Process</h3>
                 <ul class="cs-ul">
                     <li class="cs-li">
-                        <strong>Initial Inspection & Assessment</strong>: We analyze moisture levels, check for structural rot, and identify any active mold colonies in your Raleigh or Durham home.
+                        <strong>Initial Inspection & Assessment</strong>: We analyze moisture levels, check for structural rot, and identify any active mold colonies in your home.
                     </li>
                     <li class="cs-li">
                         <strong>Debris Removal & Leveling</strong>: We clear out old insulation and trash, then level the soil to ensure a smooth, professional vapor barrier fit.
@@ -125,7 +115,7 @@ faqs:
                 <span class="cs-topper">Is It Time?</span>
                 <h2 class="cs-title">Signs Your Crawl Space Needs Encapsulation</h2>
                 <p class="cs-text">
-                    Most homeowners don't think about their crawl space until it starts affecting the rest of the house. In the Triangle's humid climate, these warning signs usually show up gradually:
+                    Most homeowners don't think about their crawl space until it starts affecting the rest of the house. In central North Carolina's humid climate, these warning signs usually show up gradually:
                 </p>
                 <ul class="cs-ul">
                     <li class="cs-li"><strong>Musty odors upstairs</strong>: If the first floor of your home smells damp or musty—especially after rain—air is likely being pulled up from an unsealed crawl space.</li>
@@ -152,6 +142,8 @@ faqs:
             </div>
         </div>
     </section>
+
+    {% include 'components/areas-served.html' %}
 
     {% include 'components/faq.html' %}
 
