@@ -16,6 +16,10 @@ faqs:
 {% extends "layouts/base.html" %}
 {% from "components/macros.html" import banner %}
 
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/leaflet.css">
+{% endblock %}
+
 {% block body %}
 
     <div id="banner-310">
@@ -61,6 +65,8 @@ faqs:
             </div>
         </div>
     </section>
+
+    {% include 'components/service-map.html' %}
 
     {% include 'components/faq.html' %}
 

@@ -10,6 +10,7 @@ breadcrumbLabel: "Contact Us"
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/contact.css">
+    <link rel="stylesheet" href="/assets/css/leaflet.css">
 {% endblock %}
 
 {% block body %}
@@ -144,6 +145,8 @@ breadcrumbLabel: "Contact Us"
             </div>
         </div>
     </section>
+
+    {% include 'components/service-map.html' %}
 
     {% include 'components/areas-served.html' %}
 
