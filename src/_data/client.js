@@ -4,15 +4,15 @@ module.exports = {
     email: "mmcrawlspace@gmail.com",
     phoneForTel: "910-635-4943",
     phoneFormatted: "(910) 635-4943",
-    // Service-area business: no public street address. Based near Cameron, NC (Moore County).
+    // Service-area business: no public street address. Based in Cary, NC (Wake County); the street address stays hidden.
     address: {
-        city: "Cameron",
+        city: "Cary",
         state: "NC",
-        zip: "28326",
+        zip: "27511",
         country: "US",
         mapLink: "https://maps.app.goo.gl/FhxawrndcXawchTe9",
     },
-    geo: { lat: 35.33, lng: -79.25 },
+    geo: { lat: 35.79, lng: -78.78 },
     // Stable Google Maps URL for the Business Profile (CID), used for schema hasMap/sameAs.
     gbpUrl: "https://www.google.com/maps?cid=4409509259746241717",
     shareImage: "/assets/images/portfolio/og-share.jpg",

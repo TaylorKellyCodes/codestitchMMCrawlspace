@@ -34,10 +34,10 @@ eleventyComputed:
                 <span class="cs-topper">{{ loc.county }} &middot; {{ loc.region }}</span>
                 <h2 class="cs-title">Crawl space help for {{ loc.name }} homeowners</h2>
                 <p class="cs-text">{{ loc.intro }}</p>
-                {% if loc.slug == "cameron" %}
+                {% if loc.slug == "cary" %}
                 <p class="cs-text">Because we are based here, a free inspection in {{ loc.name }} is usually the easiest one to schedule.</p>
                 {% else %}
-                <p class="cs-text">We travel to {{ loc.name }} from our base near Cameron, roughly {{ loc.drive }} away depending on traffic, and we are open daily, {{ client.hours.label }}.</p>
+                <p class="cs-text">We travel to {{ loc.name }} from our base in Cary, usually {{ loc.drive }} away depending on traffic, and we are open daily, {{ client.hours.label }}.</p>
                 {% endif %}
                 <h2 class="cs-title">What crawl spaces face in {{ loc.name }}</h2>
                 <p class="cs-text">{{ loc.conditions }}</p>
