@@ -1,0 +1,269 @@
+// City page sections (side by side with a three-photo group, and numbered steps).
+// Layout follows the CodeStitch SBS and Steps sections used on trianglewebdesign.com/service-areas/.
+
+@media only screen and (min-width:0rem){
+    
+  #area-sbs{
+    background-color:#fdfaf8;
+    overflow:hidden;
+    padding:var(--sectionPadding);
+    position:relative;
+    z-index:1}
+  #area-sbs .cs-container{
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+    gap:clamp(3rem,6vw,4rem);
+    margin:auto;
+    max-width:36.5rem;
+    width:100%}
+  #area-sbs .cs-content{
+    align-items:flex-start;
+    display:flex;
+    flex-direction:column;
+    max-width:36.625rem;
+    text-align:left;
+    width:100%}
+  #area-sbs .cs-text{
+    margin-bottom:1.5rem}
+  #area-sbs .cs-list{
+    flex-direction:column;
+    gap:clamp(1.5rem,3vw,2rem);
+    margin:0 0 2rem}
+  #area-sbs .cs-li,#area-sbs .cs-list{
+    align-items:flex-start;
+    display:flex;
+    padding:0}
+  #area-sbs .cs-li{
+    gap:1.5rem;
+    justify-content:flex-start;
+    list-style:none;
+    margin:0}
+  #area-sbs .cs-h3{
+    color:var(--headerColor);
+    font-size:clamp(1.25rem,2.5vw,1.5625rem);
+    font-weight:700;
+    line-height:1.2em;
+    margin:0 0 .75rem;
+    text-align:left}
+  #area-sbs .cs-li-text{
+    color:var(--bodyTextColor);
+    font-size:clamp(.875rem,1.8vw,1rem);
+    line-height:1.5em;
+    margin:0;
+    text-align:left}
+  #area-sbs .cs-image-group{
+    display:block;
+    font-size:min(2.32vw,.74em);
+    height:40.9375em;
+    position:relative;
+    width:39.375em;
+    z-index:1}
+  #area-sbs .cs-image-group:before{
+    background:var(--secondary);
+    bottom:11.125em;
+    content:"";
+    display:block;
+    height:auto;
+    left:5.5em;
+    opacity:.2;
+    position:absolute;
+    top:9em;
+    width:22.375em}
+  #area-sbs .cs-picture{
+    position:absolute}
+  #area-sbs .cs-picture img{
+    height:100%;
+    left:0;
+    -o-object-fit:cover;
+    object-fit:cover;
+    position:absolute;
+    top:0;
+    width:100%}
+  #area-sbs .cs-picture1{
+    border:4px solid #fff;
+    bottom:17.5625em;
+    height:auto;
+    left:0;
+    top:0;
+    width:19.0625em}
+  #area-sbs .cs-picture2{
+    border:4px solid #fff;
+    bottom:0;
+    height:auto;
+    right:0;
+    top:16.9375em;
+    width:25.8125em}
+  #area-sbs .cs-picture3{
+    height:9.6875em;
+    right:4.6875em;
+    top:5.25em;
+    width:13.625em}
+  #area-sbs .cs-button-solid{
+    background-color:var(--primary);
+    box-sizing:border-box;
+    color:#fff;
+    display:inline-block;
+    font-size:1rem;
+    font-weight:700;
+    line-height:clamp(2.875rem,5.5vw,3.5rem);
+    margin:0;
+    min-width:9.375rem;
+    padding:0 1.5rem;
+    position:relative;
+    text-align:center;
+    text-decoration:none;
+    z-index:1}
+  #area-sbs .cs-button-solid:before{
+    background:#000;
+    content:"";
+    height:100%;
+    left:0;
+    opacity:1;
+    position:absolute;
+    top:0;
+    transition:width .3s;
+    width:0;
+    z-index:-1}
+  #area-sbs .cs-button-solid:hover:before{
+    width:100%}
+}
+@media only screen and (min-width:64rem){
+    
+  #area-sbs .cs-container{
+    align-items:stretch;
+    flex-direction:row;
+    justify-content:center;
+    max-width:80rem}
+  #area-sbs .cs-content{
+    align-self:center;
+    width:47%}
+  #area-sbs .cs-li{
+    align-items:center}
+  #area-sbs .cs-image-group{
+    flex:none;
+    font-size:min(1.2vw,1em);
+    height:auto}
+}
+@media only screen and (min-width:0rem){
+    
+  #area-steps{
+    padding:var(--sectionPadding);
+    padding-left:0;
+    padding-right:0}
+  #area-steps .cs-container{
+    gap:clamp(3rem,6vw,4rem);
+    margin:auto;
+    max-width:36.5rem}
+  #area-steps .cs-container,#area-steps .cs-content{
+    align-items:center;
+    display:flex;
+    flex-direction:column;
+    width:100%}
+  #area-steps .cs-content{
+    padding:0 1rem;
+    text-align:center}
+  #area-steps .cs-text{
+    max-width:32.625rem}
+  #area-steps .cs-card-group{
+    align-items:stretch;
+    display:grid;
+    grid-auto-flow:row;
+    justify-items:center;
+    margin:0;
+    padding:0}
+  #area-steps .cs-item{
+    align-items:flex-start;
+    box-sizing:border-box;
+    display:flex;
+    flex-direction:column;
+    list-style:none;
+    padding:1.5rem;
+    position:relative}
+  #area-steps .cs-item:after{
+    background:linear-gradient(90deg,hsla(0,0%,100%,0),#bababa 50%,hsla(0,0%,100%,0));
+    bottom:0;
+    content:"";
+    height:1px;
+    left:0;
+    opacity:.6;
+    position:absolute;
+    width:100%}
+  #area-steps .cs-item:first-of-type{
+    padding-top:0}
+  #area-steps .cs-item:last-of-type{
+    padding-bottom:0}
+  #area-steps .cs-item:last-of-type:after{
+    content:none}
+  #area-steps .cs-number{
+    color:var(--primary);
+    display:block;
+    font-size:clamp(5rem,1vw,6.25rem);
+    font-weight:900;
+    line-height:1.2em;
+    opacity:.12}
+  #area-steps .cs-h3{
+    color:var(--headerColor);
+    font-size:clamp(1.25rem,2vw,1.5625rem);
+    font-weight:700;
+    line-height:1.2em;
+    margin:-1.9375rem 0 1rem}
+  #area-steps .cs-item-text{
+    color:var(--bodyTextColor);
+    font-size:clamp(.875rem,2vw,1rem);
+    line-height:1.5em;
+    margin:0;
+    text-align:left}
+}
+@media only screen and (min-width:48rem){
+    
+  #area-steps .cs-container{
+    max-width:120rem}
+  #area-steps .cs-card-group{
+    gap:0;
+    grid-template-columns:repeat(4,1fr)}
+  #area-steps .cs-item{
+    padding:clamp(1.5rem,3vw,3.75rem)}
+  #area-steps .cs-item:after{
+    background:linear-gradient(0deg,hsla(0,0%,100%,0),#bababa 50%,hsla(0,0%,100%,0));
+    height:100%;
+    left:auto;
+    opacity:.6;
+    right:0;
+    width:1px}
+  #area-steps .cs-item:first-of-type,#area-steps .cs-item:last-of-type{
+    padding:clamp(1.5rem,3vw,3.75rem)}
+}
+
+// Dark mode
+@media only screen and (min-width:0rem){
+body.dark-mode #area-sbs{
+    background-color:rgba(0,0,0,.2)}
+
+body.dark-mode #area-sbs .cs-h3,body.dark-mode #area-sbs .cs-li-text,body.dark-mode #area-sbs .cs-text,body.dark-mode #area-sbs .cs-title{
+    color:var(--bodyTextColorWhite)}
+
+body.dark-mode #area-sbs .cs-li-text,body.dark-mode #area-sbs .cs-text{
+    opacity:.8}
+
+
+body.dark-mode #area-steps .cs-topper{
+    color:var(--primaryLight)}
+
+body.dark-mode #area-steps .cs-title{
+    color:var(--bodyTextColorWhite)}
+
+body.dark-mode #area-steps .cs-item{
+    border-color:var(--bodyTextColorWhite)}
+
+body.dark-mode #area-steps .cs-item:after{
+    opacity:.2}
+
+body.dark-mode #area-steps .cs-item-text,body.dark-mode #area-steps .cs-text{
+    color:var(--bodyTextColorWhite);
+    opacity:.8}
+
+body.dark-mode #area-steps .cs-h3,body.dark-mode #area-steps .cs-number{
+    color:var(--primaryLight)}
+
+}

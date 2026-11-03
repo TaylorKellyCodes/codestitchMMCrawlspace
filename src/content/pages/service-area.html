@@ -13,8 +13,12 @@ eleventyComputed:
 ---
 
 {% extends "layouts/base.html" %}
-{% from "components/macros.html" import banner %}
+{% from "components/macros.html" import banner, pic %}
 {% set faqs = loc.faqs.concat([{ q: "Do you offer free crawl space inspections in " + loc.name + "?", a: "Yes. Every inspection in " + loc.name + " is free and comes with no obligation. We look at moisture, mold, insulation, and drainage, explain what we find, and give you a written quote before any work starts." }]) %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/service-area.css">
+{% endblock %}
 
 {% block body %}
 
@@ -28,8 +32,13 @@ eleventyComputed:
 
     {% include 'components/trust-strip.html' %}
 
-    <section id="area-intro" class="cs-detail-section">
+    <section id="area-sbs">
         <div class="cs-container">
+            <div class="cs-image-group">
+                {{ pic("/assets/images/portfolio/clean-crawlspace3.webp", "Encapsulated crawl space with a white vapor barrier on the floor and wrapped piers", 305, 368, "cs-picture cs-picture1") }}
+                {{ pic("/assets/images/portfolio/crawlspace-before1.webp", "Wet crawl space with fallen insulation, debris, and standing water before work", 413, 376, "cs-picture cs-picture2") }}
+                {{ pic("/assets/images/portfolio/vent.jpeg", "Foundation block vent sealed with foam and a clear panel", 218, 155, "cs-picture cs-picture3") }}
+            </div>
             <div class="cs-content">
                 <span class="cs-topper">{{ loc.county }} &middot; {{ loc.region }}</span>
                 <h2 class="cs-title">Crawl space help for {{ loc.name }} homeowners</h2>
@@ -39,27 +48,51 @@ eleventyComputed:
                 {% else %}
                 <p class="cs-text">We travel to {{ loc.name }} from our base in Cary, usually {{ loc.drive }} away depending on traffic, and we are open daily, {{ client.hours.label }}.</p>
                 {% endif %}
-                <h2 class="cs-title">What crawl spaces face in {{ loc.name }}</h2>
-                <p class="cs-text">{{ loc.conditions }}</p>
-                <p class="cs-text">In {{ loc.name }} we most often recommend {{ loc.focus }}.</p>
+                <p class="cs-text">{{ loc.conditions }} In {{ loc.name }} we most often recommend {{ loc.focus }}.</p>
+                <ul class="cs-list">
+                    {% for c in loc.communities %}
+                    <li class="cs-li">
+                        <div class="cs-flex">
+                            <h3 class="cs-h3">{{ c[0] }}</h3>
+                            <p class="cs-li-text">{{ c[1] }}</p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+                <a href="/contact/" class="cs-button-solid">Book a Free {{ loc.name }} Inspection</a>
             </div>
         </div>
     </section>
 
-    <section id="area-communities" class="cs-detail-section cs-alt">
+    <section id="area-steps">
         <div class="cs-container">
             <div class="cs-content">
-                <span class="cs-topper">Where We Work</span>
-                <h2 class="cs-title">Communities we serve around {{ loc.name }}</h2>
-                <ul class="cs-area-cards">
-                    {% for c in loc.communities %}
-                    <li class="cs-area-card">
-                        <h3 class="cs-h3">{{ c[0] }}</h3>
-                        <p class="cs-text">{{ c[1] }}</p>
-                    </li>
-                    {% endfor %}
-                </ul>
+                <span class="cs-topper">Our Process</span>
+                <h2 class="cs-title">How a {{ loc.name }} Inspection Works</h2>
+                <p class="cs-text">Four straightforward steps, from your first call to a finished crawl space.</p>
             </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <span class="cs-number">01</span>
+                    <h3 class="cs-h3">You Call or Message Us</h3>
+                    <p class="cs-item-text">Tell us what you are seeing in {{ loc.name }}, like a musty smell, standing water, or sagging insulation, and we set a time that works.</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-number">02</span>
+                    <h3 class="cs-h3">We Inspect the Crawl Space</h3>
+                    <p class="cs-item-text">We check moisture, mold, insulation, vents, and drainage, and we take photos so you can see what we see.</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-number">03</span>
+                    <h3 class="cs-h3">You Get a Written Quote</h3>
+                    <p class="cs-item-text">We explain what we found and what it needs. You get a clear written quote before any work starts, and the inspection is free.</p>
+                </li>
+                <li class="cs-item">
+                    <span class="cs-number">04</span>
+                    <h3 class="cs-h3">We Do the Work</h3>
+                    <p class="cs-item-text">Once you approve the quote, we schedule the job and complete it, then walk you through the finished crawl space.</p>
+                </li>
+            </ul>
         </div>
     </section>
 
@@ -74,13 +107,6 @@ eleventyComputed:
                     <li class="cs-li"><a href="/sump-pump-dehumidifier/"><strong>Sump pumps and dehumidifiers</strong></a>: drainage and humidity control where water collects.</li>
                     <li class="cs-li"><a href="/prebatt-insulation/"><strong>Prebatt insulation and fire/draft stops</strong></a>: tighter, safer floor systems that cut energy loss.</li>
                 </ul>
-                <h3 class="cs-h3">How a {{ loc.name }} inspection works</h3>
-                <ul class="cs-ul">
-                    <li class="cs-li"><strong>You call or message us</strong>: tell us what you are seeing and we set a time that works.</li>
-                    <li class="cs-li"><strong>We inspect the crawl space</strong>: moisture, mold, insulation, vents, and drainage.</li>
-                    <li class="cs-li"><strong>You get a clear written quote</strong>: we explain what we found before any work starts.</li>
-                </ul>
-                <a href="/contact/" class="cs-button-solid">Book a Free {{ loc.name }} Inspection</a>
             </div>
         </div>
     </section>
