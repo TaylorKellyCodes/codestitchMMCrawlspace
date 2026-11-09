@@ -106,10 +106,9 @@
     display:inline-block;
     font-size:1rem;
     font-weight:700;
-    line-height:clamp(2.875rem,5.5vw,3.5rem);
+    line-height: (16/16em);
     margin:0;
-    min-width:9.375rem;
-    padding:0 1.5rem;
+        padding: 1rem 2rem;
     position:relative;
     text-align:center;
     text-decoration:none;
@@ -376,12 +375,12 @@ body.dark-mode #area-steps .cs-h3,body.dark-mode #area-steps .cs-number{
         .cs-button-outline {
             font-size: (16/16rem);
             /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            line-height: (16/16em);
             text-decoration: none;
             font-weight: 700;
             margin: 0;
             color: #fff;
-            padding: 0 (24/16rem);
+            padding: (16/16rem) (32/16rem);
             display: inline-block;
             position: relative;
             z-index: 1;
@@ -394,7 +393,9 @@ body.dark-mode #area-steps .cs-h3,body.dark-mode #area-steps .cs-number{
 
         .cs-button-outline {
             border: 2px solid #fff;
-            line-height: clamp(2.6875rem, 5.2vw, 3.25rem);
+            line-height: (16/16em);
+            /* the 2px border adds height and width, so the padding gives it back to match the solid button */
+            padding: calc(1rem - 2px) calc(2rem - 2px);
         }
 
         .cs-button-solid:before,
@@ -824,14 +825,13 @@ body.dark-mode #area-water .cs-text a {
         .cs-button-solid {
             font-size: (16/16rem);
             /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            line-height: (16/16em);
             text-decoration: none;
             font-weight: 700;
             text-align: center;
             margin: 0;
             color: #fff;
-            min-width: (150/16rem);
-            padding: 0 (24/16rem);
+                        padding: (16/16rem) (32/16rem);
             background-color: var(--primary);
             border-radius: (4/16rem);
             display: inline-block;
