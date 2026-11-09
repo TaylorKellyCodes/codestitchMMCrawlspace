@@ -3,7 +3,7 @@ title: "Crawl Space Dehumidifier: Do You Need One?"
 url: crawl-space-dehumidifier-nc
 description: "Do you need a crawl space dehumidifier? What it does, how it is sized, what to look for, and how it fits with encapsulation in central North Carolina."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-10-12T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/pump.jpeg

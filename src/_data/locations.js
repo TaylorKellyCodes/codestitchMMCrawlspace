@@ -190,4 +190,8 @@ const list = [
     }
 ];
 
+// Listed by distance from the Cary base, so Cary and the closest cities come first everywhere (footer, hub, schema, nav).
+const order = ["cary", "apex", "raleigh", "durham", "chapel-hill", "fuquay-varina", "pittsboro", "sanford", "lillington", "cameron", "fayetteville", "southern-pines", "aberdeen", "pinehurst"];
+list.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
+
 module.exports = list.map((l) => ({ ...l, nearLinks: l.near.map((slug) => list.find((x) => x.slug === slug)) }));

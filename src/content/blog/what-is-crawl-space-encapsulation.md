@@ -3,7 +3,7 @@ title: "What Is Crawl Space Encapsulation? A Plain Guide"
 url: what-is-crawl-space-encapsulation
 description: "What is crawl space encapsulation? A plain guide to how it works, what it includes, and how to tell if your North Carolina home needs it."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-10-26T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/crawlspace-after2.webp

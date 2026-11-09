@@ -3,7 +3,7 @@ title: "NC Soil and Crawl Space Moisture: Clay vs Sand"
 url: nc-soil-crawl-space-moisture
 description: "How Piedmont clay and Sandhills sand affect crawl space moisture in central North Carolina, and what each means for drainage, humidity, and the fix."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-09-14T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/before1.png
