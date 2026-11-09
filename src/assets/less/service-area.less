@@ -267,3 +267,876 @@ body.dark-mode #area-steps .cs-h3,body.dark-mode #area-steps .cs-number{
     color:var(--primaryLight)}
 
 }
+
+
+/* ---- city page: hero (CodeStitch hero-1619 layout) ---- */
+@media only screen and (min-width: 0rem) {
+    #area-hero {
+        min-height: auto;
+        padding: var(--sectionPadding);
+        /* 100px - 300px, leaving room for the navigation */
+        padding-top: clamp(6.25rem, 16vw, 12rem);
+        position: relative;
+        z-index: 1;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .cs-content {
+            text-align: left;
+            width: 100%;
+            max-width: (780/16rem);
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .cs-breadcrumbs {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            align-items: center;
+            gap: (8/16rem);
+            margin-bottom: (12/16rem);
+
+            .cs-link {
+                font-size: (16/16rem);
+                line-height: 1.5em;
+                text-decoration: none;
+                color: rgba(255, 255, 255, 0.85);
+                transition: color 0.2s ease;
+                display: inline-flex;
+                align-items: center;
+
+                &:not(:last-child)::after {
+                    content: "/";
+                    margin-left: (6/16rem);
+                    color: rgba(255, 255, 255, 0.5);
+                    pointer-events: none;
+                }
+
+                &.cs-active {
+                    color: var(--primary);
+                }
+
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        .cs-topper {
+            font-size: clamp(0.8125rem, 1.5vw, 1rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: (8/16rem);
+            color: var(--primary);
+            display: block;
+        }
+
+        .cs-title {
+            /* 34px - 56px */
+            font-size: clamp(2.125rem, 5.6vw, 3.5rem);
+            font-weight: 700;
+            line-height: 1.15em;
+            text-align: inherit;
+            max-width: 100%;
+            margin: 0 0 (24/16rem) 0;
+            color: #fff;
+            position: relative;
+        }
+
+        .cs-text {
+            /* 16px - 20px */
+            font-size: clamp(1rem, 1.95vw, 1.25rem);
+            line-height: 1.5em;
+            text-align: inherit;
+            width: 100%;
+            max-width: clamp(29rem, 60vw, 38.785rem);
+            margin: 0 0 (32/16rem) 0;
+            color: #fff;
+        }
+
+        .cs-button-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: (16/16rem);
+        }
+
+        .cs-button-solid,
+        .cs-button-outline {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            margin: 0;
+            color: #fff;
+            padding: 0 (24/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            box-sizing: border-box;
+        }
+
+        .cs-button-solid {
+            background-color: var(--primary);
+        }
+
+        .cs-button-outline {
+            border: 2px solid #fff;
+            line-height: clamp(2.6875rem, 5.2vw, 3.25rem);
+        }
+
+        .cs-button-solid:before,
+        .cs-button-outline:before {
+            content: "";
+            position: absolute;
+            display: block;
+            height: 100%;
+            width: 0%;
+            background: #000;
+            opacity: 1;
+            top: 0;
+            left: 0;
+            z-index: -1;
+            transition: width 0.3s;
+        }
+
+        .cs-button-solid:hover:before,
+        .cs-button-outline:hover:before {
+            width: 100%;
+        }
+
+        .cs-background {
+            width: 100%;
+            height: 100%;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+
+            &:before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: 0.68;
+                position: absolute;
+                display: block;
+                top: 0;
+                left: 0;
+                z-index: 1;
+                pointer-events: none;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+                object-position: center;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 48rem) {
+    #area-hero {
+        padding-bottom: clamp(5rem, 10vw, 8rem);
+    }
+}
+
+/* ---- city page: symptom cards and service cards (CodeStitch services layout) ---- */
+@media only screen and (min-width: 0rem) {
+#area-services, #area-symptoms {
+        padding: var(--sectionPadding);
+        position: relative;
+        z-index: 10;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: left;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: flex-start;
+        }
+
+        .cs-title {
+            max-width: 20ch;
+        }
+
+        .cs-card-group {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: 0;
+            padding: 0 (16/16rem);
+            /* prevents padding and border from affecting height and width */
+            background-color: var(--lightBg, #fefcf4);
+            box-shadow: 0px 4px 35px 0px rgba(0, 0, 0, 0.05);
+            box-sizing: border-box;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            position: relative;
+            z-index: 15;
+        }
+
+        .cs-item {
+            text-align: left;
+            list-style: none;
+            width: 100%;
+            border-bottom: 1px solid #e8e8e8;
+            box-sizing: border-box;
+            grid-column: span 12;
+            transition:
+                background-color 0.3s,
+                border-color 0.3s;
+
+            &:last-of-type {
+                border-bottom: none;
+            }
+        }
+
+        .cs-link {
+            text-decoration: none;
+            /* 24px - 60px top & Bottom */
+            /* 24px - 16px top & Bottom */
+            padding: clamp(1.5rem, 5.3vw, 3.75rem) clamp(1rem, 2.7vw, 2.5rem);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            flex-direction: column;
+        }
+
+        .cs-icon {
+            /* 32px - 40px */
+            height: clamp(2rem, 4vw, 2.5rem);
+            width: auto;
+            margin: 0 0 (16/16rem) 0;
+        }
+
+        .cs-h3 {
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 2vw, 1.5625rem);
+            font-weight: 700;
+            text-align: inherit;
+            line-height: 1.2em;
+            margin: 0 0 (12/16rem) 0;
+            color: var(--headerColor);
+            transition: color 0.3s;
+        }
+
+        .cs-item-text {
+            /* 14px - 16px */
+            font-size: clamp(0.875rem, 1.5vw, 1rem);
+            text-align: inherit;
+            line-height: 1.5em;
+            margin: 0;
+            color: var(--bodyTextColor);
+            transition:
+                color 0.3s,
+                opacity 0.3s;
+        }
+    }
+}
+
+@media only screen and (min-width: 48rem) {
+#area-services, #area-symptoms {
+        .cs-content {
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            gap: (48/16rem);
+        }
+
+        .cs-title {
+            margin: 0;
+        }
+
+        .cs-flex-group {
+            width: 50%;
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-item {
+            grid-column: span 6;
+
+            &:nth-of-type(3) {
+                border-bottom: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+#area-services, #area-symptoms {
+        .cs-card-group {
+            padding: 0;
+        }
+
+        .cs-item {
+            grid-column: span 3;
+            border-bottom: 0;
+            border-right: 1px solid #e8e8e8;
+
+            &:hover {
+                background-color: #1a1a1a;
+                border-color: #1a1a1a;
+
+                .cs-h3,
+                .cs-item-text {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-item-text {
+                    opacity: 0.8;
+                }
+            }
+
+            &:last-of-type {
+                border: none;
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 0rem) {
+body.dark-mode {
+#area-services, #area-symptoms {
+            .cs-title,
+            .cs-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-text {
+                opacity: 0.8;
+            }
+
+            .cs-card-group {
+                background-color: rgba(0, 0, 0, 0.3);
+            }
+
+            .cs-item {
+                border-color: rgba(255, 255, 255, 0.1);
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.6);
+                    border-color: rgba(0, 0, 0, 0.6);
+                }
+            }
+
+            .cs-h3,
+            .cs-item-text {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-item-text {
+                opacity: 0.8;
+            }
+        }
+}
+}
+
+#area-symptoms .cs-static {
+    pointer-events: none;
+}
+
+#area-symptoms .cs-icon {
+    background: var(--primary);
+    padding: (8/16rem);
+    box-sizing: content-box;
+    border-radius: (4/16rem);
+}
+
+/* ---- city page: local water section ---- */
+#area-water {
+    padding: var(--sectionPadding);
+
+    .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+    }
+
+    .cs-content {
+        max-width: (780/16rem);
+        text-align: left;
+    }
+
+    .cs-text {
+        margin-bottom: (16/16rem);
+    }
+
+    .cs-text a {
+        color: var(--primary);
+        text-decoration: underline;
+    }
+}
+
+body.dark-mode #area-water .cs-text a {
+    color: var(--primaryLight);
+}
+
+/* ---- city page: neighborhoods ---- */
+#area-neighborhoods {
+    padding: var(--sectionPadding);
+
+    .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+    }
+}
+
+/* ---- city page: photo gallery (CodeStitch gallery-48 layout, one row) ---- */
+@media only screen and (min-width: 0rem) {
+#area-gallery {
+        padding: var(--sectionPadding);
+        position: relative;
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .cs-image-group {
+            /* used rem so it doesn't scale with the font size of on parent */
+            font-size: ~"min(1.1vw, 1em)";
+            width: 100%;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* 8px - 20px */
+            gap: clamp(0.5rem, 2vw, 1.25rem);
+        }
+
+        .cs-row {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            /* 8px - 20px */
+            gap: clamp(0.5rem, 2vw, 1.25rem);
+        }
+
+        .cs-picture {
+            width: 100%;
+            position: relative;
+            display: block;
+            border-radius: (8/16rem);
+            overflow: hidden;
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+
+        .cs-row-1 {
+            .cs-picture-1 {
+                height: (567/16em);
+            }
+
+            .cs-picture-2 {
+                height: (629/16em);
+            }
+
+            .cs-picture-3 {
+                height: (512/16em);
+            }
+        }
+
+        .cs-row-2 {
+            .cs-picture-1 {
+                height: (492/16em);
+            }
+
+            .cs-picture-2 {
+                height: (517/16em);
+            }
+
+            .cs-picture-3 {
+                height: (629/16em);
+            }
+        }
+
+        .cs-row-3 {
+            .cs-picture-1 {
+                height: (625/16em);
+            }
+
+            .cs-picture-2 {
+                height: (452/16em);
+            }
+
+            .cs-picture-3 {
+                height: (629/16em);
+            }
+        }
+
+        .cs-button-solid {
+            font-size: (16/16rem);
+            /* 46px - 56px */
+            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
+            text-decoration: none;
+            font-weight: 700;
+            text-align: center;
+            margin: 0;
+            color: #fff;
+            min-width: (150/16rem);
+            padding: 0 (24/16rem);
+            background-color: var(--primary);
+            border-radius: (4/16rem);
+            display: inline-block;
+            position: relative;
+            z-index: 1;
+            /* prevents padding from adding to the width */
+            box-sizing: border-box;
+
+            &:before {
+                content: "";
+                position: absolute;
+                height: 100%;
+                width: 0%;
+                background: #000;
+                opacity: 1;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                border-radius: (4/16rem);
+                transition: width 0.3s;
+            }
+
+            &:hover {
+                &:before {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (min-width: 0rem) {
+body.dark-mode {
+#area-gallery {
+            .cs-title {
+                color: var(--bodyTextColorWhite);
+            }
+        }
+}
+}
+
+/* ---- city page: reviews (CodeStitch reviews-67 layout) ---- */
+@media only screen and (min-width: 0rem) {
+#area-reviews {
+        padding: var(--sectionPadding);
+
+        .cs-container {
+            width: 100%;
+            max-width: (1280/16rem);
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-content {
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+        }
+
+        .cs-card-group {
+            padding: 0;
+            margin: 0;
+            display: grid;
+            column-gap: (20/16rem);
+            row-gap: (64/16rem);
+            width: 100%;
+            grid-template-columns: repeat(12, 1fr);
+        }
+
+        .cs-item {
+            grid-column: span 12;
+            text-align: left;
+            list-style: none;
+            width: 100%;
+            /* pushes up the same amount the cs-item-img overlaps the card */
+            margin: (40/16rem) 0 0 0;
+            /* Padding L & R - 16px - 32px */
+            padding: (60/16rem) clamp(1rem, 3.2vw, 2rem) 0;
+            /* 32px - 40px */
+            padding-bottom: clamp(2rem, 5.4vw, 2.5rem);
+            box-shadow: 0px 20px 39px 0px rgba(0, 0, 0, 0.05);
+            border-radius: (4/16rem);
+            background: var(--lightBg, #fefcf4);
+            position: relative;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            /* Prevents padding from affecting height & width */
+            box-sizing: border-box;
+
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+
+        .cs-item-img {
+            width: (80/16rem);
+            height: (80/16rem);
+            position: absolute;
+            top: (-40/16rem);
+        }
+
+        .cs-item-text {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            margin: 0 0 (20/16rem);
+            padding-bottom: (20/16rem);
+            color: var(--bodyTextColor);
+            border-bottom: 1px solid #e8e9ec;
+        }
+
+        .cs-info {
+            width: 100%;
+            /* margin-top auto pushes up against the rest of the card, that way when one card has more text than the other, the reviewer info is always pushed to the bottom and lined up with the rest of them.  This ensures better responsiveness for changing content */
+            margin: auto 0 0 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .cs-flex-group {
+            width: 100%;
+            margin: 0;
+        }
+
+        .cs-name {
+            font-size: (16/16rem);
+            line-height: 1.5em;
+            font-weight: 700;
+            width: 40%;
+            margin: 0;
+            display: block;
+            color: var(--headerColor);
+        }
+
+        .cs-desc {
+            font-size: (14/16rem);
+            font-weight: 400;
+            color: #7d799c;
+            display: block;
+        }
+
+        .cs-item-stars {
+            width: (96/16rem);
+            height: (16/16rem);
+        }
+    }
+}
+
+@media only screen and (min-width: 48rem) {
+#area-reviews {
+        .cs-item {
+            grid-column: span 6;
+        }
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+#area-reviews {
+        .cs-item {
+            grid-column: span 4;
+        }
+    }
+}
+
+@media only screen and (min-width: 0rem) {
+body.dark-mode {
+#area-reviews {
+            .cs-title,
+            .cs-text,
+            .cs-item-text,
+            .cs-name {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-item {
+                background: rgba(0, 0, 0, 0.2);
+            }
+
+            .cs-desc {
+                color: var(--primaryLight);
+            }
+        }
+}
+}
+
+
+/* ---- city page: finished project (Raleigh) ---- */
+#area-project {
+    padding: var(--sectionPadding);
+
+    .cs-container {
+        width: 100%;
+        max-width: (1280/16rem);
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(2.5rem, 5vw, 3.5rem);
+    }
+
+    .cs-content {
+        text-align: left;
+        width: 100%;
+        max-width: (620/16rem);
+    }
+
+    .cs-h3 {
+        font-size: clamp(1.25rem, 2vw, 1.5625rem);
+        font-weight: 700;
+        color: var(--headerColor);
+        margin: (24/16rem) 0 (12/16rem);
+    }
+
+    .cs-steps {
+        margin: 0 0 (28/16rem);
+        padding: 0 0 0 (22/16rem);
+    }
+
+    .cs-step {
+        font-size: (16/16rem);
+        line-height: 1.55em;
+        color: var(--bodyTextColor);
+        margin-bottom: (12/16rem);
+        list-style: decimal;
+
+        strong {
+            color: var(--headerColor);
+        }
+    }
+
+    .cs-photo-grid {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(0.5rem, 2vw, 1.25rem);
+        align-items: start;
+    }
+
+    .cs-photo {
+        margin: 0;
+        position: relative;
+        border-radius: (8/16rem);
+        overflow: hidden;
+
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+
+    .cs-tag {
+        position: absolute;
+        top: (12/16rem);
+        left: (12/16rem);
+        padding: (4/16rem) (12/16rem);
+        font-size: (14/16rem);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        color: #fff;
+        background: var(--headerColor);
+    }
+
+    .cs-photo-after .cs-tag {
+        background: var(--primary);
+    }
+}
+
+@media only screen and (min-width: 64rem) {
+    #area-project {
+        .cs-container {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        .cs-content {
+            flex: none;
+            width: 46%;
+        }
+
+        .cs-photo-grid {
+            width: 50%;
+        }
+    }
+}
+
+body.dark-mode #area-project {
+    .cs-h3,
+    .cs-step strong {
+        color: var(--bodyTextColorWhite);
+    }
+
+    .cs-step {
+        color: var(--bodyTextColorWhite);
+        opacity: 0.85;
+    }
+}

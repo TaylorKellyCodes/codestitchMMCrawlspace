@@ -190,6 +190,33 @@ const list = [
     }
 ];
 
+// Merge the extra local content, the new meta description, and the full FAQ list for each city.
+const extras = require("./cityExtras.js");
+list.forEach((l) => {
+    const x = extras[l.slug];
+    Object.assign(l, x);
+    l.meta = `Crawl space repair and encapsulation in ${l.name}, NC ${x.metaTag}. 5.0 stars on Google, free inspection, open daily 5 AM to 10 PM.`;
+    const base = l.faqs.filter((f) => !/energy bills/i.test(f.q));
+    const quoteFaq = {
+        q: `How much does crawl space work cost in ${l.name}?`,
+        a: "Every crawl space is different, so we do not post prices. Size, height, condition, mold, water, and the equipment needed all change the work. We inspect for free and then give you a written quote before any work starts, so you see the full scope and the price together.",
+    };
+    const signsFaq = {
+        q: `What are the warning signs of a crawl space problem in ${l.name}?`,
+        a: "A musty smell, cold or damp floors, sagging insulation, condensation on ducts or pipes, visible mold, and water after rain are the most common signs. If you notice any of them, an inspection shows how serious the moisture is.",
+    };
+    const scopeFaq = {
+        q: "Do you repair foundations or structural framing?",
+        a: "No. We handle crawl space moisture, mold, insulation, drainage, and humidity control. If an inspection shows structural damage, we tell you so you can bring in a structural contractor.",
+    };
+    const baseText = l.slug === "cary" ? "We are based in Cary, so inspections here are usually quick to schedule." : `We travel to ${l.name} from our base in Cary.`;
+    const scheduleFaq = {
+        q: `How do I schedule an inspection in ${l.name}?`,
+        a: `Call or text (910) 635-4943 any day from 5 AM to 10 PM, or use the contact form. ${baseText} Inspections are free, and you get a written quote before any work starts.`,
+    };
+    l.faqs = [base[0], quoteFaq, signsFaq, ...x.faqExtra, ...base.slice(1), scopeFaq, scheduleFaq];
+});
+
 // Listed by distance from the Cary base, so Cary and the closest cities come first everywhere (footer, hub, schema, nav).
 const order = ["cary", "apex", "raleigh", "durham", "chapel-hill", "fuquay-varina", "pittsboro", "sanford", "lillington", "cameron", "fayetteville", "southern-pines", "aberdeen", "pinehurst"];
 list.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
