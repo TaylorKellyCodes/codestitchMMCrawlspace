@@ -13,6 +13,7 @@
 @media only screen and (min-width: 0px) {
 	/* All elements in the library derive their variables and base styles from this central sheet, simplifying site-wide edits. For instance, if you want to modify how your h2's appear across the site, you just update it once in the global styles, and the changes apply everywhere. */
 	:root {
+		--lightBg: #fefcf4;
 		--primary: #ff6a3e;
 		--primaryDark: #b93a0f;
 		--primaryLight: #ffba43;
@@ -35,8 +36,8 @@
 		/* 60px - 100px top and bottom */
 		--sectionPadding: clamp(3.75rem, 7.82vw, 6.25rem) 1rem;
 
-		--headerFont: "Roboto", Arial, sans-serif;
-		--bodyFont: "Roboto", Arial, sans-serif;
+		--headerFont: "Atkinson Hyperlegible Next", Arial, sans-serif;
+		--bodyFont: "Atkinson Hyperlegible Next", Arial, sans-serif;
 	}
 
 	html,
@@ -56,7 +57,7 @@
 	}
 
 	body {
-		background-color: #fff;
+		background-color: var(--lightBg, #fefcf4);
 	}
 
 	*,
@@ -305,32 +306,13 @@
 
 /* Fonts */
 @media only screen and (min-width: 0px) {
-	// Grab your fonts to locally host from https://gwfh.mranftl.com/fonts
-	/* roboto-regular - latin */
+	// Atkinson Hyperlegible Next (Braille Institute, SIL Open Font License), self-hosted as one variable Latin file covering weights 200 to 800.
 	@font-face {
 		font-style: normal;
-		font-family: "Roboto";
-		font-weight: 400;
+		font-family: "Atkinson Hyperlegible Next";
+		font-weight: 200 800;
 		font-display: swap;
-		src: local(""), url("/assets/fonts/roboto-v29-latin-regular.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-regular.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-	}
-
-	/* roboto-700 - latin */
-	@font-face {
-		font-style: normal;
-		font-family: "Roboto";
-		font-weight: 700;
-		font-display: swap;
-		src: local(""), url("/assets/fonts/roboto-v29-latin-700.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-700.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-	}
-
-	/* roboto-900 - latin */
-	@font-face {
-		font-style: normal;
-		font-family: "Roboto";
-		font-weight: 900;
-		font-display: swap;
-		src: local(""), url("/assets/fonts/roboto-v29-latin-900.woff2") format("woff2"), /* Chrome 26+, Opera 23+, Firefox 39+ */ url("/assets/fonts/roboto-v29-latin-900.woff") format("woff"); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+		src: url("/assets/fonts/atkinson-hyperlegible-next-latin-variable.woff2") format("woff2");
 	}
 }
 
@@ -430,7 +412,7 @@
 		/* prevents padding and border from affecting height and width */
 		box-sizing: border-box;
 		padding: (12/16rem) (16/16rem);
-		background-color: #fff;
+		background-color: var(--lightBg, #fefcf4);
 		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 		position: fixed;
 		z-index: 10000;
@@ -578,7 +560,7 @@
 
 		.cs-ul-wrapper {
 			height: 100vh;
-			background-color: #fff;
+			background-color: var(--lightBg, #fefcf4);
 			box-shadow: inset rgba(0, 0, 0, 0.2) 0px 8px 24px;
 			opacity: 0;
 			position: absolute;
@@ -842,7 +824,7 @@
 			min-width: (200/16rem);
 			margin: 0;
 			padding: 0;
-			background-color: #fff;
+			background-color: var(--lightBg, #fefcf4);
 			box-shadow: rgba(149, 157, 165, 0.2) 0px 10px 16px;
 			opacity: 0;
 			border-bottom: 5px solid var(--primary);
@@ -981,7 +963,7 @@
 		/* prevents padding and border from affecting height and width */
 		box-sizing: border-box;
 		padding: 0 (16/16rem);
-		background-color: #fff;
+		background-color: var(--lightBg, #fefcf4);
 		box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 		position: fixed;
 		z-index: 10000;
@@ -1802,7 +1784,7 @@ body.dark-mode .cs-topper,
 
 /* Service area pages */
 .cs-detail-section.cs-alt {
-	background-color: #fff;
+	background-color: var(--lightBg, #fefcf4);
 }
 
 .cs-area-cards {
@@ -1818,7 +1800,7 @@ body.dark-mode .cs-topper,
 		padding: (16/16rem) (18/16rem);
 		border: 1px solid #e8e8e8;
 		border-radius: (6/16rem);
-		background-color: #fff;
+		background-color: var(--lightBg, #fefcf4);
 
 		.cs-h3 {
 			margin: 0 0 (6/16rem);

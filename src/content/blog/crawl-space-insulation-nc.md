@@ -3,7 +3,7 @@ title: "Crawl Space Insulation in North Carolina: What Works"
 url: crawl-space-insulation-nc
 description: "Crawl space insulation in North Carolina: the main types, why moisture matters first, when to do it, and what to expect. Free inspections from M&M in Cary."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-11-02T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/air-pipe.webp

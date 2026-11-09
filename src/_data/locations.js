@@ -152,7 +152,7 @@ const list = [
     {
         slug: "raleigh", meta: "Raleigh crawl space encapsulation, drainage and sump pumps for older bungalows in Oakwood, Five Points and beyond. Free inspections and written quotes.", name: "Raleigh", county: "Wake County", region: "Triangle", tier: "Close to home", drive: "about 20 to 25 minutes",
         lat: 35.78, lng: -78.64, near: ["cary", "apex", "durham", "fuquay-varina"],
-        hero: { src: H + "crawlspace-before1.webp", alt: "Wet crawl space with fallen insulation, debris, and standing water before work" },
+        hero: { src: H + "clean-crawlspace3.webp", alt: "Encapsulated crawl space with a white vapor barrier on the floor and wrapped piers" },
         intro: "Raleigh has some of the oldest homes in the Triangle, and many of them rest on original crawl spaces. We have worked on Raleigh homes, including an encapsulation with a sump pump that one customer described as a great job on communication and quality.",
         conditions: "Raleigh's red clay soil holds moisture, and the city's older bungalows and cottages often have vented, uninsulated crawl spaces over dirt. Gutters and grading that no longer match the way the lot has settled can send water toward the foundation. Combined with humid summers, that creates damp crawl spaces, sagging insulation, and musty air in the living space.",
         communities: [["Oakwood, Boylan Heights & Cameron Park", "Historic neighborhoods with older homes and original foundations."], ["Five Points & Hayes Barton", "Established neighborhoods with 1920s to 1950s homes."], ["Garner, Wake Forest & Knightdale", "Surrounding towns with a mix of mid-century and newer homes."]],
@@ -189,5 +189,36 @@ const list = [
         ]
     }
 ];
+
+// Merge the extra local content, the new meta description, and the full FAQ list for each city.
+const extras = require("./cityExtras.js");
+list.forEach((l) => {
+    const x = extras[l.slug];
+    Object.assign(l, x);
+    l.meta = `Crawl space repair and encapsulation in ${l.name}, NC ${x.metaTag}. 5.0 stars on Google, free inspection, open daily 5 AM to 10 PM.`;
+    const base = l.faqs.filter((f) => !/energy bills/i.test(f.q));
+    const quoteFaq = {
+        q: `How much does crawl space work cost in ${l.name}?`,
+        a: "Every crawl space is different, so we do not post prices. Size, height, condition, mold, water, and the equipment needed all change the work. We inspect for free and then give you a written quote before any work starts, so you see the full scope and the price together.",
+    };
+    const signsFaq = {
+        q: `What are the warning signs of a crawl space problem in ${l.name}?`,
+        a: "A musty smell, cold or damp floors, sagging insulation, condensation on ducts or pipes, visible mold, and water after rain are the most common signs. If you notice any of them, an inspection shows how serious the moisture is.",
+    };
+    const scopeFaq = {
+        q: "Do you repair foundations or structural framing?",
+        a: "No. We handle crawl space moisture, mold, insulation, drainage, and humidity control. If an inspection shows structural damage, we tell you so you can bring in a structural contractor.",
+    };
+    const baseText = l.slug === "cary" ? "We are based in Cary, so inspections here are usually quick to schedule." : `We travel to ${l.name} from our base in Cary.`;
+    const scheduleFaq = {
+        q: `How do I schedule an inspection in ${l.name}?`,
+        a: `Call or text (910) 635-4943 any day from 5 AM to 10 PM, or use the contact form. ${baseText} Inspections are free, and you get a written quote before any work starts.`,
+    };
+    l.faqs = [base[0], quoteFaq, signsFaq, ...x.faqExtra, ...base.slice(1), scopeFaq, scheduleFaq];
+});
+
+// Listed by distance from the Cary base, so Cary and the closest cities come first everywhere (footer, hub, schema, nav).
+const order = ["cary", "apex", "raleigh", "durham", "chapel-hill", "fuquay-varina", "pittsboro", "sanford", "lillington", "cameron", "fayetteville", "southern-pines", "aberdeen", "pinehurst"];
+list.sort((a, b) => order.indexOf(a.slug) - order.indexOf(b.slug));
 
 module.exports = list.map((l) => ({ ...l, nearLinks: l.near.map((slug) => list.find((x) => x.slug === slug)) }));

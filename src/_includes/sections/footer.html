@@ -66,7 +66,7 @@
             <li class="cs-nav-li">
                 <span class="cs-header">Service Areas</span>
             </li>
-            {%- for slug in ["cameron", "sanford", "southern-pines", "pinehurst", "fayetteville", "raleigh", "cary", "durham"] %}{% for l in locations %}{% if l.slug == slug %}
+            {%- for slug in ["cary", "raleigh", "apex", "durham", "chapel-hill", "sanford", "fayetteville", "southern-pines"] %}{% for l in locations %}{% if l.slug == slug %}
             <li class="cs-nav-li">
                 <a class="cs-nav-link" href="/service-areas/{{ l.slug }}/">{{ l.name }}, NC</a>
             </li>

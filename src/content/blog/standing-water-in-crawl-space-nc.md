@@ -3,7 +3,7 @@ title: "Standing Water in Crawl Space: Causes and Fixes"
 url: standing-water-in-crawl-space-nc
 description: "Standing water in crawl space: what causes it, what to do first, and whether you need a sump pump, French drain, or dehumidifier. Central NC guide."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-09-28T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/crawlspace-before1.webp

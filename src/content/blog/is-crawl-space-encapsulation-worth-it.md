@@ -3,7 +3,7 @@ title: "Is Crawl Space Encapsulation Worth It?"
 url: is-crawl-space-encapsulation-worth-it
 description: "Is crawl space encapsulation worth it? The benefits, the drawbacks, how long it lasts, and how to decide for your North Carolina home."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-09-21T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/clean-crawlspace3.webp

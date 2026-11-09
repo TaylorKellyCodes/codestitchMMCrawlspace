@@ -3,7 +3,7 @@ title: "Do You Need a Crawl Space Vapor Barrier? NC Guide"
 url: crawl-space-vapor-barrier-nc
 description: "Do you need a crawl space vapor barrier? How it works, when thin plastic falls short, and what a proper installation includes in central North Carolina."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-10-19T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/vapor.jpg

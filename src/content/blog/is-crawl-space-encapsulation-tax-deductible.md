@@ -3,7 +3,7 @@ title: "Is Crawl Space Encapsulation Tax Deductible?"
 url: is-crawl-space-encapsulation-tax-deductible
 description: "Is crawl space encapsulation tax deductible? What the IRS says about home improvements, cost basis, and the energy credit, and what records to keep."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-09-07T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/crawl1.jpg

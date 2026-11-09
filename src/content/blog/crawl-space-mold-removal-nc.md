@@ -3,7 +3,7 @@ title: "Crawl Space Mold: Signs, Causes, and Removal"
 url: crawl-space-mold-removal-nc
 description: "Crawl space mold: how to spot it, what causes it, and how removal works. Find out why fixing the moisture matters most. Free inspections from M&M in Cary."
 author: Miguel Martinez
-date: 2026-11-09T12:00:00Z
+date: 2026-10-05T12:00:00Z
 tags:
     - post
 image: /assets/images/portfolio/before-crawlspace-durham.webp
