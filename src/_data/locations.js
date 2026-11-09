@@ -152,7 +152,7 @@ const list = [
     {
         slug: "raleigh", meta: "Raleigh crawl space encapsulation, drainage and sump pumps for older bungalows in Oakwood, Five Points and beyond. Free inspections and written quotes.", name: "Raleigh", county: "Wake County", region: "Triangle", tier: "Close to home", drive: "about 20 to 25 minutes",
         lat: 35.78, lng: -78.64, near: ["cary", "apex", "durham", "fuquay-varina"],
-        hero: { src: H + "crawlspace-before1.webp", alt: "Wet crawl space with fallen insulation, debris, and standing water before work" },
+        hero: { src: H + "clean-crawlspace3.webp", alt: "Encapsulated crawl space with a white vapor barrier on the floor and wrapped piers" },
         intro: "Raleigh has some of the oldest homes in the Triangle, and many of them rest on original crawl spaces. We have worked on Raleigh homes, including an encapsulation with a sump pump that one customer described as a great job on communication and quality.",
         conditions: "Raleigh's red clay soil holds moisture, and the city's older bungalows and cottages often have vented, uninsulated crawl spaces over dirt. Gutters and grading that no longer match the way the lot has settled can send water toward the foundation. Combined with humid summers, that creates damp crawl spaces, sagging insulation, and musty air in the living space.",
         communities: [["Oakwood, Boylan Heights & Cameron Park", "Historic neighborhoods with older homes and original foundations."], ["Five Points & Hayes Barton", "Established neighborhoods with 1920s to 1950s homes."], ["Garner, Wake Forest & Knightdale", "Surrounding towns with a mix of mid-century and newer homes."]],
