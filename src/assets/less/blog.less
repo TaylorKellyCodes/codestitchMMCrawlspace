@@ -507,6 +507,32 @@
                 margin-bottom: (32/16rem);
             }
 
+            table {
+                width: 100%;
+                margin: (16/16rem) 0 (24/16rem);
+                border-collapse: collapse;
+                font-size: (15/16rem);
+
+                th,
+                td {
+                    padding: (10/16rem) (12/16rem);
+                    text-align: left;
+                    border: 1px solid #ebebeb;
+                    line-height: 1.5em;
+                    color: var(--bodyTextColor);
+                }
+
+                th {
+                    background: #fdfaf8;
+                    color: var(--headerColor);
+                    font-weight: 700;
+                }
+            }
+
+            ol li {
+                list-style: decimal;
+            }
+
             ul,
             ol {
                 margin: (16/16rem) 0;
@@ -554,6 +580,22 @@
                 span,
                 li {
                     opacity: 0.8;
+                }
+
+                table {
+                    th,
+                    td {
+                        color: var(--bodyTextColorWhite);
+                        border-color: rgba(255, 255, 255, 0.2);
+                    }
+
+                    th {
+                        background: rgba(255, 255, 255, 0.08);
+                    }
+
+                    td {
+                        opacity: 0.85;
+                    }
                 }
             }
         }
