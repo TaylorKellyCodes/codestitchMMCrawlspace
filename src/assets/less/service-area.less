@@ -462,7 +462,7 @@ body.dark-mode #area-steps .cs-h3,body.dark-mode #area-steps .cs-number{
 
 /* ---- city page: symptom cards and service cards (CodeStitch services layout) ---- */
 @media only screen and (min-width: 0rem) {
-#area-services, #area-symptoms {
+#area-services, #area-symptoms, #area-why {
         padding: var(--sectionPadding);
         position: relative;
         z-index: 10;
@@ -568,7 +568,7 @@ body.dark-mode #area-steps .cs-h3,body.dark-mode #area-steps .cs-number{
 }
 
 @media only screen and (min-width: 48rem) {
-#area-services, #area-symptoms {
+#area-services, #area-symptoms, #area-why {
         .cs-content {
             flex-direction: row;
             justify-content: space-between;
@@ -597,7 +597,7 @@ body.dark-mode #area-steps .cs-h3,body.dark-mode #area-steps .cs-number{
 }
 
 @media only screen and (min-width: 64rem) {
-#area-services, #area-symptoms {
+#area-services, #area-symptoms, #area-why {
         .cs-card-group {
             padding: 0;
         }
@@ -630,7 +630,7 @@ body.dark-mode #area-steps .cs-h3,body.dark-mode #area-steps .cs-number{
 
 @media only screen and (min-width: 0rem) {
 body.dark-mode {
-#area-services, #area-symptoms {
+#area-services, #area-symptoms, #area-why {
             .cs-title,
             .cs-text {
                 color: var(--bodyTextColorWhite);
@@ -664,11 +664,11 @@ body.dark-mode {
 }
 }
 
-#area-symptoms .cs-static {
+#area-symptoms .cs-static, #area-why .cs-static {
     pointer-events: none;
 }
 
-#area-symptoms .cs-icon {
+#area-symptoms .cs-icon, #area-why .cs-icon {
     background: var(--primary);
     padding: (8/16rem);
     box-sizing: content-box;

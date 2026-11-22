@@ -19,6 +19,7 @@ eleventyComputed:
 
 {% block head %}
     <link rel="stylesheet" href="/assets/css/service-area.css">
+    <link rel="stylesheet" href="/assets/css/leaflet.css">
 {% endblock %}
 
 {% block body %}
@@ -35,13 +36,13 @@ eleventyComputed:
                     <a href="/service-areas/" class="cs-link">Service Areas</a>
                     <a href="/service-areas/{{ loc.slug }}/" class="cs-link cs-active" aria-current="page">{{ loc.name }}</a>
                 </div>
-                <span class="cs-topper">Serving {{ loc.name }} and the surrounding area</span>
+                <span class="cs-topper">Serving {{ loc.county }} and nearby communities</span>
                 <h1 class="cs-title">Crawl Space Repair &amp; Encapsulation in {{ loc.name }}, NC</h1>
                 <p class="cs-text">
-                    Moisture, mold, and damaged insulation under your {{ loc.name }} home can be fixed. We repair liners and insulation, install sump pumps and dehumidifiers, and seal crawl spaces for {{ loc.county }} homeowners. Inspections are free.
+                    Moisture, mold, and damaged insulation under your home can be fixed. We repair liners and insulation, install sump pumps and dehumidifiers, and seal crawl spaces for homeowners across {{ loc.county }}. Inspections are free.
                 </p>
                 <div class="cs-button-group">
-                    <a href="/contact/" class="cs-button-solid">Book a Free {{ loc.name }} Inspection</a>
+                    <a href="/contact/" class="cs-button-solid">Book a Free Inspection</a>
                     <a href="tel:{{ client.phoneForTel }}" class="cs-button-outline">Call or Text {{ client.phoneFormatted }}</a>
                 </div>
             </div>
@@ -73,12 +74,12 @@ eleventyComputed:
                 <h2 class="cs-title">Crawl space help for {{ loc.name }} homeowners</h2>
                 <p class="cs-text">{{ loc.intro }}</p>
                 {% if loc.slug == "cary" %}
-                <p class="cs-text">Because we are based here, a free inspection in {{ loc.name }} is usually the easiest one to schedule.</p>
+                <p class="cs-text">Because we are based here, a free inspection is usually the easiest one to schedule.</p>
                 {% else %}
-                <p class="cs-text">We travel to {{ loc.name }} from our base in Cary, usually {{ loc.drive }} away depending on traffic, and we are open daily, {{ client.hours.label }}.</p>
+                <p class="cs-text">We travel from our base in Cary, usually {{ loc.drive }} away depending on traffic, and we are open daily, {{ client.hours.label }}.</p>
                 {% endif %}
-                <p class="cs-text">In {{ loc.name }} we most often recommend {{ loc.focus }}.</p>
-                <a href="/contact/" class="cs-button-solid">Book a Free {{ loc.name }} Inspection</a>
+                <p class="cs-text">For homes here we most often recommend {{ loc.focus }}.</p>
+                <a href="/contact/" class="cs-button-solid">Book a Free Inspection</a>
             </div>
         </div>
     </section>
@@ -94,7 +95,7 @@ eleventyComputed:
                     <span class="cs-topper">What Homeowners Notice</span>
                     <h2 class="cs-title">Signs your {{ loc.name }} crawl space needs attention</h2>
                 </div>
-                <p class="cs-text">These are the signs we hear about most from {{ loc.name }} homeowners. If you notice any of them, an inspection shows how serious the moisture is.</p>
+                <p class="cs-text">These are the signs we hear about most from homeowners nearby. If you notice any of them, an inspection shows how serious the moisture is.</p>
             </div>
             <ul class="cs-card-group">
                 {%- set icons = ["/assets/svgs/s1.svg", "/assets/svgs/s2.svg", "/assets/svgs/s3.svg", "/assets/svgs/s4.svg"] %}
@@ -143,7 +144,7 @@ eleventyComputed:
                     <a href="/crawlspace-encapsulation/" class="cs-link">
                         <img class="cs-icon" src="/assets/svgs/decor/brain.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
                         <h3 class="cs-h3">Crawl Space Repair &amp; Encapsulation</h3>
-                        <p class="cs-item-text">Replace torn liners and wet insulation, or seal the whole space with a heavy-duty liner and sealed vents for {{ loc.name }} homes.</p>
+                        <p class="cs-item-text">Replace torn liners and wet insulation, or seal the whole space with a heavy-duty liner and sealed vents.</p>
                     </a>
                 </li>
                 <li class="cs-item">
@@ -166,6 +167,52 @@ eleventyComputed:
                         <h3 class="cs-h3">Prebatt Insulation &amp; Fire/Draft Stops</h3>
                         <p class="cs-item-text">Tighter, safer floor systems that cut heat loss and block drafts.</p>
                     </a>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--              Why homeowners choose us        -->
+    <!-- ============================================ -->
+
+    <section id="area-why">
+        <div class="cs-container">
+            <div class="cs-content">
+                <div class="cs-flex-group">
+                    <span class="cs-topper">Why Choose Us</span>
+                    <h2 class="cs-title">What you can expect from M&amp;M</h2>
+                </div>
+                <p class="cs-text">Founded by Miguel Martinez in Cary in 2021, and rated {{ client.ratingValue }} stars across {{ client.reviewCount }} Google reviews.</p>
+            </div>
+            <ul class="cs-card-group">
+                <li class="cs-item">
+                    <div class="cs-link cs-static">
+                        <img class="cs-icon" src="/assets/svgs/s1.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
+                        <h3 class="cs-h3">A free inspection with photos</h3>
+                        <p class="cs-item-text">We photograph what we find so you can see the crawl space the way we do, at no cost.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-link cs-static">
+                        <img class="cs-icon" src="/assets/svgs/s2.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
+                        <h3 class="cs-h3">A written quote first</h3>
+                        <p class="cs-item-text">You see the full scope and the price together before any work starts.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-link cs-static">
+                        <img class="cs-icon" src="/assets/svgs/s3.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
+                        <h3 class="cs-h3">Licensed and insured</h3>
+                        <p class="cs-item-text">Fully licensed, insured, and NC code-compliant on every job.</p>
+                    </div>
+                </li>
+                <li class="cs-item">
+                    <div class="cs-link cs-static">
+                        <img class="cs-icon" src="/assets/svgs/s4.svg" loading="lazy" decoding="async" alt="" width="40" height="40" aria-hidden="true">
+                        <h3 class="cs-h3">Open every day</h3>
+                        <p class="cs-item-text">Call or text any day, {{ client.hours.label }}, and we will set a time that works.</p>
+                    </div>
                 </li>
             </ul>
         </div>
@@ -209,7 +256,7 @@ eleventyComputed:
                     <li class="cs-step"><strong>{{ st[0] }}.</strong> {{ st[1] }}</li>
                     {%- endfor %}
                 </ol>
-                <a href="/contact/" class="cs-button-solid">Book a Free {{ loc.name }} Inspection</a>
+                <a href="/contact/" class="cs-button-solid">Book a Free Inspection</a>
             </div>
             <div class="cs-photo-grid">
                 {%- for ph in loc.project.photos %}
@@ -231,7 +278,7 @@ eleventyComputed:
         <div class="cs-container">
             <div class="cs-content">
                 <span class="cs-topper">Our Work</span>
-                <h2 class="cs-title">Examples of our crawl space work serving {{ loc.name }}</h2>
+                <h2 class="cs-title">Examples of our crawl space work</h2>
             </div>
             <div class="cs-image-group">
                 {%- for ph in photos.gallery %}
@@ -282,14 +329,14 @@ eleventyComputed:
         <div class="cs-container">
             <div class="cs-content">
                 <span class="cs-topper">Our Process</span>
-                <h2 class="cs-title">How a {{ loc.name }} Inspection Works</h2>
+                <h2 class="cs-title">How a Free Inspection Works</h2>
                 <p class="cs-text">Four straightforward steps, from your first call to a finished crawl space.</p>
             </div>
             <ul class="cs-card-group">
                 <li class="cs-item">
                     <span class="cs-number">01</span>
                     <h3 class="cs-h3">You Call or Message Us</h3>
-                    <p class="cs-item-text">Tell us what you are seeing in {{ loc.name }}, like a musty smell, standing water, or sagging insulation, and we set a time that works.</p>
+                    <p class="cs-item-text">Tell us what you are seeing, like a musty smell, standing water, or sagging insulation, and we set a time that works.</p>
                 </li>
                 <li class="cs-item">
                     <span class="cs-number">02</span>
@@ -319,9 +366,14 @@ eleventyComputed:
                     {% for n in loc.nearLinks %}<a href="/service-areas/{{ n.slug }}/">{{ n.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
                     See the full <a href="/service-areas/">list of service areas</a>.
                 </p>
+                <p class="cs-text">
+                    Helpful reading: <a href="/blog/what-is-crawl-space-encapsulation/">what crawl space encapsulation is</a>, <a href="/blog/nc-soil-crawl-space-moisture/">how clay and sand soil affect moisture</a>, {% if "Sandhills" in loc.region %}<a href="/blog/crawl-space-dehumidifier-nc/">whether you need a crawl space dehumidifier</a>{% else %}<a href="/blog/standing-water-in-crawl-space-nc/">what causes standing water in a crawl space</a>{% endif %}, and <a href="/blog/crawl-space-encapsulation-cost-nc/">what affects encapsulation cost</a>.
+                </p>
             </div>
         </div>
     </section>
+
+    {% include 'components/service-map.html' %}
 
     {% include 'components/faq.html' %}
 

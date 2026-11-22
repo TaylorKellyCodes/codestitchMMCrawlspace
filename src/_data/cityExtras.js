@@ -6,11 +6,11 @@ const CANDOR = '<a href="https://soilseries.sc.egov.usda.gov/OSD_Docs/C/CANDOR.h
 
 // Shared question wording, with a short local answer added per city.
 const newHome = (name, local) => ({
-    q: `My ${name} home is fairly new. Do I need to think about the crawl space?`,
+    q: `My home is fairly new. Do I need to think about the crawl space?`,
     a: `Many newer homes still have vented crawl spaces with thin plastic or bare soil. ${local} A quick inspection is worth it if you notice a musty smell, cold floors, or condensation on the ducts.`,
 });
 const waterAfterDry = (name, local) => ({
-    q: `Why is there suddenly water under my ${name} house after years of none?`,
+    q: `Why is there suddenly water under my house after years of none?`,
     a: `${local} We find the source first, then recommend drainage, a sump pump, or sealing, depending on where the water comes from.`,
 });
 const moldNowDry = (name, local) => ({
@@ -19,7 +19,7 @@ const moldNowDry = (name, local) => ({
 });
 const repairOrRedo = (name, local) => ({
     q: `Can you repair a torn liner or wet insulation, or does everything have to be redone?`,
-    a: `Often we can repair what is there. A torn or bunched liner can be replaced, wet or sagging insulation can be swapped out, and a sump pump or drain can be added. ${local} The inspection shows which approach fits your ${name} home.`,
+    a: `Often we can repair what is there. A torn or bunched liner can be replaced, wet or sagging insulation can be swapped out, and a sump pump or drain can be added. ${local} The inspection shows which approach fits your home.`,
 });
 
 module.exports = {
