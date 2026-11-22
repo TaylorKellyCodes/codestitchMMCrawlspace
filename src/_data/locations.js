@@ -209,7 +209,7 @@ list.forEach((l) => {
         q: "Do you repair foundations or structural framing?",
         a: "No. We handle crawl space moisture, mold, insulation, drainage, and humidity control. If an inspection shows structural damage, we tell you so you can bring in a structural contractor.",
     };
-    const baseText = l.slug === "cary" ? "We are based in Cary, so inspections here are usually quick to schedule." : `We travel to ${l.name} from our base in Cary.`;
+    const baseText = l.slug === "cary" ? "We are based in Cary, so inspections here are usually quick to schedule." : "We travel from our base in Cary.";
     const scheduleFaq = {
         q: `How do I schedule an inspection in ${l.name}?`,
         a: `Call or text (910) 635-4943 any day from 5 AM to 10 PM, or use the contact form. ${baseText} Inspections are free, and you get a written quote before any work starts.`,

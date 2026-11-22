@@ -1481,13 +1481,22 @@
 			/* pushes all flex children to the top */
 			align-items: flex-start;
 			justify-content: flex-end;
+			/* logo group plus four link columns stay on one line */
+			flex-wrap: nowrap;
+			column-gap: clamp(1.5rem, 3vw, 3.5rem);
 		}
 
 		.cs-logo-group {
 			/* pushes everything to the right of it as far as possible in a flexbox */
 			margin-right: auto;
 			width: auto;
-			max-width: (305/16rem);
+			max-width: clamp(13rem, 20vw, 19rem);
+			flex: 0 1 auto;
+		}
+
+		.cs-nav {
+			flex: 0 1 auto;
+			min-width: 0;
 		}
 
 		.cs-text {
@@ -1503,6 +1512,8 @@
 
 		.cs-contact {
 			width: auto;
+			flex: 0 1 auto;
+			min-width: 0;
 		}
 	}
 }

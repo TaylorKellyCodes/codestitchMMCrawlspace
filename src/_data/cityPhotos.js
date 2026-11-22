@@ -22,7 +22,7 @@ const HERO_SIZES = { desktop: [1600, 1000], mobile: [800, 1000] };
 const nameOf = (c) => c.name;
 function make(c, p, size) {
     const slug = c.slug;
-    const phrase = p.own ? `${p.desc}.` : `${p.desc}. Example of our crawl space work serving ${nameOf(c)}, NC.`;
+    const phrase = `${p.desc}.`;
     return { file: `/assets/images/areas/${slug}-nc-${p.key}.webp`, source: p.src, alt: phrase, w: size[0], h: size[1] };
 }
 
