@@ -1,8 +1,9 @@
 <section class="cs-detail-section cs-alt cs-service-map">
     <div class="cs-container">
         <div class="cs-content">
-            <span class="cs-topper">Service Area Map</span>
-            <h2 class="cs-title">Serving homes within about two hours of Cary</h2>
+            <span class="cs-topper">{{ mapTopper or "Service Area Map" }}</span>
+            <h2 class="cs-title">{{ mapTitle or "Serving homes within about two hours of Cary" }}</h2>
+            {{ mapExtra | safe }}
             <p class="cs-text">The dashed ring shows roughly a two-hour drive from our base in Cary, NC. Tap a city to see what crawl spaces face there.</p>
             <div id="service-map" class="cs-map" role="region" aria-label="Interactive map of the central North Carolina service area. City links are also listed in the service areas section."></div>
         </div>

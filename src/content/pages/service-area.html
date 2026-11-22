@@ -357,22 +357,14 @@ eleventyComputed:
         </div>
     </section>
 
-    <section id="area-nearby" class="cs-detail-section cs-alt">
-        <div class="cs-container">
-            <div class="cs-content">
-                <span class="cs-topper">Nearby</span>
-                <h2 class="cs-title">Also serving communities near {{ loc.name }}</h2>
+    {% set mapTopper = "Nearby" %}
+    {% set mapTitle = "Also serving communities near " + loc.name %}
+    {% set mapExtra %}
                 <p class="cs-text">
                     {% for n in loc.nearLinks %}<a href="/service-areas/{{ n.slug }}/">{{ n.name }}</a>{% if not loop.last %}, {% endif %}{% endfor %}
                     See the full <a href="/service-areas/">list of service areas</a>.
                 </p>
-                <p class="cs-text">
-                    Helpful reading: <a href="/blog/what-is-crawl-space-encapsulation/">what crawl space encapsulation is</a>, <a href="/blog/nc-soil-crawl-space-moisture/">how clay and sand soil affect moisture</a>, {% if "Sandhills" in loc.region %}<a href="/blog/crawl-space-dehumidifier-nc/">whether you need a crawl space dehumidifier</a>{% else %}<a href="/blog/standing-water-in-crawl-space-nc/">what causes standing water in a crawl space</a>{% endif %}, and <a href="/blog/crawl-space-encapsulation-cost-nc/">what affects encapsulation cost</a>.
-                </p>
-            </div>
-        </div>
-    </section>
-
+    {% endset %}
     {% include 'components/service-map.html' %}
 
     {% include 'components/faq.html' %}
